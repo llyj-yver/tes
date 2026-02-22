@@ -10,7 +10,7 @@ import {
   Home,
   RotateCcw
 } from "lucide-react";
-import { sendEmailWithFile } from "../utils/emailSender";
+
 
 
 const quizQuestions = [
@@ -216,21 +216,6 @@ export default function QuizPage() {
 
     sessionStorage.setItem("quizEmailSent", "true");
 
-    sendEmailWithFile({
-      toEmail: "jyllyvers@email.com",
-      toName: "Student",
-      subject: "Quiz Passed – Module 2",
-      message: `
-Congratulations!
-
-You passed Module 2 – Components of a Salad.
-
-Score: ${score}/${quizQuestions.length}
-Percentage: ${percentage.toFixed(0)}%
-
-Keep up the great work!
-      `,
-    });
   }, [quizCompleted, score]);
 
   const question = quizQuestions[currentQuestion];
