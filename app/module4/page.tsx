@@ -335,7 +335,7 @@ const VideoQuizSystem: React.FC = () => {
               <div className="relative aspect-video bg-gray-950">
                 <video
                   ref={videoRef}
-                  src="https://drive.google.com/uc?export=download&id=1c6I8jWm0zKwMMvkT8QebP7bkgdDUebpF"
+                  src="/image/video/MODULE 4_ VIDEO .mp4"
                   className="w-full h-full object-contain"
                   muted={isMuted}
                   onTimeUpdate={handleTimeUpdate}
