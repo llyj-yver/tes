@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Play, Pause, RotateCcw, Volume2, VolumeX, Maximize, SkipForward, SkipBack, CheckCircle2, XCircle, Award } from 'lucide-react';
+import { Play, Pause, RotateCcw, Volume2, VolumeX, Maximize, SkipForward, SkipBack, CheckCircle2, XCircle, Award, BookOpen, Clock } from 'lucide-react';
 
 interface QuizQuestion {
   question: string;
@@ -163,51 +163,34 @@ const VideoQuizSystem: React.FC = () => {
   const [isCompleted, setIsCompleted] = useState<boolean>(false);
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
-
   const [videoDuration, setVideoDuration] = useState<number>(0);
   const progress = (askedQuestions.size / quizData.length) * 100;
 
-  // Check if module is already completed on mount
   useEffect(() => {
     const completedModules = localStorage.getItem('completedModules');
     if (completedModules) {
       const modules = JSON.parse(completedModules);
-      if (modules.module4) {
-        setIsCompleted(true);
-      }
+      if (modules.module4) setIsCompleted(true);
     }
   }, []);
 
-  // Mark module as complete when all quizzes are done
   useEffect(() => {
     if (askedQuestions.size === quizData.length && !isCompleted) {
-      // Mark module 4 as complete
       const completedModules = localStorage.getItem('completedModules');
       let modules = completedModules ? JSON.parse(completedModules) : {};
-
       modules.module4 = true;
       localStorage.setItem('completedModules', JSON.stringify(modules));
       setIsCompleted(true);
-
-      // Dispatch event to notify navigation page
       window.dispatchEvent(new Event('moduleCompleted'));
-
-      console.log('Module 4 automatically marked as complete!');
     }
   }, [askedQuestions.size, isCompleted]);
 
-  // Simulate video playback
   const handleTimeUpdate = () => {
     if (!videoRef.current) return;
-
     const time = videoRef.current.currentTime;
     setCurrentTime(time);
-
     for (let i = 0; i < quizData.length; i++) {
-      if (
-        !askedQuestions.has(i) &&
-        Math.abs(time - quizData[i].timePopUp) < 0.3
-      ) {
+      if (!askedQuestions.has(i) && Math.abs(time - quizData[i].timePopUp) < 0.3) {
         videoRef.current.pause();
         setIsPlaying(false);
         setShowQuiz(true);
@@ -219,24 +202,18 @@ const VideoQuizSystem: React.FC = () => {
   };
 
   const handleLoadedMetadata = () => {
-    if (videoRef.current) {
-      setVideoDuration(videoRef.current.duration);
-    }
+    if (videoRef.current) setVideoDuration(videoRef.current.duration);
   };
-
 
   const togglePlayPause = () => {
     if (!videoRef.current) return;
-
     if (isPlaying) {
       videoRef.current.pause();
     } else {
       videoRef.current.play();
     }
-
     setIsPlaying(!isPlaying);
   };
-
 
   const resetVideo = (): void => {
     setCurrentTime(0);
@@ -263,19 +240,19 @@ const VideoQuizSystem: React.FC = () => {
   };
 
   const handleSubmitAnswer = (): void => {
-    if (selectedAnswer) {
-      setShowExplanation(true);
-    }
+    if (selectedAnswer) setShowExplanation(true);
   };
 
   const handleNextQuestion = (): void => {
     const currentQuiz = quizData[currentQuizIndex];
-
     if (selectedAnswer === currentQuiz.correctAnswer) {
       setShowQuiz(false);
       setSelectedAnswer(null);
       setShowExplanation(false);
       setIsPlaying(true);
+      setTimeout(() => {
+        videoRef.current?.play();
+      }, 50);
     }
   };
 
@@ -290,45 +267,75 @@ const VideoQuizSystem: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-lime-50 to-emerald-50">
-      <div className="max-w-[1400px] mx-auto px-6 py-8">
-        {/* Header */}
-        <div className="mb-8">
+
+      {/* Hero Header — matches landing page hero style */}
+      <div className="bg-gradient-to-br from-lime-600 via-green-600 to-emerald-700 text-white relative overflow-hidden">
+        {/* Decorative blobs */}
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-yellow-300 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-10 w-80 h-80 bg-green-300 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 py-10 relative z-10">
+          {/* Back button */}
           <button
             onClick={() => window.location.href = '/navigation'}
-            className="flex items-center gap-2 text-green-700 hover:text-green-900 transition-colors mb-4 group"
+            className="flex items-center gap-2 text-green-100 hover:text-white transition-colors mb-6 group"
           >
             <svg className="w-5 h-5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            <span className="text-sm font-medium">Back to Course</span>
+            <span className="text-sm font-semibold">Back to Course</span>
           </button>
-          <div className="flex items-center justify-between">
+
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
-              <h1 className="text-3xl font-bold text-gray-800 mb-3">
-                Interactive Video Quiz - Module 4
+              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-3">
+                <span className="bg-gradient-to-r from-yellow-200 via-lime-200 to-green-200 bg-clip-text text-transparent">
+                  Module 4
+                </span>
+                <br />
+                <span className="text-white text-3xl md:text-4xl">Interactive Video Quiz</span>
               </h1>
-              <p className="text-gray-600 text-base">
-                Watch the video and answer questions when they appear
+              <p className="text-green-100 text-lg">
+                Watch the video and answer questions as they appear
               </p>
             </div>
-            {isCompleted && (
-              <div className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-lg shadow-md">
-                <CheckCircle2 className="w-5 h-5" />
-                <span className="font-semibold">Completed</span>
+
+            <div className="flex flex-wrap gap-3">
+              {/* Stats chips — same as landing page */}
+              <div className="flex items-center gap-2 text-white bg-white/10 backdrop-blur-md px-5 py-3 rounded-full border border-white/20">
+                <BookOpen className="w-5 h-5 text-lime-300" />
+                <span className="font-semibold">{quizData.length} Questions</span>
               </div>
-            )}
+              <div className="flex items-center gap-2 text-white bg-white/10 backdrop-blur-md px-5 py-3 rounded-full border border-white/20">
+                <Clock className="w-5 h-5 text-yellow-300" />
+                <span className="font-semibold">{formatTime(videoDuration)}</span>
+              </div>
+              {isCompleted && (
+                <div className="flex items-center gap-2 bg-gradient-to-r from-yellow-300 via-lime-400 to-green-400 text-green-900 px-5 py-3 rounded-full font-bold shadow-lg">
+                  <CheckCircle2 className="w-5 h-5" />
+                  <span>Completed</span>
+                </div>
+              )}
+            </div>
           </div>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8">
-          {/* Video Section */}
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8">
+
+          {/* Left — Video + Quiz */}
           <div className="space-y-6">
-            {/* Video Player */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-green-200">
-              <div className="relative aspect-video bg-gray-100">
+
+            {/* Video Player Card */}
+            <div className="bg-white rounded-3xl overflow-hidden shadow-lg border-2 border-green-200">
+              <div className="relative aspect-video bg-gray-950">
                 <video
                   ref={videoRef}
-                  src="/image/video/MODULE 4_ VIDEO .mp4"
+                  src="https://drive.google.com/uc?export=download&id=1c6I8jWm0zKwMMvkT8QebP7bkgdDUebpF"
                   className="w-full h-full object-contain"
                   muted={isMuted}
                   onTimeUpdate={handleTimeUpdate}
@@ -336,45 +343,39 @@ const VideoQuizSystem: React.FC = () => {
                   playsInline
                 />
               </div>
-              {/* Video Controls */}
+
+              {/* Controls */}
               {!showQuiz && (
-                <div className="bg-gradient-to-r from-green-100 to-lime-100 p-5">
-                  {/* Timeline with Quiz Markers */}
-                  <div className="mb-4 relative">
+                <div className="bg-gradient-to-r from-lime-50 to-green-50 px-6 py-5">
+                  {/* Timeline */}
+                  <div className="mb-4">
                     <div
                       onClick={handleTimelineClick}
-                      className="w-full bg-green-200 rounded-full h-2 cursor-pointer relative group"
+                      className="w-full bg-green-200 rounded-full h-2.5 cursor-pointer relative group"
                     >
-                      {/* Quiz Markers */}
+                      {/* Quiz markers */}
                       {quizData.map((quiz, idx) => (
                         <div
                           key={idx}
-                          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 transition-all z-10"
+                          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 z-10"
                           style={{ left: `${(quiz.timePopUp / videoDuration) * 100}%` }}
                         >
-                          <div className={`w-4 h-4 rounded-full border-2 border-white transition-all ${askedQuestions.has(idx)
-                              ? 'bg-green-500'
-                              : 'bg-yellow-400 animate-pulse'
-                            }`}>
-                          </div>
+                          <div className={`w-3.5 h-3.5 rounded-full border-2 border-white shadow transition-all ${askedQuestions.has(idx) ? 'bg-green-500' : 'bg-yellow-400 animate-pulse'}`} />
                         </div>
                       ))}
-
-                      {/* Progress Bar */}
+                      {/* Progress */}
                       <div
-                        className="bg-gradient-to-r from-lime-500 to-green-600 h-full rounded-full transition-all relative"
+                        className="bg-gradient-to-r from-lime-500 to-green-600 h-full rounded-full transition-all"
                         style={{ width: `${(currentTime / videoDuration) * 100}%` }}
-                      >
-                        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-green-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                      </div>
+                      />
                     </div>
-                    <div className="flex justify-between text-xs text-gray-600 mt-2">
+                    <div className="flex justify-between text-xs text-green-700 mt-2 font-medium">
                       <span>{formatTime(currentTime)}</span>
                       <span>{formatTime(videoDuration)}</span>
                     </div>
                   </div>
 
-                  {/* Control Buttons */}
+                  {/* Buttons */}
                   <div className="flex items-center gap-3">
                     <button
                       onClick={togglePlayPause}
@@ -382,54 +383,41 @@ const VideoQuizSystem: React.FC = () => {
                     >
                       {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
                     </button>
-
                     <button
                       onClick={() => skipTime(-10)}
-                      className="bg-white hover:bg-green-50 text-green-700 p-2.5 rounded-full transition-all shadow-sm border border-green-300"
+                      className="bg-white hover:bg-green-50 text-green-700 p-2.5 rounded-full transition-all shadow-sm border-2 border-green-200 hover:border-green-400"
                     >
                       <SkipBack className="w-5 h-5" />
                     </button>
-
                     <button
                       onClick={() => skipTime(10)}
-                      className="bg-white hover:bg-green-50 text-green-700 p-2.5 rounded-full transition-all shadow-sm border border-green-300"
+                      className="bg-white hover:bg-green-50 text-green-700 p-2.5 rounded-full transition-all shadow-sm border-2 border-green-200 hover:border-green-400"
                     >
                       <SkipForward className="w-5 h-5" />
                     </button>
-
                     <button
                       onClick={resetVideo}
-                      className="bg-white hover:bg-green-50 text-green-700 p-2.5 rounded-full transition-all shadow-sm border border-green-300"
+                      className="bg-white hover:bg-green-50 text-green-700 p-2.5 rounded-full transition-all shadow-sm border-2 border-green-200 hover:border-green-400"
                     >
                       <RotateCcw className="w-5 h-5" />
                     </button>
 
-                    {/* Volume Control */}
                     <div className="flex items-center gap-3 ml-auto">
                       <button
                         onClick={() => setIsMuted(!isMuted)}
-                        className="bg-white hover:bg-green-50 text-green-700 p-2.5 rounded-full transition-all shadow-sm border border-green-300"
+                        className="bg-white hover:bg-green-50 text-green-700 p-2.5 rounded-full transition-all shadow-sm border-2 border-green-200 hover:border-green-400"
                       >
-                        {isMuted || volume === 0 ? (
-                          <VolumeX className="w-5 h-5" />
-                        ) : (
-                          <Volume2 className="w-5 h-5" />
-                        )}
+                        {isMuted || volume === 0 ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
                       </button>
                       <input
                         type="range"
                         min="0"
                         max="100"
                         value={isMuted ? 0 : volume}
-                        onChange={(e) => {
-                          setVolume(Number(e.target.value));
-                          setIsMuted(false);
-                        }}
+                        onChange={(e) => { setVolume(Number(e.target.value)); setIsMuted(false); }}
                         className="w-24 h-1 accent-green-600 cursor-pointer"
                       />
-                      <button
-                        className="bg-white hover:bg-green-50 text-green-700 p-2.5 rounded-full transition-all shadow-sm border border-green-300"
-                      >
+                      <button className="bg-white hover:bg-green-50 text-green-700 p-2.5 rounded-full transition-all shadow-sm border-2 border-green-200 hover:border-green-400">
                         <Maximize className="w-5 h-5" />
                       </button>
                     </div>
@@ -438,26 +426,34 @@ const VideoQuizSystem: React.FC = () => {
               )}
             </div>
 
-            {/* Quiz Modal */}
+            {/* Quiz Card — styled like landing page popup */}
             {showQuiz && currentQuiz && (
-              <div className="bg-white rounded-xl shadow-xl overflow-hidden animate-fade-in border border-green-200">
-                <div className="bg-gradient-to-r from-lime-600 to-green-600 text-white px-8 py-5 flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center flex-shrink-0">
-                      <span className="font-bold text-green-600 text-xl">?</span>
+              <div className="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-green-200 animate-fade-in">
+
+                {/* Quiz Header — matches landing page hero gradient */}
+                <div className="bg-gradient-to-br from-lime-600 via-green-600 to-emerald-700 text-white px-8 py-6 relative overflow-hidden">
+                  <div className="absolute inset-0 opacity-20 pointer-events-none">
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-yellow-300 rounded-full blur-3xl"></div>
+                  </div>
+                  <div className="flex items-center justify-between relative z-10">
+                    <div className="flex items-center gap-4">
+                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-300 via-lime-400 to-green-400 flex items-center justify-center shadow-lg">
+                        <span className="font-extrabold text-green-900 text-2xl">?</span>
+                      </div>
+                      <div>
+                        <p className="text-lime-200 text-sm font-semibold uppercase tracking-widest mb-0.5">Knowledge Check</p>
+                        <h3 className="font-extrabold text-xl">Question {currentQuizIndex + 1} of {quizData.length}</h3>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-bold text-xl">Knowledge Check</h3>
-                      <p className="text-sm text-green-100">Question {currentQuizIndex + 1} of {quizData.length}</p>
+                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                      ⏱ {formatTime(currentQuiz.timePopUp)}
                     </div>
                   </div>
-                  <span className="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm font-medium">
-                    {formatTime(currentQuiz.timePopUp)}
-                  </span>
                 </div>
 
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-8">
+                  {/* Question */}
+                  <h3 className="text-2xl font-extrabold text-green-900 mb-8 leading-snug">
                     {currentQuiz.question}
                   </h3>
 
@@ -474,67 +470,55 @@ const VideoQuizSystem: React.FC = () => {
                           key={option}
                           onClick={() => !showExplanation && handleAnswerSelect(option)}
                           disabled={showExplanation}
-                          className={`w-full text-left p-5 border-2 rounded-xl transition-all ${showCorrect
-                              ? 'border-green-500 bg-green-50'
+                          className={`w-full text-left p-5 border-2 rounded-2xl transition-all font-medium text-lg
+                            ${showCorrect
+                              ? 'border-green-500 bg-green-50 text-green-900'
                               : showIncorrect
-                                ? 'border-red-400 bg-red-50'
+                                ? 'border-red-400 bg-red-50 text-red-900'
                                 : isSelected
-                                  ? 'border-lime-500 bg-lime-50'
-                                  : 'border-gray-200 hover:border-green-400 hover:bg-green-50/50'
-                            } ${showExplanation ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                                  ? 'border-lime-500 bg-lime-50 text-green-900'
+                                  : 'border-green-200 hover:border-green-400 hover:bg-green-50 text-green-800'
+                            } ${showExplanation ? 'cursor-not-allowed' : 'cursor-pointer hover:shadow-md'}`}
                         >
-                          <div className="flex items-start gap-4">
-                            <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-all ${showCorrect
-                                ? 'border-green-500 bg-green-500'
+                          <div className="flex items-center gap-4">
+                            {/* Option badge */}
+                            <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 font-extrabold text-sm transition-all
+                              ${showCorrect
+                                ? 'bg-gradient-to-br from-green-500 to-emerald-600 text-white'
                                 : showIncorrect
-                                  ? 'border-red-400 bg-red-400'
+                                  ? 'bg-red-400 text-white'
                                   : isSelected
-                                    ? 'border-lime-600'
-                                    : 'border-gray-300'
+                                    ? 'bg-gradient-to-br from-lime-500 to-green-600 text-white'
+                                    : 'bg-green-100 text-green-700'
                               }`}>
-                              {showCorrect && <CheckCircle2 className="w-4 h-4 text-white" />}
-                              {showIncorrect && <XCircle className="w-4 h-4 text-white" />}
-                              {isSelected && !showExplanation && (
-                                <div className="w-3 h-3 bg-lime-600 rounded-full" />
-                              )}
-                            </div>
-                            <span className={`text-lg font-medium ${showCorrect
-                                ? 'text-green-800'
+                              {showCorrect
+                                ? <CheckCircle2 className="w-5 h-5" />
                                 : showIncorrect
-                                  ? 'text-red-800'
-                                  : 'text-gray-800'
-                              }`}>
-                              {currentQuiz[option]}
-                            </span>
+                                  ? <XCircle className="w-5 h-5" />
+                                  : option.toUpperCase()
+                              }
+                            </div>
+                            <span>{currentQuiz[option]}</span>
                           </div>
                         </button>
                       );
                     })}
                   </div>
 
-                  {/* Explanation */}
+                  {/* Explanation box — matches landing page card style */}
                   {showExplanation && selectedAnswer && (
-                    <div
-                      className={`p-5 rounded-xl mb-6 border-2 animate-fade-in ${isCorrect
-                          ? 'bg-green-50 border-green-300'
-                          : 'bg-red-50 border-red-300'
-                        }`}
-                    >
+                    <div className={`p-5 rounded-2xl mb-6 border-2 ${isCorrect ? 'bg-green-50 border-green-300' : 'bg-red-50 border-red-300'}`}>
                       <div className="flex items-start gap-4">
                         <div className="flex-shrink-0 mt-0.5">
-                          {isCorrect ? (
-                            <CheckCircle2 className="w-6 h-6 text-green-600" />
-                          ) : (
-                            <XCircle className="w-6 h-6 text-red-500" />
-                          )}
+                          {isCorrect
+                            ? <CheckCircle2 className="w-6 h-6 text-green-600" />
+                            : <XCircle className="w-6 h-6 text-red-500" />}
                         </div>
                         <div>
-                          <h4 className={`font-bold text-lg mb-2 ${isCorrect ? 'text-green-800' : 'text-red-800'
-                            }`}>
-                            {isCorrect ? 'Correct!' : 'Not quite right'}
+                          <h4 className={`font-extrabold text-lg mb-1 ${isCorrect ? 'text-green-800' : 'text-red-800'}`}>
+                            {isCorrect ? '🎉 Correct!' : 'Not quite right'}
                           </h4>
-                          <p className={`text-base leading-relaxed ${isCorrect ? 'text-green-700' : 'text-red-700'
-                            }`}>
+                          <p className={`text-base leading-relaxed ${isCorrect ? 'text-green-700' : 'text-red-700'}`}>
                             {currentQuiz[`${selectedAnswer}Description` as keyof QuizQuestion]}
                           </p>
                         </div>
@@ -542,30 +526,27 @@ const VideoQuizSystem: React.FC = () => {
                     </div>
                   )}
 
-                  {/* Action Button */}
+                  {/* Action buttons — same style as landing page CTA */}
                   {!showExplanation ? (
                     <button
                       onClick={handleSubmitAnswer}
                       disabled={!selectedAnswer}
-                      className="w-full bg-gradient-to-r from-lime-500 to-green-600 hover:from-lime-600 hover:to-green-700 disabled:from-gray-300 disabled:to-gray-300 disabled:cursor-not-allowed text-white font-semibold py-4 px-6 rounded-xl transition-all text-lg shadow-md"
+                      className="w-full bg-gradient-to-r from-yellow-300 via-lime-400 to-green-400 disabled:from-gray-200 disabled:to-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed text-green-900 font-extrabold py-4 px-6 rounded-2xl transition-all text-lg shadow-md hover:shadow-xl hover:shadow-lime-500/30 hover:scale-[1.02]"
                     >
                       Check Answer
                     </button>
                   ) : isCorrect ? (
                     <button
                       onClick={handleNextQuestion}
-                      className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold py-4 px-6 rounded-xl transition-all flex items-center justify-center gap-3 text-lg shadow-md"
+                      className="w-full bg-gradient-to-r from-yellow-300 via-lime-400 to-green-400 text-green-900 font-extrabold py-4 px-6 rounded-2xl transition-all flex items-center justify-center gap-3 text-lg shadow-md hover:shadow-xl hover:shadow-lime-500/30 hover:scale-[1.02]"
                     >
                       Continue Video
                       <Play className="w-5 h-5" />
                     </button>
                   ) : (
                     <button
-                      onClick={() => {
-                        setSelectedAnswer(null);
-                        setShowExplanation(false);
-                      }}
-                      className="w-full bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 text-white font-semibold py-4 px-6 rounded-xl transition-all text-lg shadow-md"
+                      onClick={() => { setSelectedAnswer(null); setShowExplanation(false); }}
+                      className="w-full bg-gradient-to-r from-red-400 to-orange-400 hover:from-red-500 hover:to-orange-500 text-white font-extrabold py-4 px-6 rounded-2xl transition-all text-lg shadow-md hover:scale-[1.02]"
                     >
                       Try Again
                     </button>
@@ -577,73 +558,114 @@ const VideoQuizSystem: React.FC = () => {
 
           {/* Sidebar */}
           <div>
-            <div className="bg-white rounded-xl shadow-lg p-6 sticky top-8 border border-green-200">
-              <h3 className="font-bold text-xl text-gray-800 mb-6">Course Progress</h3>
+            <div className="sticky top-8 space-y-4">
 
-              {/* Progress Bar */}
-              <div className="mb-8">
-                <div className="flex justify-between text-sm mb-3">
-                  <span className="font-medium text-gray-700">Quiz Completion</span>
-                  <span className="font-bold text-green-700">{progress.toFixed(0)}%</span>
+              {/* Progress Card — matches landing page card style */}
+              <div className="bg-white rounded-3xl shadow-sm border-2 border-green-200 overflow-hidden">
+                <div className="w-full h-32 bg-gradient-to-br from-green-100 to-emerald-100 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(74,222,128,0.2),transparent_70%)]"></div>
+                  <span className="text-6xl relative z-10">🥗</span>
                 </div>
-                <div className="w-full bg-green-100 rounded-full h-3">
-                  <div
-                    className="bg-gradient-to-r from-lime-500 via-green-500 to-emerald-600 h-full rounded-full transition-all duration-500"
-                    style={{ width: `${progress}%` }}
-                  />
-                </div>
-                <p className="text-sm text-gray-600 mt-3">
-                  {askedQuestions.size} of {quizData.length} quizzes completed
-                </p>
-              </div>
 
-              {/* Quiz List */}
-              <div className="space-y-3 mb-6">
-                <h4 className="font-semibold text-base text-gray-700 mb-4">Quiz Timeline</h4>
-                {quizData.map((quiz, idx) => (
-                  <div
-                    key={idx}
-                    className={`flex items-center gap-3 p-3 rounded-lg border transition-all ${askedQuestions.has(idx)
-                        ? 'bg-green-50 border-green-300'
-                        : 'bg-lime-50/50 border-lime-200'
-                      }`}
-                  >
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${askedQuestions.has(idx)
-                        ? 'bg-gradient-to-br from-green-500 to-emerald-600'
-                        : 'bg-gradient-to-br from-lime-400 to-green-500'
-                      }`}>
-                      {askedQuestions.has(idx) ? (
-                        <CheckCircle2 className="w-5 h-5 text-white" />
-                      ) : (
-                        <span className="text-white font-bold text-sm">{idx + 1}</span>
-                      )}
+                <div className="p-6">
+                  <h3 className="font-extrabold text-xl text-green-900 mb-5">Your Progress</h3>
+
+                  {/* Progress bar */}
+                  <div className="mb-5">
+                    <div className="flex justify-between text-sm mb-2">
+                      <span className="font-semibold text-green-700">Quiz Completion</span>
+                      <span className="font-extrabold text-green-700">{progress.toFixed(0)}%</span>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-gray-800">
-                        Quiz {idx + 1}
-                      </p>
-                      <p className="text-xs text-gray-600">
-                        {formatTime(quiz.timePopUp)}
-                      </p>
+                    <div className="w-full bg-green-100 rounded-full h-2.5">
+                      <div
+                        className="bg-gradient-to-r from-lime-500 to-green-600 h-full rounded-full transition-all duration-500"
+                        style={{ width: `${progress}%` }}
+                      />
+                    </div>
+                    <p className="text-sm text-green-600 mt-2 font-medium">
+                      {askedQuestions.size} of {quizData.length} quizzes done
+                    </p>
+                  </div>
+
+                  <div className="space-y-2 text-sm mb-5">
+                    <div className="flex justify-between">
+                      <span className="text-gray-500">Current time</span>
+                      <span className="font-semibold text-green-700">{formatTime(currentTime)}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-500">Total length</span>
+                      <span className="font-semibold text-green-700">{formatTime(videoDuration)}</span>
                     </div>
                   </div>
-                ))}
+                </div>
               </div>
 
-              {/* Completion Badge */}
+              {/* Quiz Timeline Card */}
+              <div className="bg-white rounded-3xl shadow-sm border-2 border-green-200 p-6">
+                <h4 className="font-extrabold text-green-900 mb-4 flex items-center gap-2">
+                  <Award className="w-5 h-5 text-green-600" />
+                  Quiz Timeline
+                </h4>
+                <div className="space-y-3 max-h-80 overflow-y-auto pr-1">
+                  {quizData.map((quiz, idx) => (
+                    <div
+                      key={idx}
+                      className={`flex items-center gap-3 p-3 rounded-2xl border-2 transition-all ${
+                        askedQuestions.has(idx)
+                          ? 'bg-green-50 border-green-300'
+                          : 'bg-lime-50 border-lime-200'
+                      }`}
+                    >
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 shadow ${
+                        askedQuestions.has(idx)
+                          ? 'bg-gradient-to-br from-lime-500 to-green-600'
+                          : 'bg-gradient-to-br from-lime-300 to-green-400'
+                      }`}>
+                        {askedQuestions.has(idx)
+                          ? <CheckCircle2 className="w-5 h-5 text-white" />
+                          : <span className="text-white font-extrabold text-sm">{idx + 1}</span>
+                        }
+                      </div>
+                      <div>
+                        <p className="text-sm font-bold text-green-900">Quiz {idx + 1}</p>
+                        <p className="text-xs text-green-600">{formatTime(quiz.timePopUp)}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Completion badge — same award card style as landing page */}
               {progress === 100 && (
-                <div className="bg-gradient-to-br from-yellow-50 to-amber-50 border-2 border-yellow-400 rounded-xl p-5 text-center animate-fade-in">
-                  <Award className="w-14 h-14 text-yellow-600 mx-auto mb-3" />
-                  <h4 className="font-bold text-base text-gray-800 mb-2">Module Complete! 🎉</h4>
-                  <p className="text-sm text-gray-600 mb-4">Great job on finishing all knowledge checks</p>
+                <div className="bg-gradient-to-br from-white to-yellow-50 rounded-3xl border-2 border-yellow-300 p-6 text-center shadow-lg">
+                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <Award className="w-8 h-8 text-white" />
+                  </div>
+                  <h4 className="font-extrabold text-xl text-yellow-900 mb-2">Module Complete! 🎉</h4>
+                  <p className="text-yellow-700 text-sm mb-5">Great job finishing all knowledge checks</p>
                   <button
                     onClick={() => window.location.href = '/navigation'}
-                    className="w-full bg-gradient-to-r from-lime-500 to-green-600 hover:from-lime-600 hover:to-green-700 text-white font-semibold py-3 px-4 rounded-lg transition-all shadow-md"
+                    className="w-full bg-gradient-to-r from-yellow-300 via-lime-400 to-green-400 text-green-900 font-extrabold py-3 px-4 rounded-2xl transition-all hover:shadow-xl hover:shadow-lime-500/30 hover:scale-105"
                   >
-                    Back to Course
+                    Back to Course →
                   </button>
                 </div>
               )}
+
+              {/* Study Tips — matches landing page tips card */}
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-6 border-2 border-green-200">
+                <h3 className="font-extrabold text-green-900 mb-3 flex items-center gap-2">
+                  <BookOpen className="w-5 h-5 text-green-600" />
+                  Study Tips
+                </h3>
+                <ul className="space-y-2 text-sm text-green-800 font-medium">
+                  <li>• Answer each question before continuing</li>
+                  <li>• Re-watch sections you found tricky</li>
+                  <li>• Take notes on key hygiene steps</li>
+                  <li>• Review all modules before the final quiz</li>
+                </ul>
+              </div>
+
             </div>
           </div>
         </div>
