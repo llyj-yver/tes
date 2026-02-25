@@ -219,9 +219,6 @@ function ResearchersModal({ onClose }: { onClose: () => void }) {
                         className="bg-gradient-to-br from-green-50 to-lime-50 rounded-2xl p-4 border-2 border-green-200 mb-5"
                         style={{ opacity: animating ? 0 : 1, transition: "opacity 0.22s ease" }}
                     >
-                        <p className="text-green-800 leading-relaxed text-sm">
-                            {researcher.description}
-                        </p>
                     </div>
 
                     {/* Thumbnail strip */}

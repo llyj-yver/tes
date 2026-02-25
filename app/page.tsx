@@ -201,11 +201,8 @@ export default function HomePage() {
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-lime-600 via-green-600 to-emerald-600 bg-clip-text text-transparent mb-3">
-                Ready to Start Learning?
+                Ready to Begin the Lesson?
               </h2>
-              <p className="text-green-700 text-lg">
-                Everything you need to become a salad preparation expert
-              </p>
             </div>
 
             {/* Description */}
