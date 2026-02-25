@@ -30,175 +30,175 @@ const knowledgeBase = {
 
     classificationIngredients: {
         keywords: ["classification according to ingredients", "salads ingredients used", "types according to ingredients", "classify salad", "classification of salad", "how salads classified", "how are salads classified", "salad classification", "salad types"],
-        answer: "**Classification of Salads According to Ingredients Used:**\n\n🥬 Green Salads\n🥕 Vegetables, Grain Legumes and Pasta Salads\n🥄 Bound Salads\n🍎 Fruit Salads\n🎨 Composed Salads\n🍮 Gelatin Salads"
+        answer: "Classification of Salads According to Ingredients Used: \n\n🥬 Green Salads\n🥕 Vegetables, Grain Legumes and Pasta Salads\n🥄 Bound Salads\n🍎 Fruit Salads\n🎨 Composed Salads\n🍮 Gelatin Salads"
     },
 
     classificationFunction: {
         keywords: ["classification according to function", "salads functions", "function in the meal", "when served", "classification meal"],
-        answer: "**Classification of Salads According to their Functions in the Meal:**\n\n🥗 Appetizer Salads\n🍽️ Accompaniment Salad / Side Dish Salad\n🥩 Main Course Salads\n🍋 Separate Course Salads\n🍰 Dessert Salads"
+        answer: " Classification of Salads According to their Functions in the Meal: \n\n🥗 Appetizer Salads\n🍽️ Accompaniment Salad / Side Dish Salad\n🥩 Main Course Salads\n🍋 Separate Course Salads\n🍰 Dessert Salads"
     },
 
     greenSalad: {
         keywords: ["green salad", "leafy vegetables", "lettuce salad", "spinach salad"],
-        answer: "**Green Salad:** A salad made primarily of leafy vegetables like lettuce, spinach, or cabbage. They must be fresh, crisp, and well-drained.\n\n**Primary ingredients:** Fresh leafy greens like Romaine lettuce, iceberg lettuce, spinach, cabbage, or arugula."
+        answer: " Green Salad:  A salad made primarily of leafy vegetables like lettuce, spinach, or cabbage. They must be fresh, crisp, and well-drained.\n\n Primary ingredients:  Fresh leafy greens like Romaine lettuce, iceberg lettuce, spinach, cabbage, or arugula."
     },
 
     vegetableSalad: {
         keywords: ["vegetable salad", "grain salad", "legume salad", "pasta salad", "macaroni", "rice salad"],
-        answer: "**Vegetables, Grain Legumes, and Pasta Salads:** These are salads where the main ingredients are vegetables (other than leafy greens) or starchy items like macaroni, rice, or beans.\n\n**Ingredients:** Starchy items like pasta (rotini, macaroni), grains (rice, quinoa), or legumes (beans, peas). Examples include broccoli, cauliflower, or carrots."
+        answer: " Vegetables, Grain Legumes, and Pasta Salads:  These are salads where the main ingredients are vegetables (other than leafy greens) or starchy items like macaroni, rice, or beans.\n\n Ingredients:  Starchy items like pasta (rotini, macaroni), grains (rice, quinoa), or legumes (beans, peas). Examples include broccoli, cauliflower, or carrots."
     },
 
     boundSalad: {
         keywords: ["bound salad", "mayonnaise salad", "thick dressing", "potato salad", "tuna salad"],
-        answer: "**Bound Salad:** A mixture of ingredients (like tuna, chicken, or potato) held together or 'bound' by a thick dressing, usually mayonnaise.\n\n**Binding ingredients:** A heavy or thick dressing, most commonly mayonnaise, yogurt, or a boiled dressing."
+        answer: " Bound Salad:  A mixture of ingredients (like tuna, chicken, or potato) held together or 'bound' by a thick dressing, usually mayonnaise.\n\n Binding ingredients:  A heavy or thick dressing, most commonly mayonnaise, yogurt, or a boiled dressing."
     },
 
     fruitSalad: {
         keywords: ["fruit salad", "fresh fruit", "fruit ingredients", "pineapple salad"],
-        answer: "**Fruit Salad:** A salad that uses various fruits as the main ingredients. These can be served as appetizers, side dishes, or desserts.\n\n**Ingredients:** Various fruits like pineapples, apples, grapes, and bananas."
+        answer: " Fruit Salad:  A salad that uses various fruits as the main ingredients. These can be served as appetizers, side dishes, or desserts.\n\n Ingredients:  Various fruits like pineapples, apples, grapes, and bananas."
     },
 
     composedSalad: {
         keywords: ["composed salad", "arranged salad", "cobb salad", "plated salad", "artfully arranged"],
-        answer: "**Composed Salad:** A salad where the ingredients are arranged attractively on a plate rather than being tossed or mixed together.\n\n**Example:** A Cobb Salad is a famous composed salad with sliced grilled chicken, avocado, hard-boiled egg wedges, and bacon bits arranged in rows.\n\n**Uniqueness:** The ingredients are layered or arranged artfully on a plate rather than being mixed."
+        answer: " Composed Salad:  A salad where the ingredients are arranged attractively on a plate rather than being tossed or mixed together.\n\n Example:  A Cobb Salad is a famous composed salad with sliced grilled chicken, avocado, hard-boiled egg wedges, and bacon bits arranged in rows.\n\n Uniqueness:  The ingredients are layered or arranged artfully on a plate rather than being mixed."
     },
 
     gelatinSalad: {
         keywords: ["gelatin salad", "jello salad", "jell-o", "flavored gelatin"],
-        answer: "**Gelatin Salad:** A salad made using flavored or unflavored gelatin, often mixed with fruits or vegetables. It is also commonly known as a 'Jello salad.'\n\n**Key ingredients:** Sweetened gelatin mix (like Jell-O), fruit juices, and suspended items like canned fruits or nuts."
+        answer: " Gelatin Salad:  A salad made using flavored or unflavored gelatin, often mixed with fruits or vegetables. It is also commonly known as a 'Jello salad.'\n\n Key ingredients:  Sweetened gelatin mix (like Jell-O), fruit juices, and suspended items like canned fruits or nuts."
     },
 
     appetizerSalad: {
         keywords: ["appetizer salad", "appetizer", "stimulate appetite", "cheese salad", "shrimp salad"],
-        answer: "**Appetizer Salad:** Stimulates appetite with fresh, crisp ingredients, tangy flavorful dressing, and attractive appearance.\n\n**Examples:** Cheese, ham, salami, shrimp, crabmeat.\n\n**Note:** Crisp raw or lightly cooked vegetables may be added."
+        answer: " Appetizer Salad:  Stimulates appetite with fresh, crisp ingredients, tangy flavorful dressing, and attractive appearance.\n\n Examples:  Cheese, ham, salami, shrimp, crabmeat.\n\n Note:  Crisp raw or lightly cooked vegetables may be added."
     },
 
     accompanimentSalad: {
         keywords: ["accompaniment salad", "side dish salad", "balance meal", "harmonize"],
-        answer: "**Accompaniment Salad / Side Dish Salad:** Must balance and harmonize with the meal, like a side dish.\n\n**Guidelines:**\n• Should be light and flavorful\n• Vegetable salads are ideal\n• Avoid serving potato salad with French fries or another starch\n• Sweet fruit salads are rarely suitable except with ham or pork\n• Macaroni or protein-rich salads (seafood, cheese) are less appropriate unless the main course is light"
+        answer: " Accompaniment Salad / Side Dish Salad:  Must balance and harmonize with the meal, like a side dish.\n\n Guidelines: \n• Should be light and flavorful\n• Vegetable salads are ideal\n• Avoid serving potato salad with French fries or another starch\n• Sweet fruit salads are rarely suitable except with ham or pork\n• Macaroni or protein-rich salads (seafood, cheese) are less appropriate unless the main course is light"
     },
 
     mainCourseSalad: {
         keywords: ["main course salad", "protein salad", "full meal", "substantial salad"],
-        answer: "**Main Course Salad:** Large enough to serve as a full meal with a substantial portion of protein.\n\n**Ingredients:** Meat, poultry, seafood, egg, and cheese.\n\n**Characteristics:**\n• Contains protein\n• Includes variety of flavors and textures\n• Can be eaten as a complete meal"
+        answer: " Main Course Salad:  Large enough to serve as a full meal with a substantial portion of protein.\n\n Ingredients:  Meat, poultry, seafood, egg, and cheese.\n\n Characteristics: \n• Contains protein\n• Includes variety of flavors and textures\n• Can be eaten as a complete meal"
     },
 
     separateCourseSalad: {
         keywords: ["separate course", "cleanse palate", "after main course", "light salad"],
-        answer: "**Separate Course Salad:** Very light and not filling, served after the main course to cleanse the plate and refresh the appetite.\n\n**Characteristics:**\n• Served before dessert\n• Avoid heavy dressing like sour cream or mayonnaise\n• Very light composition"
+        answer: " Separate Course Salad:  Very light and not filling, served after the main course to cleanse the plate and refresh the appetite.\n\n Characteristics: \n• Served before dessert\n• Avoid heavy dressing like sour cream or mayonnaise\n• Very light composition"
     },
 
     dessertSalad: {
         keywords: ["dessert salad", "sweet salad", "fruits dessert", "sweetened gelatin"],
-        answer: "**Dessert Salad:** Usually sweeter and may contain items such as fruits, sweetened gelatin, nuts and cream.\n\nServed at the end of the meal."
+        answer: " Dessert Salad:  Usually sweeter and may contain items such as fruits, sweetened gelatin, nuts and cream.\n\nServed at the end of the meal."
     },
 
     // MODULE 2: Components of a Salad
     saladBase: {
         keywords: ["base of salad", "salad base", "foundation", "leafy greens base", "lettuce base"],
-        answer: "**The Base:** The foundation of the salad and is usually made of leafy greens like lettuce.\n\n**Main role:**\n• Gives structure, volume, and support to the other salad ingredients\n• Holds the body ingredients\n• Affects the salad's shape and portion size"
+        answer: " The Base:  The foundation of the salad and is usually made of leafy greens like lettuce.\n\n Main role: \n• Gives structure, volume, and support to the other salad ingredients\n• Holds the body ingredients\n• Affects the salad's shape and portion size"
     },
 
     saladBody: {
         keywords: ["body of salad", "salad body", "main part", "main ingredients"],
-        answer: "**The Body:** The main part of the salad and includes vegetables, fruits, meat, or seafood.\n\n**Importance:**\n• Adds flavor, texture, and nutritional value\n• Main source of nutrients\n• Placed on top of the base\n• Can be cooked or raw"
+        answer: " The Body:  The main part of the salad and includes vegetables, fruits, meat, or seafood.\n\n Importance: \n• Adds flavor, texture, and nutritional value\n• Main source of nutrients\n• Placed on top of the base\n• Can be cooked or raw"
     },
 
     saladDressing: {
         keywords: ["salad dressing", "dressing liquid", "flavor moisture", "when add dressing", "what is dressing"],
-        answer: "**The Dressing:** A liquid or semi-liquid mixture that adds flavor and moisture to the salad.\n\n**Common ingredients:** Oil, vinegar, mayonnaise, or cream\n\n**When to add:** Before or during service (can be served on the side)\n\n**Note:** Timing affects salad quality - add too early and greens may wilt"
+        answer: " The Dressing:  A liquid or semi-liquid mixture that adds flavor and moisture to the salad.\n\n Common ingredients:  Oil, vinegar, mayonnaise, or cream\n\n When to add:  Before or during service (can be served on the side)\n\n Note:  Timing affects salad quality - add too early and greens may wilt"
     },
 
     dressingTypes: {
         keywords: ["types of dressing", "dressing types", "kinds of dressing", "different dressings", "types of salad dressing"],
-        answer: "**Types of Salad Dressing:**\n\n🫒 **Oil & Vinegar** - Simple combination (3:1 ratio)\n🥫 **Emulsified** - Thick and creamy with mayonnaise base\n🥗 **Vinaigrette** - Temporary emulsion (separates over time)\n🧈 **Permanent Emulsion** - Stays mixed (mayonnaise, ranch)\n🍳 **Cooked Dressing** - Thickened with heat\n\nWould you like details on any specific type?"
+        answer: " Types of Salad Dressing: \n\n🫒  Oil & Vinegar  - Simple combination (3:1 ratio)\n🥫  Emulsified  - Thick and creamy with mayonnaise base\n🥗  Vinaigrette  - Temporary emulsion (separates over time)\n🧈  Permanent Emulsion  - Stays mixed (mayonnaise, ranch)\n🍳  Cooked Dressing  - Thickened with heat\n\nWould you like details on any specific type?"
     },
 
     saladGarnish: {
         keywords: ["garnish", "decoration", "edible decoration", "visual appeal", "appearance"],
-        answer: "**The Garnish:** An edible decoration that improves the appearance of the salad.\n\n**Purpose:**\n• Adds visual appeal\n• Should complement the other salad ingredients\n• Must be edible\n• Should not overpower the salad\n• Can be simple\n• Optional but recommended"
+        answer: " The Garnish:  An edible decoration that improves the appearance of the salad.\n\n Purpose: \n• Adds visual appeal\n• Should complement the other salad ingredients\n• Must be edible\n• Should not overpower the salad\n• Can be simple\n• Optional but recommended"
     },
 
     // MODULE 3: Types of Salad Dressing
     oilVinegarDressing: {
         keywords: ["oil and vinegar", "less oil", "tarter", "milder", "oil balance"],
-        answer: "**Oil and Vinegar Dressing:**\n\nUsing **less oil** makes the dressing tarter and helps avoid the salad dressing tasting milder and oilier.\n\nThis is important for balancing high acidity in creating oil and vinegar dressing."
+        answer: " Oil and Vinegar Dressing: \n\nUsing  less oil  makes the dressing tarter and helps avoid the salad dressing tasting milder and oilier.\n\nThis is important for balancing high acidity in creating oil and vinegar dressing."
     },
 
     emulsifiedDressing: {
         keywords: ["emulsified dressing", "mayonnaise base", "thick creamy", "emulsion"],
-        answer: "**Emulsified Dressings:**\n\nUse mayonnaise as a base and are usually thick and creamy.\n\n• Mayonnaise IS an emulsified dressing\n• They are thick and stable\n• Mayonnaise is used as a base for many variations"
+        answer: " Emulsified Dressings: \n\nUse mayonnaise as a base and are usually thick and creamy.\n\n• Mayonnaise IS an emulsified dressing\n• They are thick and stable\n• Mayonnaise is used as a base for many variations"
     },
 
     vinaigretteRatio: {
         keywords: ["vinaigrette ratio", "oil to vinegar", "3 to 1", "how much oil", "ratio"],
-        answer: "**Vinaigrette Oil-to-Vinegar Ratio:**\n\nThe standard ratio is **3 parts oil to 1 part vinegar**, but it can be adjusted to taste.\n\n• More oil = milder, smoother\n• Less oil = tarter, more acidic\n• Adjustable based on preference"
+        answer: " Vinaigrette Oil-to-Vinegar Ratio: \n\nThe standard ratio is  3 parts oil to 1 part vinegar , but it can be adjusted to taste.\n\n• More oil = milder, smoother\n• Less oil = tarter, more acidic\n• Adjustable based on preference"
     },
 
     vinaigretteType: {
         keywords: ["vinaigrette type", "temporary emulsion", "vinaigrette emulsion", "oil vinegar seasonings"],
-        answer: "**Vinaigrette:**\n\nA **temporary emulsion** made from oil, vinegar, and seasonings.\n\n• Not permanent - will separate over time\n• Contains oil and vinegar\n• Needs to be shaken or whisked before use\n• Is an emulsion but temporary"
+        answer: " Vinaigrette: \n\nA  temporary emulsion  made from oil, vinegar, and seasonings.\n\n• Not permanent - will separate over time\n• Contains oil and vinegar\n• Needs to be shaken or whisked before use\n• Is an emulsion but temporary"
     },
 
     // MODULE 4: Guidelines in Preparing Salad and Dressing
     vegetablePastaGuidelines: {
         keywords: ["vegetable preparation", "cutting vegetables", "cook vegetables", "pasta grain", "accurate cutting"],
-        answer: "**Guidelines for Vegetables, Legumes, Grains and Pasta Salads:**\n\n✓ Neat and accurate cutting is important for appearance\n✓ Cut vegetables close to serving time to maintain freshness\n✓ Cook vegetables properly - not overcooked\n✓ Cooked vegetables must be drained and chilled\n✓ Pasta and grains should not be overcooked\n✓ Prepare close to serving time"
+        answer: " Guidelines for Vegetables, Legumes, Grains and Pasta Salads: \n\n✓ Neat and accurate cutting is important for appearance\n✓ Cut vegetables close to serving time to maintain freshness\n✓ Cook vegetables properly - not overcooked\n✓ Cooked vegetables must be drained and chilled\n✓ Pasta and grains should not be overcooked\n✓ Prepare close to serving time"
     },
 
     boundSaladGuidelines: {
         keywords: ["bound salad preparation", "mayonnaise cooling", "potato cooking", "crisp vegetables bound"],
-        answer: "**Guidelines for Bound Salads:**\n\n✓ Ingredients must be cooled before adding mayonnaise\n✓ Keep bound salads chilled at all times\n✓ Potatoes should be cooked whole before peeling\n✓ Add crisp vegetables for texture\n✓ Fold dressings in gently to avoid breaking ingredients\n✓ Mix gently and portion properly"
+        answer: " Guidelines for Bound Salads: \n\n✓ Ingredients must be cooled before adding mayonnaise\n✓ Keep bound salads chilled at all times\n✓ Potatoes should be cooked whole before peeling\n✓ Add crisp vegetables for texture\n✓ Fold dressings in gently to avoid breaking ingredients\n✓ Mix gently and portion properly"
     },
 
     fruitSaladGuidelines: {
         keywords: ["fruit salad preparation", "handle fruit", "acidic liquid", "drain fruit", "discoloration"],
-        answer: "**Guidelines for Fruit Salads:**\n\n✓ Handle fruit salads carefully to avoid bruising\n✓ Dip some fruits in acidic liquid to prevent discoloration\n✓ Prepare vegetables before fruit salads\n✓ Canned fruits must be well drained\n✓ Place attractive fruit pieces on top\n✓ Arrange attractively"
+        answer: " Guidelines for Fruit Salads: \n\n✓ Handle fruit salads carefully to avoid bruising\n✓ Dip some fruits in acidic liquid to prevent discoloration\n✓ Prepare vegetables before fruit salads\n✓ Canned fruits must be well drained\n✓ Place attractive fruit pieces on top\n✓ Arrange attractively"
     },
 
     composedSaladGuidelines: {
         keywords: ["composed salad preparation", "separate preparation", "season individually", "contrast", "plating"],
-        answer: "**Guidelines for Composed Salads:**\n\n✓ Prepare ingredients separately\n✓ Season each ingredient individually\n✓ Add delicate ingredients just before serving\n✓ Create contrast in colors and textures\n✓ Proper plating is important\n✓ Careful arrangement required"
+        answer: " Guidelines for Composed Salads: \n\n✓ Prepare ingredients separately\n✓ Season each ingredient individually\n✓ Add delicate ingredients just before serving\n✓ Create contrast in colors and textures\n✓ Proper plating is important\n✓ Careful arrangement required"
     },
 
     gelatinSaladGuidelines: {
         keywords: ["gelatin salad preparation", "gelatin ratio", "dissolve gelatin", "pineapple papaya", "gelatin liquid"],
-        answer: "**Guidelines for Gelatin Salads:**\n\n✓ Correct gelatin-to-liquid ratio is important\n✓ Unflavored gelatin must be properly dissolved in cold water first, then hot\n✓ Flavored gelatin is dissolved in hot water\n✓ Raw pineapple and papaya are NOT allowed (enzymes prevent setting)\n✓ Fruits must be drained before adding to gelatin\n✓ Must be refrigerated to set properly"
+        answer: " Guidelines for Gelatin Salads: \n\n✓ Correct gelatin-to-liquid ratio is important\n✓ Unflavored gelatin must be properly dissolved in cold water first, then hot\n✓ Flavored gelatin is dissolved in hot water\n✓ Raw pineapple and papaya are NOT allowed (enzymes prevent setting)\n✓ Fruits must be drained before adding to gelatin\n✓ Must be refrigerated to set properly"
     },
 
     balance: {
         keywords: ["balance in salad", "color balance", "texture balance", "shape size", "flavor balance"],
-        answer: "**Balance in Salad Preparation:**\n\nBalance ensures salad ingredients are arranged by color, shape, texture, and flavor to enhance appearance.\n\n• Balance color for visual appeal\n• Balance texture for eating experience\n• Arrange by shape and size\n• Balance flavors for overall taste"
+        answer: " Balance in Salad Preparation: \n\nBalance ensures salad ingredients are arranged by color, shape, texture, and flavor to enhance appearance.\n\n• Balance color for visual appeal\n• Balance texture for eating experience\n• Arrange by shape and size\n• Balance flavors for overall taste"
     },
 
     harmony: {
         keywords: ["harmony in salad", "ingredients harmonize", "unity dressing", "complement"],
-        answer: "**Harmony in Salad Preparation:**\n\nHarmony means choosing ingredients that complement each other and the dressing for a unified taste and presentation.\n\n• Ingredients should harmonize with each other\n• Herbs, spices, or sauces add harmony\n• Unity between dressing and ingredients is important\n• Improves overall appeal"
+        answer: " Harmony in Salad Preparation: \n\nHarmony means choosing ingredients that complement each other and the dressing for a unified taste and presentation.\n\n• Ingredients should harmonize with each other\n• Herbs, spices, or sauces add harmony\n• Unity between dressing and ingredients is important\n• Improves overall appeal"
     },
 
     color: {
         keywords: ["color in salad", "colored vegetables", "eye appeal", "visual", "shredded carrots beets"],
-        answer: "**Color in Salad Presentation:**\n\nColor adds eye appeal; combining different colored ingredients makes the salad visually attractive.\n\n• Different colored vegetables improve appearance\n• Add shredded carrots, beets, or red cabbage\n• Color affects appetite\n• Using only one color makes salad less appealing"
+        answer: " Color in Salad Presentation: \n\nColor adds eye appeal; combining different colored ingredients makes the salad visually attractive.\n\n• Different colored vegetables improve appearance\n• Add shredded carrots, beets, or red cabbage\n• Color affects appetite\n• Using only one color makes salad less appealing"
     },
 
     texture: {
         keywords: ["texture in salad", "contrast texture", "crisp vegetables", "tender meat"],
-        answer: "**Texture in Salad:**\n\nTexture creates contrast between ingredients, such as crisp vegetables and tender meat or fish, making the salad more appealing.\n\n• Important for eating experience\n• Contrast improves the salad\n• Pair crisp vegetables with meat or fish\n• Makes salad more visually appealing"
+        answer: " Texture in Salad: \n\nTexture creates contrast between ingredients, such as crisp vegetables and tender meat or fish, making the salad more appealing.\n\n• Important for eating experience\n• Contrast improves the salad\n• Pair crisp vegetables with meat or fish\n• Makes salad more visually appealing"
     },
 
     safetyStorage: {
         keywords: ["storage", "cold plate", "refrigerate", "1-2 hours", "holding time", "temperature control"],
-        answer: "**Safety and Hygienic Practices in Storing Salad:**\n\n✓ Plate green salads on a cold plate\n✓ Do not plate more than 1–2 hours before serving\n✓ Add dressing to green salads just before serving\n✓ Refrigerate salads until serving\n✓ Salads held too long will wilt and spoil\n✓ Holding boxes should have high humidity\n✓ Proper temperature control prevents spoilage"
+        answer: " Safety and Hygienic Practices in Storing Salad: \n\n✓ Plate green salads on a cold plate\n✓ Do not plate more than 1–2 hours before serving\n✓ Add dressing to green salads just before serving\n✓ Refrigerate salads until serving\n✓ Salads held too long will wilt and spoil\n✓ Holding boxes should have high humidity\n✓ Proper temperature control prevents spoilage"
     },
 
     hygienePreparation: {
         keywords: ["hygiene", "washing vegetables", "clean hands", "clean utensils", "personal hygiene", "damaged parts", "why wash vegetables", "importance of washing", "why clean utensils", "why use clean equipment"],
-        answer: "**Principles and Practices of Hygiene in Preparing Salads:**\n\n✓ Wash salad vegetables thoroughly before preparation\n✓ Wash hands before and after handling food\n✓ Use clean utensils and equipment\n✓ Remove damaged or bruised parts\n✓ Food handlers must observe proper personal hygiene\n\nThis helps prevent contamination and ensures safe and healthy salads."
+        answer: " Principles and Practices of Hygiene in Preparing Salads: \n\n✓ Wash salad vegetables thoroughly before preparation\n✓ Wash hands before and after handling food\n✓ Use clean utensils and equipment\n✓ Remove damaged or bruised parts\n✓ Food handlers must observe proper personal hygiene\n\nThis helps prevent contamination and ensures safe and healthy salads."
     },
 
     washingProduce: {
         keywords: ["wash fruits", "wash vegetables", "running water", "scrub", "dry produce", "why running water", "how to wash", "washing produce", "clean produce"],
-        answer: "**How to Wash Fruits and Vegetables:**\n\n✓ Wash fruits and vegetables before use\n✓ Use clean running water when washing produce\n✓ Remove bruised or damaged areas\n✓ Scrub firm produce properly\n✓ Dry washed produce before use\n\nThis helps remove dirt, bacteria, and contaminants, ensuring food safety and cleanliness."
+        answer: " How to Wash Fruits and Vegetables: \n\n✓ Wash fruits and vegetables before use\n✓ Use clean running water when washing produce\n✓ Remove bruised or damaged areas\n✓ Scrub firm produce properly\n✓ Dry washed produce before use\n\nThis helps remove dirt, bacteria, and contaminants, ensuring food safety and cleanliness."
     }
 };
 
@@ -240,7 +240,7 @@ export default function ChatWidget() {
             lowerMessage.match(/\b(salad|salads)\b/) &&
             !lowerMessage.includes("ingredient") &&
             !lowerMessage.includes("function")) {
-            return "Salads can be classified in **two ways**:\n\n**1. According to Ingredients Used:**\n🥬 Green Salads\n🥕 Vegetables, Grain Legumes & Pasta Salads\n🥄 Bound Salads\n🍎 Fruit Salads\n🎨 Composed Salads\n🍮 Gelatin Salads\n\n**2. According to Function in the Meal:**\n🥗 Appetizer Salads\n🍽️ Accompaniment/Side Dish Salads\n🥩 Main Course Salads\n🍋 Separate Course Salads\n🍰 Dessert Salads\n\nWhich classification would you like to learn more about?";
+            return "Salads can be classified in  two ways :\n\n 1. According to Ingredients Used: \n🥬 Green Salads\n🥕 Vegetables, Grain Legumes & Pasta Salads\n🥄 Bound Salads\n🍎 Fruit Salads\n🎨 Composed Salads\n🍮 Gelatin Salads\n\n 2. According to Function in the Meal: \n🥗 Appetizer Salads\n🍽️ Accompaniment/Side Dish Salads\n🥩 Main Course Salads\n🍋 Separate Course Salads\n🍰 Dessert Salads\n\nWhich classification would you like to learn more about?";
         }
 
         // Search through all knowledge base entries
