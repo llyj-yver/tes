@@ -52,9 +52,9 @@ const researchers = [
         gradient: "from-lime-500 to-green-600",
     },
     {
-        name: "SIXTH RESEARCHER",           // ← replace with real name
-        role: "Researcher",                  // ← replace with real role
-        photo: "/image/researchers/sixth.jpg", // ← replace with real photo path
+        name: "JULYNAH NADINE M. LLENA",           // ← replace with real name
+        role: "Assets Editor",                  // ← replace with real role
+        photo: "/image/researchers/JULYNAH NADINE M. LLENA_.jpg", // ← replace with real photo path
         fallbackEmoji: "👩‍🎓",
         description:
             "Add a short description for this researcher here.",

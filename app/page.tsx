@@ -41,14 +41,14 @@ export default function HomePage() {
             <div className="space-y-8">
               <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
                 <span className="bg-gradient-to-r from-yellow-200 via-lime-200 to-green-200 bg-clip-text text-transparent">
-                  Salad & Dressing
+                  Salad and Salad Dressing
                 </span>
                 <br />
                 <span className="text-white">Mastery</span>
               </h1>
               
               <p className="text-xl md:text-2xl text-green-50 leading-relaxed">
-                Transform fresh ingredients into culinary art with professional techniques and creative presentations
+                This is one of the sectors under Family and Consumer Science consisting of the preliminary competencies in the specializations of Cookery, and Bread and Pastry. It covers the necessary procedures in kitchen operations.
               </p>
 
               {/* Stats */}
@@ -137,15 +137,15 @@ export default function HomePage() {
           <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-lime-600 via-green-600 to-emerald-600 bg-clip-text text-transparent mb-4">
             What You'll Master
           </h2>
-          <p className="text-xl text-green-700">Comprehensive skills for professional salad preparation</p>
+          <p className="text-xl text-green-700">Fundamental knowledge and skills in preparing salad and salad dressings</p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-6 mb-16">
           {[
-            "Understand different types of salads and their origins",
-            "Learn proper food preparation and cutting techniques",
-            "Practice safe food handling and hygiene standards",
-            "Create visually appealing salad presentations"
+            "Classify different types of salads",
+            "Identify the components of a salad",
+            "Differentiate the types of salad dressings",
+            "Apply proper guidelines in preparing salads and dressings"
           ].map((item, idx) => (
             <div key={idx} className="flex items-start gap-4 bg-white p-6 rounded-2xl border-2 border-green-200 hover:border-green-400 hover:shadow-lg transition-all">
               <div className="w-8 h-8 rounded-full bg-gradient-to-br from-lime-400 to-green-500 flex items-center justify-center flex-shrink-0 shadow-md">
@@ -210,8 +210,7 @@ export default function HomePage() {
 
             {/* Description */}
             <p className="text-green-800 mb-6 leading-relaxed text-lg">
-              This comprehensive course will guide you through the fundamentals of salad
-              preparation, ingredients, hygiene, and presentation techniques used by professionals.
+              This course provides a structured discussion of the classification of salads, components of a salad, types of salad dressings, and the proper guidelines in preparing salads and salad dressings.
             </p>
 
             {/* Feature List */}

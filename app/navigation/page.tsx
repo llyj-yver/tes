@@ -234,10 +234,10 @@ export default function NavigationPage() {
                                     FCS Food Preparation
                                 </span>
                                 <br />
-                                <span className="text-white text-3xl md:text-4xl">Master Salad Techniques</span>
+                                <span className="text-white text-3xl md:text-4xl">Salads and Salad Dressings</span>
                             </h1>
                             <p className="text-green-100 text-lg mb-6 max-w-2xl leading-relaxed">
-                                Learn professional salad preparation from classification to presentation. Perfect for culinary students and food enthusiasts.
+                                Gain comprehensive knowledge of salad classification, components, types of dressings, and proper preparation guidelines. Designed for learners in Food and Consumer Services (FCS).
                             </p>
                             {/* Stats chips */}
                             <div className="flex flex-wrap items-center gap-3">
