@@ -33,7 +33,7 @@ export default function HomePage() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('YOUR_IMAGE_URL_HERE')`,
+            backgroundImage: `/image/landingpage/classification_cover.png`,
             opacity: 0.7,
             zIndex: 0,
           }}
