@@ -126,18 +126,34 @@ function ReferencesModal({ onClose }: { onClose: () => void }) {
                 style={{ animation: "modalIn 0.35s cubic-bezier(0.34,1.56,0.64,1) both" }}
             >
                 {/* Header */}
-                <div className="bg-gradient-to-br from-lime-600 via-green-600 to-emerald-700 px-8 py-7 relative overflow-hidden flex-shrink-0">
-                    <div className="absolute inset-0 opacity-20 pointer-events-none">
+                <div className="bg-gradient-to-br from-lime-600/90 via-green-600/90 to-emerald-700/90 px-8 py-7 relative overflow-hidden flex-shrink-0">
+                    {/* Background image at 70% opacity */}
+                    <div
+                        className="absolute inset-0 bg-cover bg-center"
+                        style={{
+                            backgroundImage: `/image/landingpage/components_salad.png`,
+                            opacity: 0.7,
+                            zIndex: 0,
+                        }}
+                    />
+                    {/* Green gradient overlay sits on top */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-lime-600/80 via-green-600/80 to-emerald-700/80" style={{ zIndex: 1 }} />
+
+                    {/* Blur blobs */}
+                    <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ zIndex: 2 }}>
                         <div className="absolute top-0 left-0 w-48 h-48 bg-yellow-300 rounded-full blur-3xl" />
                         <div className="absolute bottom-0 right-0 w-40 h-40 bg-green-300 rounded-full blur-3xl" />
                     </div>
+
                     <button
                         onClick={onClose}
-                        className="absolute top-4 right-4 w-9 h-9 rounded-xl bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-all hover:rotate-90 duration-300 border border-white/20 z-10"
+                        className="absolute top-4 right-4 w-9 h-9 rounded-xl bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-all hover:rotate-90 duration-300 border border-white/20"
+                        style={{ zIndex: 10 }}
                     >
                         <X className="w-4 h-4" />
                     </button>
-                    <div className="relative z-10">
+
+                    <div className="relative" style={{ zIndex: 10 }}>
                         <p className="text-lime-200 text-xs font-bold uppercase tracking-widest mb-1">Sources & Citations</p>
                         <h2 className="text-2xl font-extrabold text-white">References</h2>
                         <p className="text-green-100 text-sm mt-1">Materials used across all modules</p>

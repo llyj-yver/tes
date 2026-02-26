@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { 
-  ChevronLeft, 
-  ChevronRight, 
-  PlayCircle, 
-  CheckCircle2, 
+import {
+  ChevronLeft,
+  ChevronRight,
+  PlayCircle,
+  CheckCircle2,
   Clock,
   BookOpen,
   Award
@@ -29,13 +29,25 @@ export default function HomePage() {
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-lime-50 to-emerald-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-lime-600 via-green-600 to-emerald-700 text-white relative overflow-hidden">
+        {/* Background image at 70% opacity */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('YOUR_IMAGE_URL_HERE')`,
+            opacity: 0.7,
+            zIndex: 0,
+          }}
+        />
+        {/* Green gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-lime-600/80 via-green-600/80 to-emerald-700/80" style={{ zIndex: 1 }} />
+
         {/* Decorative Elements */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-20" style={{ zIndex: 2 }}>
           <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-300 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-300 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 py-20 md:py-28 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 py-20 md:py-28 relative" style={{ zIndex: 10 }}>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <div className="space-y-8">
@@ -46,7 +58,7 @@ export default function HomePage() {
                 <br />
                 <span className="text-white">Mastery</span>
               </h1>
-              
+
               <p className="text-xl md:text-2xl text-green-50 leading-relaxed">
                 This is one of the sectors under Family and Consumer Science consisting of the preliminary competencies in the specializations of Cookery, and Bread and Pastry. It covers the necessary procedures in kitchen operations.
               </p>
@@ -94,18 +106,17 @@ export default function HomePage() {
                     className="object-cover"
                     priority={current === 0}
                   />
-                  
+
                   {/* Image Counter */}
                   <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
                     {images.map((_, idx) => (
                       <button
                         key={idx}
                         onClick={() => setCurrent(idx)}
-                        className={`h-2.5 rounded-full transition-all ${
-                          idx === current 
-                            ? "bg-gradient-to-r from-lime-500 to-green-600 w-10" 
+                        className={`h-2.5 rounded-full transition-all ${idx === current
+                            ? "bg-gradient-to-r from-lime-500 to-green-600 w-10"
                             : "bg-green-200 hover:bg-green-300 w-2.5"
-                        }`}
+                          }`}
                       />
                     ))}
                   </div>
@@ -139,7 +150,7 @@ export default function HomePage() {
           </h2>
           <p className="text-xl text-green-700">Fundamental knowledge and skills in preparing salad and salad dressings</p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 gap-6 mb-16">
           {[
             "Classify different types of salads",
@@ -186,7 +197,7 @@ export default function HomePage() {
 
       {/* Popup Modal */}
       {showPopup && (
-        <div 
+        <div
           className="fixed inset-0 bg-green-900/40 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-in fade-in duration-200"
           onClick={(e) => {
             if (e.target === e.currentTarget) setShowPopup(false);
