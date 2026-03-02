@@ -172,7 +172,7 @@ export default function HomePage() {
               <BookOpen className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-bold text-green-900 mb-3">Structured Learning</h3>
-            <p className="text-green-700 leading-relaxed">Follow a step-by-step curriculum from basics to advanced techniques</p>
+            <p className="text-green-700 leading-relaxed">From basics of salad components to proper preparation guidelines.</p>
           </div>
 
           <div className="group bg-gradient-to-br from-white to-yellow-50 p-8 rounded-3xl border-2 border-yellow-200 hover:border-yellow-400 hover:shadow-2xl transition-all hover:-translate-y-2">
@@ -212,9 +212,6 @@ export default function HomePage() {
               <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-lime-600 via-green-600 to-emerald-600 bg-clip-text text-transparent mb-3">
                 Ready to Begin the Lesson?
               </h2>
-              <p className="text-green-700 text-lg">
-                Everything you need to become a salad preparation expert
-              </p>
             </div>
 
             {/* Description */}
