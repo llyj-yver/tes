@@ -577,19 +577,6 @@ export default function Module1() {
             <p className="mt-3 text-xs font-semibold text-green-500">Lesson {current + 1} of {salads.length}</p>
           </div>
 
-          {/* Professor Card */}
-          <div className="bg-gradient-to-br from-white to-green-50 rounded-3xl p-6 border-2 border-green-200 shadow-lg hover:border-green-400 transition-all">
-            <div className="flex items-center gap-4">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-lime-400 to-green-500 flex items-center justify-center text-3xl shadow-lg">
-                👨‍🏫
-              </div>
-              <div>
-                <h3 className="font-extrabold text-lg text-green-900">Professor Garcia</h3>
-                <p className="text-sm text-green-600 font-medium">Culinary Instructor</p>
-              </div>
-            </div>
-          </div>
-
           {/* Examples */}
           <div className="bg-white rounded-3xl p-6 border-2 border-green-200 shadow-lg">
             <h4 className="font-extrabold text-green-900 mb-4 flex items-center gap-2">

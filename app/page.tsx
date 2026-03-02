@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { 
-  ChevronLeft, 
-  ChevronRight, 
-  PlayCircle, 
-  CheckCircle2, 
+import {
+  ChevronLeft,
+  ChevronRight,
+  PlayCircle,
+  CheckCircle2,
   Clock,
   BookOpen,
   Award
@@ -28,11 +28,22 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-lime-50 to-emerald-50">
       {/* Hero Section */}
+      {/* Hero Section */}
       <div className="bg-gradient-to-br from-lime-600 via-green-600 to-emerald-700 text-white relative overflow-hidden">
-        {/* Decorative Elements */}
+
+        {/* ── Background image ── */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/image/landingpage/bg.png')" }}
+        />
+
+        {/* ── Medium green overlay (60% opacity) ── */}
+        <div className="absolute inset-0 bg-gradient-to-br from-lime-700/60 via-green-700/60 to-emerald-800/60" />
+
+        {/* ── Decorative blobs (sit on top of overlay) ── */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-300 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-300 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-300 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-300 rounded-full blur-3xl" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 py-20 md:py-28 relative z-10">
@@ -41,14 +52,13 @@ export default function HomePage() {
             <div className="space-y-8">
               <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
                 <span className="bg-gradient-to-r from-yellow-200 via-lime-200 to-green-200 bg-clip-text text-transparent">
-                  Salad & Dressing
+                  Salad and Salad Dressing 
                 </span>
                 <br />
-                <span className="text-white">Mastery</span>
               </h1>
-              
+
               <p className="text-xl md:text-2xl text-green-50 leading-relaxed">
-                Transform fresh ingredients into culinary art with professional techniques and creative presentations
+                Fundamental knowledge and skills in preparing salad and salad dressings
               </p>
 
               {/* Stats */}
@@ -94,18 +104,17 @@ export default function HomePage() {
                     className="object-cover"
                     priority={current === 0}
                   />
-                  
+
                   {/* Image Counter */}
                   <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
                     {images.map((_, idx) => (
                       <button
                         key={idx}
                         onClick={() => setCurrent(idx)}
-                        className={`h-2.5 rounded-full transition-all ${
-                          idx === current 
-                            ? "bg-gradient-to-r from-lime-500 to-green-600 w-10" 
+                        className={`h-2.5 rounded-full transition-all ${idx === current
+                            ? "bg-gradient-to-r from-lime-500 to-green-600 w-10"
                             : "bg-green-200 hover:bg-green-300 w-2.5"
-                        }`}
+                          }`}
                       />
                     ))}
                   </div>
@@ -139,13 +148,13 @@ export default function HomePage() {
           </h2>
           <p className="text-xl text-green-700">Comprehensive skills for professional salad preparation</p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 gap-6 mb-16">
           {[
-            "Understand different types of salads and their origins",
-            "Learn proper food preparation and cutting techniques",
-            "Practice safe food handling and hygiene standards",
-            "Create visually appealing salad presentations"
+            "Classify different types of salads",
+            "Identify the components of a salad",
+            "Differentiate the types of salad dressings",
+            "Apply proper guidelines in preparing salads and dressings"
           ].map((item, idx) => (
             <div key={idx} className="flex items-start gap-4 bg-white p-6 rounded-2xl border-2 border-green-200 hover:border-green-400 hover:shadow-lg transition-all">
               <div className="w-8 h-8 rounded-full bg-gradient-to-br from-lime-400 to-green-500 flex items-center justify-center flex-shrink-0 shadow-md">
@@ -186,7 +195,7 @@ export default function HomePage() {
 
       {/* Popup Modal */}
       {showPopup && (
-        <div 
+        <div
           className="fixed inset-0 bg-green-900/40 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-in fade-in duration-200"
           onClick={(e) => {
             if (e.target === e.currentTarget) setShowPopup(false);
@@ -201,7 +210,7 @@ export default function HomePage() {
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-lime-600 via-green-600 to-emerald-600 bg-clip-text text-transparent mb-3">
-                Ready to Start Learning?
+                Ready to Begin the Lesson?
               </h2>
               <p className="text-green-700 text-lg">
                 Everything you need to become a salad preparation expert
@@ -210,8 +219,7 @@ export default function HomePage() {
 
             {/* Description */}
             <p className="text-green-800 mb-6 leading-relaxed text-lg">
-              This comprehensive course will guide you through the fundamentals of salad
-              preparation, ingredients, hygiene, and presentation techniques used by professionals.
+              This course provides a structured discussion of the classification of salads, components of a salad, types of salad dressings, and the proper guidelines in preparing salads and salad dressings.
             </p>
 
             {/* Feature List */}

@@ -28,18 +28,11 @@ const references = [
         moduleColor: "from-lime-400 to-green-500",
         sources: [
             {
-                title: "Classification of Salads",
-                author: "National Restaurant Association Educational Foundation",
-                year: "2022",
-                url: "https://www.nraef.org",
-                type: "Book",
-            },
-            {
-                title: "Culinary Fundamentals: Salad Types and Preparation",
-                author: "Johnson, A. & Rivera, M.",
-                year: "2021",
-                url: "https://www.culinaryinstitute.edu",
-                type: "Journal",
+                title: "TLE 9 2nd Quarter Module",
+                author: "Scribd",
+                year: "2023",
+                url: "https://www.scribd.com/document/526856466/TLE-9-2nd-Quarter-Module",
+                type: "Module",
             },
         ],
     },
@@ -48,18 +41,11 @@ const references = [
         moduleColor: "from-green-400 to-emerald-500",
         sources: [
             {
-                title: "Components of a Healthy Salad",
-                author: "Harvard T.H. Chan School of Public Health",
+                title: "Module 5: Prepare Salad and Dressing",
+                author: "Scribd",
                 year: "2023",
-                url: "https://www.hsph.harvard.edu",
-                type: "Website",
-            },
-            {
-                title: "Nutritional Balance in Salad Preparation",
-                author: "Torres, L.",
-                year: "2020",
-                url: "https://www.nutritionjournal.com",
-                type: "Journal",
+                url: "https://www.scribd.com/document/469212585/MODULE-5-PREPARE-SALAD-AND-DRESSING",
+                type: "Module",
             },
         ],
     },
@@ -68,18 +54,11 @@ const references = [
         moduleColor: "from-emerald-400 to-teal-500",
         sources: [
             {
-                title: "Types of Salad Dressings: Science and Art",
-                author: "Food Science Institute",
-                year: "2022",
-                url: "https://www.foodscience.org",
-                type: "Book",
-            },
-            {
-                title: "Emulsification Techniques in Modern Cuisine",
-                author: "Dela Rosa, P.",
-                year: "2021",
-                url: "https://www.modernkitchen.com",
-                type: "Journal",
+                title: "Salad Dressing – Types and Classification",
+                author: "Scribd / Educational Notes",
+                year: "2023",
+                url: "https://fr.scribd.com/presentation/357993974/Salad-Dressing",
+                type: "Module",
             },
         ],
     },
@@ -88,18 +67,25 @@ const references = [
         moduleColor: "from-yellow-400 to-lime-500",
         sources: [
             {
-                title: "Food Hygiene and Safety in Salad Preparation",
-                author: "World Health Organization",
+                title: "Preparing Salad and Salad Dressing (Studocu)",
+                author: "University of Santo Tomas Legazpi",
                 year: "2023",
-                url: "https://www.who.int/foodsafety",
-                type: "Website",
+                url: "https://www.studocu.com/ph/document/university-of-santo-tomaslegazpi/food-and-beverages/preparing-salad-and-salad-dressing/100653525",
+                type: "Module",
             },
+        ],
+    },
+    {
+        module: "AI-Generated Images",
+        moduleColor: "from-purple-400 to-pink-500",
+        sources: [
             {
-                title: "Professional Plating Techniques",
-                author: "Culinary Arts Academy",
-                year: "2022",
-                url: "https://www.culinaryarts.edu",
-                type: "Book",
+                title: "Images generated with Google Gemini",
+                author: "Google Gemini",
+                year: "2026",
+                url: "https://gemini.google.com",
+                type: "Open Source AI Tool",
+                note: "For educational and non-commercial use",
             },
         ],
     },
@@ -211,6 +197,17 @@ export default function NavigationPage() {
 
             {/* ── Hero Header ── */}
             <div className="bg-gradient-to-br from-lime-600 via-green-600 to-emerald-700 text-white relative overflow-hidden">
+
+                {/* ── Background image ── */}
+                <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    style={{ backgroundImage: "url('/image/landingpage/bg.png')" }}
+                />
+
+                {/* ── Medium green overlay (60% opacity) ── */}
+                <div className="absolute inset-0 bg-gradient-to-br from-lime-700/60 via-green-700/60 to-emerald-800/60" />
+
+                {/* ── Decorative blobs ── */}
                 <div className="absolute inset-0 opacity-20 pointer-events-none">
                     <div className="absolute top-10 left-10 w-72 h-72 bg-yellow-300 rounded-full blur-3xl" />
                     <div className="absolute bottom-0 right-10 w-96 h-96 bg-green-300 rounded-full blur-3xl" />
@@ -223,7 +220,7 @@ export default function NavigationPage() {
                             Home
                         </span>
                         <span className="text-white/40">›</span>
-                        <span className="text-white/80 font-medium">FCS Food Preparation</span>
+                        <span className="text-white/80 font-medium">FCS Food Preparation: </span>
                     </div>
 
                     {/* Title + action buttons */}
@@ -231,13 +228,13 @@ export default function NavigationPage() {
                         <div>
                             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
                                 <span className="bg-gradient-to-r from-yellow-200 via-lime-200 to-green-200 bg-clip-text text-transparent">
-                                    FCS Food Preparation
+                                    FCS Food Preparation:
                                 </span>
                                 <br />
-                                <span className="text-white text-3xl md:text-4xl">Master Salad Techniques</span>
+                                <span className="text-white text-3xl md:text-4xl">Salads and Salad Dressings</span>
                             </h1>
                             <p className="text-green-100 text-lg mb-6 max-w-2xl leading-relaxed">
-                                Learn professional salad preparation from classification to presentation. Perfect for culinary students and food enthusiasts.
+                                Gain comprehensive knowledge of salad classification, components, types of dressings, and proper preparation guidelines. Designed for learners in Food and Consumer Services (FCS).
                             </p>
                             {/* Stats chips */}
                             <div className="flex flex-wrap items-center gap-3">
@@ -258,9 +255,7 @@ export default function NavigationPage() {
 
                         {/* ── Action buttons top-right of hero ── */}
                         <div className="flex flex-col gap-3 lg:items-end">
-                            {/* Uses your existing ResearchersButton component as-is */}
                             <ResearchersButton />
-
                             <button
                                 onClick={() => setShowReferences(true)}
                                 className="flex items-center gap-2 px-5 py-3 bg-white/10 backdrop-blur-md text-white font-extrabold rounded-2xl hover:bg-white/20 transition-all text-sm border-2 border-white/20 whitespace-nowrap"

@@ -48,7 +48,7 @@ export function ModuleProvider({ children }: { children: ReactNode }) {
       description: "We explore tossed, composed, bound, and fruit-based salads, highlighting their differences.",
       lessons: 6,
       duration: "35 min",
-      href: "/module3",
+      href: "/mods3p2",
       locked: false,
       completed: false
     },
