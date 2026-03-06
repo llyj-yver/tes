@@ -9,16 +9,22 @@ const salads = [
     id: 1,
     type: "Appetizer Salad",
     description: "Light and refreshing salads served at the beginning of a meal to stimulate the appetite. Usually small portions with crisp greens and a light vinaigrette.",
-    image: "/image/Apetizercover.jpg",
+    image: "/image/apetizer.png",
     audioPath: "/image/audio/Appetizer salad.aac",
     lectureNote: "Appetizer salads are crucial for setting the tone of a meal. They should be light enough to stimulate appetite without filling up your guests. Focus on crisp, fresh ingredients with bright, acidic dressings. Remember: presentation matters most in appetizer salads as they create the first impression.",
-    flashcard: {
-      front: "What is the main purpose of an Appetizer Salad?",
-      back: "To stimulate appetite and set the tone for the meal. It should be light, crisp, and visually appealing without being too filling."
-    },
     examples: [
-      { name: "Caesar Salad", image: "/image/examples/ceasarsalad.png" },
-      { name: "Garden Salad", image: "/image/examples/gardensalad.png" },
+      {
+        name: "Caesar Salad",
+        image: "/image/examples/ceasarsalad.png",
+        ingredients: ["Romaine lettuce", "Caesar dressing", "Croutons", "Parmesan cheese", "Black pepper"],
+        process: "Toss romaine lettuce with Caesar dressing until coated. Top with croutons and shaved Parmesan. Season with black pepper and serve immediately."
+      },
+      {
+        name: "Garden Salad",
+        image: "/image/examples/gardensalad.png",
+        ingredients: ["Mixed greens", "Cherry tomatoes", "Cucumber", "Red onion", "Vinaigrette"],
+        process: "Combine all vegetables in a bowl. Drizzle with vinaigrette and toss lightly. Serve chilled."
+      },
     ],
     keyPoints: ["Small portions", "Crisp greens", "Light vinaigrette", "Served first"]
   },
@@ -29,13 +35,19 @@ const salads = [
     image: "/image/Sidesaladcover.png",
     audioPath: "/image/audio/Side salad.aac",
     lectureNote: "Side salads serve as a complementary dish to the main course. The key is balance - they should enhance, not overpower, the entrée. Consider the flavors and textures of your main dish when selecting ingredients. A simple vinaigrette often works best to keep the focus on the main course.",
-    flashcard: {
-      front: "How should a Side Salad relate to the main course?",
-      back: "It should complement and enhance the main dish without overpowering it. Use simple dressings and consider the flavors of the entrée when choosing ingredients."
-    },
     examples: [
-      { name: "Coleslaw", image: "/image/examples/coleslaw.png" },
-      { name: "Mixed Green Salad", image: "/image/examples/mixsalad.png" },
+      {
+        name: "Coleslaw",
+        image: "/image/examples/coleslaw.png",
+        ingredients: ["Shredded cabbage", "Carrots", "Mayonnaise", "Vinegar", "Sugar"],
+        process: "Mix shredded cabbage and carrots. Stir together mayo, vinegar, and sugar. Toss with vegetables and chill before serving."
+      },
+      {
+        name: "Mixed Green Salad",
+        image: "/image/examples/mixsalad.png",
+        ingredients: ["Mixed greens", "Bell pepper", "Red onion", "Olive oil", "Lemon juice"],
+        process: "Combine greens and vegetables. Whisk olive oil and lemon juice together, drizzle over salad, and toss gently."
+      },
     ],
     keyPoints: ["Complements entrée", "Simple flavors", "Seasonal vegetables", "Balance is key"]
   },
@@ -46,13 +58,19 @@ const salads = [
     image: "/image/maincoursecover.png",
     audioPath: "/image/audio/main course salad.aac",
     lectureNote: "Main course salads must be nutritionally complete and satisfying. Include quality protein sources, complex carbohydrates, and healthy fats. These salads should be substantial enough to be the centerpiece of the meal. Pay attention to portion sizes and nutritional balance throughout.",
-    flashcard: {
-      front: "What makes a Main Course Salad nutritionally complete?",
-      back: "It must include quality protein, complex carbohydrates, and healthy fats in substantial portions. It should be filling and serve as the meal's centerpiece."
-    },
     examples: [
-      { name: "Chef Salad", image: "/image/examples/chef.png" },
-      { name: "Cobb Salad", image: "/image/examples/cobb.png" },
+      {
+        name: "Chef Salad",
+        image: "/image/examples/chef.png",
+        ingredients: ["Romaine lettuce", "Ham", "Turkey", "Hard-boiled egg", "Cheddar cheese", "Thousand Island dressing"],
+        process: "Layer lettuce with sliced ham, turkey, and egg. Add cheese strips on top. Serve with dressing on the side."
+      },
+      {
+        name: "Cobb Salad",
+        image: "/image/examples/cobb.png",
+        ingredients: ["Romaine lettuce", "Grilled chicken", "Avocado", "Bacon bits", "Blue cheese", "Vinaigrette"],
+        process: "Arrange lettuce as base. Place rows of chicken, avocado, and bacon on top. Crumble blue cheese and drizzle with vinaigrette."
+      },
     ],
     keyPoints: ["Contains protein", "Nutritionally complete", "Substantial portions", "Meal centerpiece"]
   },
@@ -63,13 +81,19 @@ const salads = [
     image: "/image/DessertSaladcover.png",
     audioPath: "/image/audio/DESSERT SALADS.aac",
     lectureNote: "Dessert salads offer a lighter alternative to traditional desserts. They combine fresh or preserved fruits with sweet, creamy dressings. Popular at gatherings and potlucks, these salads provide a refreshing end to a meal while still satisfying the sweet tooth.",
-    flashcard: {
-      front: "What role does a Dessert Salad play in a meal?",
-      back: "It serves as a lighter alternative to traditional desserts, using fruits and sweet dressings to provide a refreshing yet sweet ending to the meal."
-    },
     examples: [
-      { name: "Waldorf Salad", image: "/image/examples/waldrof.png" },
-      { name: "Ambrosia Salad", image: "/image/examples/ambrosia.png" }
+      {
+        name: "Waldorf Salad",
+        image: "/image/examples/waldrof.png",
+        ingredients: ["Apples", "Celery", "Walnuts", "Grapes", "Mayonnaise", "Lemon juice"],
+        process: "Dice apples and celery. Toss with lemon juice to prevent browning. Mix in walnuts and grapes. Fold in mayonnaise and chill."
+      },
+      {
+        name: "Ambrosia Salad",
+        image: "/image/examples/ambrosia.png",
+        ingredients: ["Mandarin oranges", "Pineapple chunks", "Coconut flakes", "Mini marshmallows", "Whipped cream"],
+        process: "Drain all canned fruits well. Fold together with coconut, marshmallows, and whipped cream. Refrigerate for at least 1 hour before serving."
+      },
     ],
     keyPoints: ["Sweet dressings", "Fresh fruits", "Light dessert option", "Refreshing finish"]
   },
@@ -80,13 +104,19 @@ const salads = [
     image: "/image/DessertSaladcover.png",
     audioPath: "/image/audio/Separate course (dessert) salad.aac",
     lectureNote: "Dessert salads are served at the end of a meal as a lighter alternative to traditional desserts. They often use fruits, sweet dressings, whipped cream, or gelatin and should be refreshing rather than heavy.",
-    flashcard: {
-      front: "When is a dessert salad served?",
-      back: "At the end of a meal as a light and refreshing dessert."
-    },
     examples: [
-      { name: "Waldorf Salad", image: "/image/examples/waldrof.png" },
-      { name: "Ambrosia Salad", image: "/image/examples/ambrosia.png" }
+      {
+        name: "Waldorf Salad",
+        image: "/image/examples/waldrof.png",
+        ingredients: ["Apples", "Celery", "Walnuts", "Grapes", "Mayonnaise", "Lemon juice"],
+        process: "Dice apples and celery. Toss with lemon juice. Mix in walnuts and grapes. Fold in mayonnaise and serve chilled."
+      },
+      {
+        name: "Ambrosia Salad",
+        image: "/image/examples/ambrosia.png",
+        ingredients: ["Mandarin oranges", "Pineapple chunks", "Coconut flakes", "Mini marshmallows", "Whipped cream"],
+        process: "Drain fruits thoroughly. Combine with coconut and marshmallows. Fold in whipped cream and refrigerate before serving."
+      },
     ],
     keyPoints: ["Sweet ingredients", "Served last", "Light dessert option", "Refreshing"]
   },
@@ -97,13 +127,19 @@ const salads = [
     image: "/image/accompanimentcover.png",
     audioPath: "/image/audio/accompaniment salad.aac",
     lectureNote: "Accompaniment salads balance rich main dishes. They are usually simple, lightly dressed, and should not overpower the main course.",
-    flashcard: {
-      front: "What is the purpose of an accompaniment salad?",
-      back: "To complement and balance the main dish."
-    },
     examples: [
-      { name: "Coleslaw", image: "/image/examples/coleslaw.png" },
-      { name: "Side Garden Salad", image: "/image/examples/gardensalad.png" }
+      {
+        name: "Coleslaw",
+        image: "/image/examples/coleslaw.png",
+        ingredients: ["Shredded cabbage", "Carrots", "Mayonnaise", "Apple cider vinegar", "Salt & pepper"],
+        process: "Shred cabbage and carrots. Mix dressing ingredients and toss with vegetables. Chill for 30 minutes before serving."
+      },
+      {
+        name: "Side Garden Salad",
+        image: "/image/examples/gardensalad.png",
+        ingredients: ["Romaine lettuce", "Tomatoes", "Cucumber", "Croutons", "Italian dressing"],
+        process: "Chop vegetables and place over lettuce. Add croutons and drizzle with Italian dressing just before serving."
+      },
     ],
     keyPoints: ["Served with main dish", "Simple flavors", "Light dressing", "Enhances meal"]
   },
@@ -114,13 +150,19 @@ const salads = [
     image: "/image/greensaladcover.png",
     audioPath: "/image/audio/Green Salads.aac",
     lectureNote: "Green salads are the most common type of salad. Freshness, crispness, and proper drying of greens are essential for quality.",
-    flashcard: {
-      front: "What is the main ingredient of green salads?",
-      back: "Leafy green vegetables like lettuce or spinach."
-    },
     examples: [
-      { name: "Caesar Salad", image: "/image/examples/caesar.png" },
-      { name: "Garden Salad", image: "/image/examples/garden.png" }
+      {
+        name: "Caesar Salad",
+        image: "/image/examples/caesar.png",
+        ingredients: ["Romaine lettuce", "Caesar dressing", "Croutons", "Parmesan", "Lemon juice"],
+        process: "Wash and dry romaine. Toss with Caesar dressing. Top with croutons, Parmesan, and a squeeze of lemon."
+      },
+      {
+        name: "Garden Salad",
+        image: "/image/examples/garden.png",
+        ingredients: ["Spinach", "Arugula", "Tomatoes", "Cucumbers", "Olive oil", "Balsamic vinegar"],
+        process: "Combine greens with vegetables. Whisk olive oil and balsamic together and drizzle over. Toss and serve immediately."
+      },
     ],
     keyPoints: ["Leafy greens", "Fresh ingredients", "Light dressing", "Crisp texture"]
   },
@@ -131,13 +173,19 @@ const salads = [
     image: "/image/pastasaladcover.png",
     audioPath: "/image/audio/Vegetable grain.aac",
     lectureNote: "These salads are filling and versatile, often used for buffets or packed meals. Proper seasoning and cooling improve flavor.",
-    flashcard: {
-      front: "Why are pasta and grain salads considered hearty?",
-      back: "Because they contain filling ingredients like pasta, beans, and grains."
-    },
     examples: [
-      { name: "Pasta Salad", image: "/image/examples/pasta.png" },
-      { name: "Bean Salad", image: "/image/examples/beansalad.png" }
+      {
+        name: "Pasta Salad",
+        image: "/image/examples/pasta.png",
+        ingredients: ["Rotini pasta", "Cherry tomatoes", "Olives", "Bell pepper", "Italian dressing"],
+        process: "Cook pasta and cool completely. Toss with vegetables and Italian dressing. Chill for 1 hour before serving."
+      },
+      {
+        name: "Bean Salad",
+        image: "/image/examples/beansalad.png",
+        ingredients: ["Kidney beans", "Chickpeas", "Green beans", "Red onion", "Vinegar", "Olive oil"],
+        process: "Drain and rinse beans. Combine with green beans and onion. Toss with vinegar and olive oil. Marinate 30 minutes."
+      },
     ],
     keyPoints: ["Hearty ingredients", "Good for buffets", "Served cold", "Well-seasoned"]
   },
@@ -148,13 +196,19 @@ const salads = [
     image: "/image/boundsaladcover.png",
     audioPath: "/image/audio/Bound Salad.aac",
     lectureNote: "Bound salads use creamy dressings that coat ingredients evenly. Proper chilling improves texture and flavor.",
-    flashcard: {
-      front: "What makes a salad a bound salad?",
-      back: "A thick dressing like mayonnaise that binds the ingredients together."
-    },
     examples: [
-      { name: "Potato Salad", image: "/image/examples/potato.png" },
-      { name: "Chicken Salad", image: "/image/examples/chicken.png" }
+      {
+        name: "Potato Salad",
+        image: "/image/examples/potato.png",
+        ingredients: ["Potatoes", "Hard-boiled eggs", "Celery", "Mayonnaise", "Mustard", "Salt & pepper"],
+        process: "Boil whole potatoes, cool, then dice. Mix mayo and mustard. Fold in eggs, celery, and potatoes. Chill before serving."
+      },
+      {
+        name: "Chicken Salad",
+        image: "/image/examples/chicken.png",
+        ingredients: ["Cooked chicken breast", "Celery", "Red grapes", "Mayonnaise", "Lemon juice"],
+        process: "Shred cooled chicken. Mix with celery and grapes. Fold in mayo and lemon juice. Refrigerate and serve chilled."
+      },
     ],
     keyPoints: ["Creamy dressing", "Thick consistency", "Served cold", "Well-mixed"]
   },
@@ -165,13 +219,19 @@ const salads = [
     image: "/image/fruitsaladcover.png",
     audioPath: "/image/audio/FRUIT SALADS.aac",
     lectureNote: "Fruit salads emphasize freshness and natural sweetness. Prevent browning by using citrus juice.",
-    flashcard: {
-      front: "What is the main ingredient in fruit salads?",
-      back: "Fresh or preserved fruits."
-    },
     examples: [
-      { name: "Fruit Cocktail", image: "/image/examples/fruitcocktail.png" },
-      { name: "Tropical Fruit Salad", image: "/image/examples/tropical.png" }
+      {
+        name: "Fruit Cocktail",
+        image: "/image/examples/fruitcocktail.png",
+        ingredients: ["Pineapple chunks", "Peaches", "Pears", "Grapes", "Cherry", "Light syrup"],
+        process: "Drain canned fruits and combine. Add fresh grapes and cherries. Toss in light syrup and chill before serving."
+      },
+      {
+        name: "Tropical Fruit Salad",
+        image: "/image/examples/tropical.png",
+        ingredients: ["Mango", "Papaya", "Pineapple", "Kiwi", "Lime juice", "Honey"],
+        process: "Dice all fruits into bite-sized pieces. Drizzle with lime juice and honey. Toss gently and serve immediately."
+      },
     ],
     keyPoints: ["Fresh fruits", "Natural sweetness", "Colorful presentation", "Light dressing"]
   },
@@ -182,13 +242,19 @@ const salads = [
     image: "/image/composedsaladcover.png",
     audioPath: "/image/audio/Composed salad.aac",
     lectureNote: "Composed salads focus on presentation. Ingredients are arranged artistically and dressed lightly or separately.",
-    flashcard: {
-      front: "How are composed salads prepared?",
-      back: "By arranging ingredients neatly instead of tossing them together."
-    },
     examples: [
-      { name: "Cobb Salad", image: "/image/examples/cobb.png" },
-      { name: "Niçoise Salad", image: "/image/examples/nicoise.png" }
+      {
+        name: "Cobb Salad",
+        image: "/image/examples/cobb.png",
+        ingredients: ["Romaine lettuce", "Grilled chicken", "Avocado", "Bacon", "Blue cheese", "Vinaigrette"],
+        process: "Lay lettuce as base. Arrange rows of chicken, avocado, and bacon without mixing. Crumble blue cheese and drizzle dressing."
+      },
+      {
+        name: "Niçoise Salad",
+        image: "/image/examples/nicoise.png",
+        ingredients: ["Mixed greens", "Tuna", "Hard-boiled eggs", "Green beans", "Olives", "Dijon vinaigrette"],
+        process: "Arrange greens on plate. Place tuna, eggs, green beans, and olives in separate sections. Drizzle with Dijon vinaigrette."
+      },
     ],
     keyPoints: ["Arranged presentation", "Visual appeal", "Separate components", "Minimal mixing"]
   },
@@ -199,13 +265,19 @@ const salads = [
     image: "/image/gelatin_cover.png",
     audioPath: "/image/audio/gelatin salads.aac",
     lectureNote: "Gelatin salads are popular for special occasions. Proper setting time and temperature are important.",
-    flashcard: {
-      front: "What ingredient gives gelatin salads their structure?",
-      back: "Gelatin."
-    },
     examples: [
-      { name: "Fruit Gelatin Salad", image: "/image/examples/gelatinfruit.png" },
-      { name: "Vegetable Aspic", image: "/image/examples/aspic.png" }
+      {
+        name: "Fruit Gelatin Salad",
+        image: "/image/examples/gelatinfruit.png",
+        ingredients: ["Flavored gelatin (Jell-O)", "Hot water", "Cold water", "Canned fruit cocktail"],
+        process: "Dissolve gelatin in hot water, add cold water. Drain fruits and stir in. Pour into mold and refrigerate until firm."
+      },
+      {
+        name: "Vegetable Aspic",
+        image: "/image/examples/aspic.png",
+        ingredients: ["Unflavored gelatin", "Vegetable broth", "Diced carrots", "Peas", "Celery"],
+        process: "Dissolve gelatin in warm broth. Add diced vegetables and pour into mold. Refrigerate for 4 hours until fully set."
+      },
     ],
     keyPoints: ["Gelatin-based", "Chilled before serving", "Decorative", "Firm texture"]
   }
@@ -274,16 +346,14 @@ export default function Module1() {
         onEnded={() => setIsPlaying(false)}
       />
 
-      {/* ── Hero Header — matches landing page ── */}
+      {/* ── Hero Header ── */}
       <div className="bg-gradient-to-br from-lime-600 via-green-600 to-emerald-700 text-white relative overflow-hidden">
-        {/* Decorative blobs */}
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           <div className="absolute top-10 left-10 w-64 h-64 bg-yellow-300 rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-10 w-80 h-80 bg-green-300 rounded-full blur-3xl" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 py-10 relative z-10">
-          {/* Back button */}
           <button
             onClick={() => window.location.href = "/navigation"}
             className="flex items-center gap-2 text-lime-200 hover:text-white transition-colors mb-6 group"
@@ -308,7 +378,6 @@ export default function Module1() {
               </p>
             </div>
 
-            {/* Stat chips */}
             <div className="flex flex-wrap gap-3">
               <div className="flex items-center gap-2 text-white bg-white/10 backdrop-blur-md px-5 py-3 rounded-full border border-white/20">
                 <BookOpen className="w-5 h-5 text-lime-300" />
@@ -327,7 +396,6 @@ export default function Module1() {
             </div>
           </div>
 
-          {/* Progress bar in header */}
           <div className="mt-6">
             <div className="flex justify-between text-sm mb-2">
               <span className="text-lime-200 font-semibold">Progress</span>
@@ -346,7 +414,7 @@ export default function Module1() {
       {/* ── Main Content ── */}
       <div className="max-w-7xl mx-auto px-4 py-8 grid lg:grid-cols-3 gap-6">
 
-        {/* Left — Main Content */}
+        {/* ── LEFT COLUMN ── */}
         <div className="lg:col-span-2 space-y-6">
 
           {/* Image Card */}
@@ -360,9 +428,7 @@ export default function Module1() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 50vw"
                 className="object-cover scale-105"
               />
-              {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-              {/* Text overlay */}
               <div className="absolute inset-0 flex items-end p-8">
                 <div className="max-w-xl">
                   <h2 className="text-3xl md:text-4xl font-extrabold text-white drop-shadow-lg mb-3">
@@ -385,7 +451,6 @@ export default function Module1() {
                 Previous
               </button>
 
-              {/* Dot indicators */}
               <div className="flex gap-1.5 flex-wrap justify-center max-w-xs">
                 {salads.map((_, idx) => (
                   <button
@@ -452,57 +517,43 @@ export default function Module1() {
             </div>
           )}
 
-          {/* Flashcard */}
+          {/* Ingredients & Process */}
           <div className="bg-white rounded-3xl p-6 shadow-lg border-2 border-green-200">
-            <div className="flex items-center justify-between mb-5">
-              <h3 className="text-xl font-extrabold text-green-900 flex items-center gap-2">
-                🎴 Knowledge Check
-              </h3>
-              <button
-                onClick={() => setIsFlipped(false)}
-                className="flex items-center gap-1.5 text-sm text-green-600 hover:text-green-800 font-semibold transition-colors bg-green-50 hover:bg-green-100 px-3 py-1.5 rounded-xl border-2 border-green-200"
-              >
-                <RotateCcw className="w-4 h-4" />
-                Reset
-              </button>
-            </div>
+            <h3 className="text-xl font-extrabold text-green-900 mb-5 flex items-center gap-2">
+              🍽️ Ingredients & Process
+            </h3>
 
-            <div
-              onClick={() => setIsFlipped(!isFlipped)}
-              className="relative cursor-pointer"
-              style={{ perspective: "1000px" }}
-            >
-              <div
-                className="relative w-full transition-all duration-500"
-                style={{ transformStyle: "preserve-3d", transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)" }}
-              >
-                {/* Front */}
-                <div
-                  className={`bg-gradient-to-br from-lime-400 to-green-500 rounded-2xl p-8 min-h-[200px] flex items-center justify-center text-center ${isFlipped ? "invisible" : "visible"}`}
-                  style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
-                >
-                  <div>
-                    <div className="text-5xl mb-4">❓</div>
-                    <p className="text-xl font-extrabold text-white">{salads[current].flashcard.front}</p>
-                    <p className="text-sm text-lime-100 mt-3 font-medium">Click to reveal answer</p>
+            <div className="space-y-5">
+              {salads[current].examples.map((example, idx) => (
+                <div key={idx} className="bg-gradient-to-br from-green-50 to-lime-50 rounded-2xl border-2 border-green-200 overflow-hidden">
+                  <div className="bg-gradient-to-r from-lime-500 to-green-600 px-4 py-2.5">
+                    <span className="text-white font-extrabold text-sm">{example.name}</span>
+                  </div>
+                  <div className="p-4 grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <p className="text-xs font-extrabold text-green-500 uppercase tracking-wider mb-2">Ingredients</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {example.ingredients.map((ing, iIdx) => (
+                          <span
+                            key={iIdx}
+                            className="bg-white text-green-700 text-xs font-semibold px-2.5 py-1 rounded-full border-2 border-green-200"
+                          >
+                            {ing}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-xs font-extrabold text-green-500 uppercase tracking-wider mb-2">Process</p>
+                      <p className="text-green-800 text-sm leading-relaxed">{example.process}</p>
+                    </div>
                   </div>
                 </div>
-                {/* Back */}
-                <div
-                  className={`bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl p-8 min-h-[200px] flex items-center justify-center text-center absolute top-0 left-0 w-full ${!isFlipped ? "invisible" : "visible"}`}
-                  style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
-                >
-                  <div>
-                    <div className="text-5xl mb-4">✅</div>
-                    <p className="text-lg font-semibold text-white leading-relaxed">{salads[current].flashcard.back}</p>
-                    <p className="text-sm text-green-100 mt-3">Click to see question</p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
 
             {/* Key Points */}
-            <div className="mt-6">
+            <div className="mt-5">
               <h4 className="font-extrabold text-green-900 mb-3">Key Points:</h4>
               <div className="grid grid-cols-2 gap-2">
                 {salads[current].keyPoints.map((point, idx) => (
@@ -516,9 +567,11 @@ export default function Module1() {
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Right — Sidebar */}
+        </div>
+        {/* ── END LEFT COLUMN ── */}
+
+        {/* ── RIGHT COLUMN (SIDEBAR) ── */}
         <div className="space-y-5">
 
           {/* Lecture Notes + Audio */}
@@ -530,7 +583,6 @@ export default function Module1() {
                 </div>
                 Lecture Notes
               </h3>
-              {/* Audio controls */}
               <div className="flex items-center gap-2">
                 <button
                   onClick={toggleAutoPlay}
@@ -614,7 +666,9 @@ export default function Module1() {
           </div>
 
         </div>
+          {/* ── END RIGHT COLUMN ── */}
+  
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
