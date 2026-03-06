@@ -10,321 +10,692 @@ interface Message {
     timestamp: Date;
 }
 
-// Comprehensive Knowledge Base from all 4 Modules
-const knowledgeBase = {
-    greetings: [
-        "Hello! 👨‍🍳 I'm your Salad Course Assistant. I can help you with:\n\n📚 Module 1 - Classification of Salad\n🥗 Module 2 - Components of a Salad\n🧴 Module 3 - Types of Salad Dressing\n✅ Module 4 - Guidelines in Preparing Salad\n\nWhat would you like to learn about?",
-        "Hi there! Ready to learn about salad preparation? Ask me anything from the 4 modules!"
-    ],
+// ─────────────────────────────────────────────────────────────────────────────
+// KNOWLEDGE BASE — every Q maps to its exact A from the module documents
+// ─────────────────────────────────────────────────────────────────────────────
+const knowledgeBase: { keywords: string[]; answer: string }[] = [
 
-    // MODULE 1: Classification of Salads
-    saladDefinition: {
-        keywords: ["what is a salad", "salad meaning", "definition of salad", "salad definition"],
+    // ── MODULE 1: Classification of Salads ───────────────────────────────────
+
+    {
+        keywords: [
+            "what is a salad", "what is the meaning of a salad",
+            "what is the definition of a salad", "salad meaning",
+            "definition of salad", "salad definition"
+        ],
         answer: "A salad is a combination of vegetables, fruits, and other ingredients served with a dressing."
     },
-
-    misEnPlace: {
-        keywords: ["mis en place", "setting everything", "organizing", "preparing materials"],
-        answer: "Mis en place is a French term meaning 'setting everything in place.' It refers to the process of organizing and preparing all materials and ingredients before you actually start the food preparation."
+    {
+        keywords: [
+            "what is the meaning of the french term mis en place",
+            "what is the mis en place", "mis en place", "mise en place",
+            "setting everything in place", "organizing ingredients before"
+        ],
+        answer: "It means \"setting everything in place.\" It refers to the process of organizing and preparing all materials and ingredients before you actually start the food preparation."
+    },
+    {
+        keywords: [
+            "classification of salads according to ingredients used",
+            "classification of salad according to ingredients",
+            "salads according to ingredients used",
+            "salads ingredients used",
+            "classification according to ingredients"
+        ],
+        answer: "Classification of Salads According to Ingredients Used:\n\n🥬 Green Salads\n🥕 Vegetables, Grain Legumes and Pasta Salads\n🥄 Bound Salads\n🍎 Fruit Salads\n🎨 Composed Salads\n🍮 Gelatin Salads"
+    },
+    {
+        keywords: [
+            "classification of salads according to their functions in the meal",
+            "classification of salad according to their functions",
+            "salads according to their functions in the meal",
+            "salads functions", "classification according to function",
+            "function in the meal"
+        ],
+        answer: "Classification of Salads According to their Functions in the Meal:\n\n🥗 Appetizer Salads\n🍽️ Accompaniment Salad\n🍽️ Side Dish Salad\n🥩 Main Course Salads\n🍋 Separate Course Salads\n🍰 Dessert Salads"
     },
 
-    classificationIngredients: {
-        keywords: ["classification according to ingredients", "salads ingredients used", "types according to ingredients", "classify salad", "classification of salad", "how salads classified", "how are salads classified", "salad classification", "salad types"],
-        answer: "Classification of Salads According to Ingredients Used: \n\n🥬 Green Salads\n🥕 Vegetables, Grain Legumes and Pasta Salads\n🥄 Bound Salads\n🍎 Fruit Salads\n🎨 Composed Salads\n🍮 Gelatin Salads"
+    // Green Salad
+    {
+        keywords: [
+            "what is a green salad", "what is the definition of green salad",
+            "green salad meaning", "green salad definition"
+        ],
+        answer: "It is a salad made primarily of leafy vegetables like lettuce, spinach, or cabbage. They must be fresh, crisp, and well-drained."
+    },
+    {
+        keywords: [
+            "what are the primary ingredients for a green salad",
+            "ingredients of green salad", "primary ingredients green salad",
+            "what ingredients are in green salad"
+        ],
+        answer: "Fresh leafy greens like Romaine lettuce, iceberg lettuce, spinach, cabbage, or arugula."
     },
 
-    classificationFunction: {
-        keywords: ["classification according to function", "salads functions", "function in the meal", "when served", "classification meal"],
-        answer: " Classification of Salads According to their Functions in the Meal: \n\n🥗 Appetizer Salads\n🍽️ Accompaniment Salad / Side Dish Salad\n🥩 Main Course Salads\n🍋 Separate Course Salads\n🍰 Dessert Salads"
+    // Vegetable Salad
+    {
+        keywords: [
+            "what are vegetables grain legumes and pasta salads",
+            "what are vegetable salads", "vegetables salad meaning",
+            "vegetable salad definition", "grain legumes pasta salad"
+        ],
+        answer: "These are salads where the main ingredients are vegetables (other than leafy greens) or starchy items like macaroni, rice, or beans."
+    },
+    {
+        keywords: [
+            "what ingredients are used in vegetable salads instead of leafy greens",
+            "ingredients used in vegetable salad", "vegetable salad ingredients"
+        ],
+        answer: "Starchy items like pasta (rotini, macaroni), grains (rice, quinoa), or legumes (beans, peas)."
+    },
+    {
+        keywords: ["vegetables salad example", "example of vegetable salad"],
+        answer: "Broccoli, cauliflower, or carrots."
     },
 
-    greenSalad: {
-        keywords: ["green salad", "leafy vegetables", "lettuce salad", "spinach salad"],
-        answer: " Green Salad:  A salad made primarily of leafy vegetables like lettuce, spinach, or cabbage. They must be fresh, crisp, and well-drained.\n\n Primary ingredients:  Fresh leafy greens like Romaine lettuce, iceberg lettuce, spinach, cabbage, or arugula."
+    // Bound Salad
+    {
+        keywords: [
+            "what is a bound salad", "what is the definition of bound salad",
+            "bound salad meaning", "bound salad definition"
+        ],
+        answer: "It is a mixture of ingredients (like tuna, chicken, or potato) held together or \"bound\" by a thick dressing, usually mayonnaise."
+    },
+    {
+        keywords: [
+            "what specific ingredients are used to bind these salads",
+            "bound salad ingredients", "what binds bound salad",
+            "bind salad", "binding ingredient"
+        ],
+        answer: "A heavy or thick dressing, most commonly mayonnaise, yogurt, or a boiled dressing."
     },
 
-    vegetableSalad: {
-        keywords: ["vegetable salad", "grain salad", "legume salad", "pasta salad", "macaroni", "rice salad"],
-        answer: " Vegetables, Grain Legumes, and Pasta Salads:  These are salads where the main ingredients are vegetables (other than leafy greens) or starchy items like macaroni, rice, or beans.\n\n Ingredients:  Starchy items like pasta (rotini, macaroni), grains (rice, quinoa), or legumes (beans, peas). Examples include broccoli, cauliflower, or carrots."
+    // Fruit Salad
+    {
+        keywords: [
+            "what is a fruit salad", "what is the definition of fruit salad",
+            "fruit salad meaning", "fruit salad definition"
+        ],
+        answer: "A salad that uses various fruits as the main ingredients. These can be served as appetizers, side dishes, or desserts."
+    },
+    {
+        keywords: [
+            "what are the ingredients of fruit salad",
+            "fruit salad ingredients", "ingredients of fruit salad"
+        ],
+        answer: "Various fruits like pineapples, apples, grapes, and bananas."
     },
 
-    boundSalad: {
-        keywords: ["bound salad", "mayonnaise salad", "thick dressing", "potato salad", "tuna salad"],
-        answer: " Bound Salad:  A mixture of ingredients (like tuna, chicken, or potato) held together or 'bound' by a thick dressing, usually mayonnaise.\n\n Binding ingredients:  A heavy or thick dressing, most commonly mayonnaise, yogurt, or a boiled dressing."
+    // Composed Salad
+    {
+        keywords: [
+            "what is a composed salad", "what is the meaning of composed salad",
+            "composed salad meaning", "composed salad definition"
+        ],
+        answer: "It is a salad where the ingredients are arranged attractively on a plate rather than being tossed or mixed together."
+    },
+    {
+        keywords: [
+            "what are the common ingredients of composed salad",
+            "composed salad ingredients"
+        ],
+        answer: "Sliced grilled chicken, avocado, hard-boiled egg wedges, and bacon bits arranged in rows."
+    },
+    {
+        keywords: ["composed salad example", "example of composed salad", "cobb salad"],
+        answer: "A Cobb Salad is a famous composed salad."
+    },
+    {
+        keywords: [
+            "what is unique about the ingredients in a composed salad",
+            "composed salad uniqueness", "unique about composed salad"
+        ],
+        answer: "The ingredients are layered or arranged artfully on a plate rather than being mixed."
     },
 
-    fruitSalad: {
-        keywords: ["fruit salad", "fresh fruit", "fruit ingredients", "pineapple salad"],
-        answer: " Fruit Salad:  A salad that uses various fruits as the main ingredients. These can be served as appetizers, side dishes, or desserts.\n\n Ingredients:  Various fruits like pineapples, apples, grapes, and bananas."
+    // Gelatin Salad
+    {
+        keywords: [
+            "what is a gelatin salad", "what is the definition of gelatin salad",
+            "gelatin salad meaning", "gelatin salad definition", "jello salad"
+        ],
+        answer: "A salad made using flavored or unflavored gelatin, often mixed with fruits or vegetables. It is also commonly known as a \"Jello salad.\""
+    },
+    {
+        keywords: [
+            "what are the key ingredients of gelatin salads",
+            "gelatin salad ingredients", "key ingredients gelatin salad"
+        ],
+        answer: "Sweetened gelatin mix (like Jell-O), fruit juices, and suspended items like canned fruits or nuts."
     },
 
-    composedSalad: {
-        keywords: ["composed salad", "arranged salad", "cobb salad", "plated salad", "artfully arranged"],
-        answer: " Composed Salad:  A salad where the ingredients are arranged attractively on a plate rather than being tossed or mixed together.\n\n Example:  A Cobb Salad is a famous composed salad with sliced grilled chicken, avocado, hard-boiled egg wedges, and bacon bits arranged in rows.\n\n Uniqueness:  The ingredients are layered or arranged artfully on a plate rather than being mixed."
+    // Functions — Appetizer
+    {
+        keywords: [
+            "what is an appetizer salad", "appetizer salad meaning",
+            "definition of appetizer salad"
+        ],
+        answer: "Stimulates appetite with fresh, crisp ingredients, tangy flavorful dressing, and attractive appearance."
+    },
+    {
+        keywords: [
+            "what is the example of appetizer salad",
+            "appetizer salad example", "example appetizer salad"
+        ],
+        answer: "Examples are cheese, ham, salami, shrimp, crabmeat."
+    },
+    {
+        keywords: [
+            "do appetizer salads include cooked vegetables",
+            "cooked vegetables appetizer salad"
+        ],
+        answer: "Yes, crisp raw or lightly cooked vegetables may be added."
     },
 
-    gelatinSalad: {
-        keywords: ["gelatin salad", "jello salad", "jell-o", "flavored gelatin"],
-        answer: " Gelatin Salad:  A salad made using flavored or unflavored gelatin, often mixed with fruits or vegetables. It is also commonly known as a 'Jello salad.'\n\n Key ingredients:  Sweetened gelatin mix (like Jell-O), fruit juices, and suspended items like canned fruits or nuts."
+    // Accompaniment Salad
+    {
+        keywords: [
+            "what is an accompaniment salad", "accompaniment salad",
+            "should accompaniment salads match the main dish"
+        ],
+        answer: "Accompaniment salad must balance and harmonize with the meal, like a side dish."
+    },
+    {
+        keywords: [
+            "are accompaniment salads side dishes",
+            "is accompaniment salad a side dish"
+        ],
+        answer: "Yes."
+    },
+    {
+        keywords: [
+            "can potato salad be served with french fries",
+            "potato salad french fries"
+        ],
+        answer: "No. Avoid serving potato salad with French fries or another starch."
+    },
+    {
+        keywords: [
+            "are sweet fruit salads always appropriate as accompaniment",
+            "sweet fruit salads accompaniment"
+        ],
+        answer: "Sweet fruit salads are rarely suitable except with ham or pork."
+    },
+    {
+        keywords: [
+            "what should side dish salads be like",
+            "side dish salad characteristics"
+        ],
+        answer: "Side dish salad should be light and flavorful."
+    },
+    {
+        keywords: [
+            "are vegetable salads good as side dishes",
+            "vegetable salad side dish"
+        ],
+        answer: "Vegetable salads are ideal."
+    },
+    {
+        keywords: [
+            "can macaroni salad be a side dish",
+            "macaroni salad side dish"
+        ],
+        answer: "Yes, macaroni or protein-rich salads (seafood, cheese) are less appropriate unless the main course is light."
     },
 
-    appetizerSalad: {
-        keywords: ["appetizer salad", "appetizer", "stimulate appetite", "cheese salad", "shrimp salad"],
-        answer: " Appetizer Salad:  Stimulates appetite with fresh, crisp ingredients, tangy flavorful dressing, and attractive appearance.\n\n Examples:  Cheese, ham, salami, shrimp, crabmeat.\n\n Note:  Crisp raw or lightly cooked vegetables may be added."
+    // Main Course
+    {
+        keywords: [
+            "main course salad ingredients",
+            "ingredients of main course salad"
+        ],
+        answer: "Examples are meat, poultry, seafood, egg, and cheese."
+    },
+    {
+        keywords: [
+            "should main course salads contain protein",
+            "main course salad protein"
+        ],
+        answer: "Yes, large enough to serve as a full meal with a substantial portion of protein."
+    },
+    {
+        keywords: [
+            "do main course salads need variety in flavors",
+            "main course salad variety"
+        ],
+        answer: "Yes, it includes the variety of flavors and texture."
     },
 
-    accompanimentSalad: {
-        keywords: ["accompaniment salad", "side dish salad", "balance meal", "harmonize"],
-        answer: " Accompaniment Salad / Side Dish Salad:  Must balance and harmonize with the meal, like a side dish.\n\n Guidelines: \n• Should be light and flavorful\n• Vegetable salads are ideal\n• Avoid serving potato salad with French fries or another starch\n• Sweet fruit salads are rarely suitable except with ham or pork\n• Macaroni or protein-rich salads (seafood, cheese) are less appropriate unless the main course is light"
+    // Separate Course
+    {
+        keywords: [
+            "what is the uniqueness of a separate course",
+            "separate course salad uniqueness", "separate course unique"
+        ],
+        answer: "A separate course is very light and not filling."
+    },
+    {
+        keywords: [
+            "can sour cream or mayonnaise be used in separate course",
+            "sour cream mayonnaise separate course"
+        ],
+        answer: "No, a separate course avoids heavy dressing like sour cream or mayonnaise."
+    },
+    {
+        keywords: [
+            "are separate course salads served before dessert",
+            "when is separate course salad served"
+        ],
+        answer: "Yes, a separate course is served after the main course to cleanse the plate and refresh the appetite."
     },
 
-    mainCourseSalad: {
-        keywords: ["main course salad", "protein salad", "full meal", "substantial salad"],
-        answer: " Main Course Salad:  Large enough to serve as a full meal with a substantial portion of protein.\n\n Ingredients:  Meat, poultry, seafood, egg, and cheese.\n\n Characteristics: \n• Contains protein\n• Includes variety of flavors and textures\n• Can be eaten as a complete meal"
+    // Dessert Salad
+    {
+        keywords: [
+            "what is a dessert salad", "what is the definition of dessert salad",
+            "dessert salad meaning", "dessert salad definition"
+        ],
+        answer: "Dessert salads are usually sweeter and may contain items such as fruits, sweetened gelatin, nuts and cream."
     },
 
-    separateCourseSalad: {
-        keywords: ["separate course", "cleanse palate", "after main course", "light salad"],
-        answer: " Separate Course Salad:  Very light and not filling, served after the main course to cleanse the plate and refresh the appetite.\n\n Characteristics: \n• Served before dessert\n• Avoid heavy dressing like sour cream or mayonnaise\n• Very light composition"
+    // ── MODULE 2: Components of a Salad ─────────────────────────────────────
+
+    {
+        keywords: [
+            "what is the base of a salad", "why are leafy greens used as a base",
+            "is lettuce the most common salad base", "what happens if a salad has no base",
+            "can the base be more than one type of green", "is the base the largest part of the salad",
+            "salad base"
+        ],
+        answer: "The base is the foundation of the salad and is usually made of leafy greens like lettuce."
+    },
+    {
+        keywords: [
+            "what is the main role of the salad base", "does the base affect the salad shape",
+            "why does the salad need structure", "is the base meant to hold the body ingredients",
+            "does the base affect portion size", "role of salad base"
+        ],
+        answer: "The base gives structure, volume, and support to the other salad ingredients."
+    },
+    {
+        keywords: [
+            "what is the body of a salad", "which ingredients belong to the salad body",
+            "is the body the main source of flavor", "can meat be part of the salad body",
+            "are fruits allowed in the body of a salad", "is the body placed on top of the base",
+            "salad body"
+        ],
+        answer: "The body is the main part of the salad and includes vegetables, fruits, meat, or seafood."
+    },
+    {
+        keywords: [
+            "why is the body important in a salad", "which part adds most of the nutrients",
+            "does the body affect texture", "can the salad body be cooked",
+            "is the body more important than the garnish", "importance of salad body"
+        ],
+        answer: "The body adds flavor, texture, and nutritional value to the salad."
+    },
+    {
+        keywords: [
+            "what is salad dressing", "why is dressing added to salad",
+            "is dressing always liquid", "does dressing add moisture",
+            "can salad be served without dressing", "is dressing mixed with the body",
+            "what is dressing"
+        ],
+        answer: "The dressing is a liquid or semi-liquid mixture that adds flavor and moisture to the salad."
+    },
+    {
+        keywords: [
+            "what are common ingredients of dressing", "is oil used in salad dressing",
+            "when should dressing be added", "can dressing be served on the side",
+            "does timing affect salad quality", "dressing ingredients"
+        ],
+        answer: "Dressings are made from oil, vinegar, mayonnaise, or cream and are added before or during service."
+    },
+    {
+        keywords: [
+            "what is a garnish", "why is garnish added to salad",
+            "is garnish mainly for appearance", "must garnish be edible",
+            "is garnish the main ingredient", "what is garnish"
+        ],
+        answer: "The garnish is an edible decoration that improves the appearance of the salad."
+    },
+    {
+        keywords: [
+            "what does garnish add to a salad", "should garnish match the salad flavor",
+            "can garnish overpower the salad", "is garnish optional",
+            "should garnish be simple", "garnish purpose"
+        ],
+        answer: "Garnish adds visual appeal and should complement the other salad ingredients."
     },
 
-    dessertSalad: {
-        keywords: ["dessert salad", "sweet salad", "fruits dessert", "sweetened gelatin"],
-        answer: " Dessert Salad:  Usually sweeter and may contain items such as fruits, sweetened gelatin, nuts and cream.\n\nServed at the end of the meal."
+    // ── MODULE 3: Types of Salad Dressing ───────────────────────────────────
+
+    {
+        keywords: [
+            "why is it important to use less oil in making salad dressing",
+            "why is it not necessary to use too much oil",
+            "how to balance high acidity in creating oil and vinegar dressing",
+            "why do we use less oil in creating oil and vinegar types of salad dressing",
+            "should we use less or more oil", "less oil dressing"
+        ],
+        answer: "Using less oil makes the dressing tarter and to avoid the salad dressing to taste milder and oilier."
+    },
+    {
+        keywords: [
+            "what is an emulsified dressing", "is mayonnaise an emulsified dressing",
+            "what makes emulsified dressings creamy", "are mayonnaise-based dressings thick",
+            "is mayonnaise used as a base", "emulsified dressing"
+        ],
+        answer: "Emulsified dressings use mayonnaise as a base and are usually thick and creamy."
+    },
+    {
+        keywords: [
+            "what is the oil-to-vinegar ratio", "how much oil is used in vinaigrette",
+            "can the ratio be changed", "what happens if more oil is added",
+            "what happens if less oil is used", "oil to vinegar ratio",
+            "vinaigrette ratio", "standard ratio"
+        ],
+        answer: "The standard oil-to-vinegar ratio for vinaigrette is 3 parts oil to 1 part vinegar, but it can be adjusted to taste."
+    },
+    {
+        keywords: [
+            "what type of emulsion is vinaigrette", "is vinaigrette permanent or temporary",
+            "does vinaigrette contain oil", "does vinaigrette contain vinegar",
+            "is vinaigrette an emulsion", "vinaigrette emulsion type",
+            "what is vinaigrette"
+        ],
+        answer: "Vinaigrette is a temporary emulsion made from oil, vinegar, and seasonings."
     },
 
-    // MODULE 2: Components of a Salad
-    saladBase: {
-        keywords: ["base of salad", "salad base", "foundation", "leafy greens base", "lettuce base"],
-        answer: " The Base:  The foundation of the salad and is usually made of leafy greens like lettuce.\n\n Main role: \n• Gives structure, volume, and support to the other salad ingredients\n• Holds the body ingredients\n• Affects the salad's shape and portion size"
+    // ── MODULE 4: Guidelines ─────────────────────────────────────────────────
+
+    {
+        keywords: [
+            "why is neat and accurate cutting important",
+            "when should vegetables be cut for salads",
+            "how should vegetables be cooked for salads",
+            "why must cooked vegetables be drained and chilled",
+            "why should pasta and grains not be overcooked",
+            "guidelines vegetables legumes grains pasta salads"
+        ],
+        answer: "These salads require neat cutting, proper cooking, thorough draining, chilling, and preparation close to serving time."
+    },
+    {
+        keywords: [
+            "why must ingredients be cooled before adding mayonnaise",
+            "why should bound salads be kept chilled",
+            "why are potatoes cooked whole before peeling",
+            "why are crisp vegetables added to bound salads",
+            "why should dressings be folded in gently",
+            "guidelines bound salads"
+        ],
+        answer: "Bound salads must use cooled ingredients, be mixed gently with mayonnaise, kept chilled, and portioned properly."
+    },
+    {
+        keywords: [
+            "why should fruit salads be handled carefully",
+            "why are some fruits dipped in acidic liquid",
+            "why should vegetables be prepared before fruit salads",
+            "why must canned fruits be well drained",
+            "why are attractive fruit pieces placed on top",
+            "guidelines fruit salads"
+        ],
+        answer: "Fruit salads should be handled gently, protected from discoloration, well drained, and arranged attractively."
+    },
+    {
+        keywords: [
+            "why are ingredients prepared separately in composed salads",
+            "why should each ingredient be seasoned individually",
+            "why are delicate ingredients added just before serving",
+            "why is contrast important in composed salads",
+            "why is proper plating important", "guidelines composed salads"
+        ],
+        answer: "Composed salads require separate preparation, proper seasoning, balanced flavors, and careful arrangement."
+    },
+    {
+        keywords: [
+            "why is the correct gelatin-to-liquid ratio important",
+            "how is unflavored gelatin properly dissolved",
+            "how is flavored gelatin properly dissolved",
+            "why are raw pineapple and papaya not allowed",
+            "why must fruits be drained before adding to gelatin",
+            "why should gelatin salads be refrigerated",
+            "guidelines gelatin salads"
+        ],
+        answer: "Gelatin salads require correct gelatin proportions, proper dissolving, drained ingredients, and correct setting methods."
     },
 
-    saladBody: {
-        keywords: ["body of salad", "salad body", "main part", "main ingredients"],
-        answer: " The Body:  The main part of the salad and includes vegetables, fruits, meat, or seafood.\n\n Importance: \n• Adds flavor, texture, and nutritional value\n• Main source of nutrients\n• Placed on top of the base\n• Can be cooked or raw"
+    // Factors — Balance
+    {
+        keywords: [
+            "what is meant by balance in salad preparation",
+            "why is it important to balance color in salads",
+            "how does balancing texture improve a salad",
+            "why should ingredients be arranged by shape and size",
+            "how does flavor balance affect the overall salad",
+            "balance in salad"
+        ],
+        answer: "Balance ensures salad ingredients are arranged by color, shape, texture, and flavor to enhance appearance."
     },
 
-    saladDressing: {
-        keywords: ["salad dressing", "dressing liquid", "flavor moisture", "when add dressing", "what is dressing"],
-        answer: " The Dressing:  A liquid or semi-liquid mixture that adds flavor and moisture to the salad.\n\n Common ingredients:  Oil, vinegar, mayonnaise, or cream\n\n When to add:  Before or during service (can be served on the side)\n\n Note:  Timing affects salad quality - add too early and greens may wilt"
+    // Harmony
+    {
+        keywords: [
+            "what does harmony mean in salad preparation",
+            "why should ingredients harmonize with each other",
+            "how do herbs spices or sauces add harmony to salads",
+            "why is unity between dressing and ingredients important",
+            "how does harmony improve the overall appeal of a salad",
+            "harmony in salad"
+        ],
+        answer: "Harmony means choosing ingredients that complement each other and the dressing for a unified taste and presentation."
     },
 
-    dressingTypes: {
-        keywords: ["types of dressing", "dressing types", "kinds of dressing", "different dressings", "types of salad dressing"],
-        answer: " Types of Salad Dressing: \n\n🫒  Oil & Vinegar  - Simple combination (3:1 ratio)\n🥫  Emulsified  - Thick and creamy with mayonnaise base\n🥗  Vinaigrette  - Temporary emulsion (separates over time)\n🧈  Permanent Emulsion  - Stays mixed (mayonnaise, ranch)\n🍳  Cooked Dressing  - Thickened with heat\n\nWould you like details on any specific type?"
+    // Color
+    {
+        keywords: [
+            "why is color important in salad presentation",
+            "how can different colored vegetables improve a salad",
+            "why should you add shredded carrots beets or red cabbage",
+            "how does color affect appetite",
+            "can using only one color make a salad less appealing",
+            "color in salad"
+        ],
+        answer: "Color adds eye appeal; combining different colored ingredients makes the salad visually attractive."
     },
 
-    saladGarnish: {
-        keywords: ["garnish", "decoration", "edible decoration", "visual appeal", "appearance"],
-        answer: " The Garnish:  An edible decoration that improves the appearance of the salad.\n\n Purpose: \n• Adds visual appeal\n• Should complement the other salad ingredients\n• Must be edible\n• Should not overpower the salad\n• Can be simple\n• Optional but recommended"
+    // Texture
+    {
+        keywords: [
+            "why is texture important in salads",
+            "how does contrast in texture improve the salad",
+            "why pair crisp vegetables with meat or fish",
+            "how does texture affect the eating experience",
+            "can texture make a salad more visually appealing",
+            "texture in salad"
+        ],
+        answer: "Texture creates contrast between ingredients, such as crisp vegetables and tender meat or fish, making the salad more appealing."
     },
 
-    // MODULE 3: Types of Salad Dressing
-    oilVinegarDressing: {
-        keywords: ["oil and vinegar", "less oil", "tarter", "milder", "oil balance"],
-        answer: " Oil and Vinegar Dressing: \n\nUsing  less oil  makes the dressing tarter and helps avoid the salad dressing tasting milder and oilier.\n\nThis is important for balancing high acidity in creating oil and vinegar dressing."
+    // Safety & Storage
+    {
+        keywords: [
+            "why should green salads be plated on a cold plate",
+            "why should salads not be plated more than 1-2 hours before serving",
+            "when should dressing be added to green salads",
+            "why should salads be refrigerated until serving",
+            "what happens if salads are held too long before serving",
+            "why should holding boxes have high humidity",
+            "safety storage salad", "salad storage"
+        ],
+        answer: "Salads should be kept cold, plated close to serving time, and dressings added just before serving to maintain freshness and prevent wilting."
+    },
+    {
+        keywords: [
+            "why should salads be plated on cold plates",
+            "why must salads be refrigerated before serving",
+            "why should dressings be added immediately before serving",
+            "why should salads not be held for a long period of time",
+            "why is proper temperature control important in salad storage",
+            "temperature control salad"
+        ],
+        answer: "Following safety and hygienic practices such as refrigeration, correct timing of dressing application, proper holding time, and temperature control helps prevent spoilage, maintain freshness, and ensure food safety."
     },
 
-    emulsifiedDressing: {
-        keywords: ["emulsified dressing", "mayonnaise base", "thick creamy", "emulsion"],
-        answer: " Emulsified Dressings: \n\nUse mayonnaise as a base and are usually thick and creamy.\n\n• Mayonnaise IS an emulsified dressing\n• They are thick and stable\n• Mayonnaise is used as a base for many variations"
+    // Hygiene
+    {
+        keywords: [
+            "why is washing salad vegetables important before preparation",
+            "why should hands be washed before and after handling food",
+            "why must clean utensils and equipment be used",
+            "why is removing damaged or bruised parts necessary",
+            "why should food handlers observe proper personal hygiene",
+            "hygiene preparing salads", "principles hygiene salad"
+        ],
+        answer: "Practicing proper hygiene such as washing vegetables, maintaining clean hands and utensils, removing damaged parts, and observing cleanliness helps prevent contamination and ensures safe and healthy salads."
     },
 
-    vinaigretteRatio: {
-        keywords: ["vinaigrette ratio", "oil to vinegar", "3 to 1", "how much oil", "ratio"],
-        answer: " Vinaigrette Oil-to-Vinegar Ratio: \n\nThe standard ratio is  3 parts oil to 1 part vinegar , but it can be adjusted to taste.\n\n• More oil = milder, smoother\n• Less oil = tarter, more acidic\n• Adjustable based on preference"
+    // Washing Produce
+    {
+        keywords: [
+            "why should fruits and vegetables be washed before use",
+            "why is it important to use running water when washing produce",
+            "why should bruised or damaged areas be removed",
+            "why must firm produce be scrubbed properly",
+            "why should washed produce be dried before use",
+            "how to wash fruits and vegetables",
+            "washing fruits vegetables", "wash produce"
+        ],
+        answer: "Proper washing of fruits and vegetables using clean running water, removing damaged parts, scrubbing firm produce, and drying them well helps remove dirt, bacteria, and contaminants, ensuring food safety and cleanliness."
     },
+];
 
-    vinaigretteType: {
-        keywords: ["vinaigrette type", "temporary emulsion", "vinaigrette emulsion", "oil vinegar seasonings"],
-        answer: " Vinaigrette: \n\nA  temporary emulsion  made from oil, vinegar, and seasonings.\n\n• Not permanent - will separate over time\n• Contains oil and vinegar\n• Needs to be shaken or whisked before use\n• Is an emulsion but temporary"
-    },
+// ─────────────────────────────────────────────────────────────────────────────
+// QUICK QUESTIONS shown on first load
+// ─────────────────────────────────────────────────────────────────────────────
+const quickQuestions = [
+    "What is a salad?",
+    "Classification of salads according to ingredients used",
+    "What are the 4 components of a salad?",
+    "What is the oil-to-vinegar ratio?",
+    "How to wash fruits and vegetables?",
+];
 
-    // MODULE 4: Guidelines in Preparing Salad and Dressing
-    vegetablePastaGuidelines: {
-        keywords: ["vegetable preparation", "cutting vegetables", "cook vegetables", "pasta grain", "accurate cutting"],
-        answer: " Guidelines for Vegetables, Legumes, Grains and Pasta Salads: \n\n✓ Neat and accurate cutting is important for appearance\n✓ Cut vegetables close to serving time to maintain freshness\n✓ Cook vegetables properly - not overcooked\n✓ Cooked vegetables must be drained and chilled\n✓ Pasta and grains should not be overcooked\n✓ Prepare close to serving time"
-    },
+// ─────────────────────────────────────────────────────────────────────────────
+// RESPONSE ENGINE
+// ─────────────────────────────────────────────────────────────────────────────
+const GREETING_RE = /\b(hi|hello|hey|greetings|good morning|good afternoon|good evening)\b/i;
 
-    boundSaladGuidelines: {
-        keywords: ["bound salad preparation", "mayonnaise cooling", "potato cooking", "crisp vegetables bound"],
-        answer: " Guidelines for Bound Salads: \n\n✓ Ingredients must be cooled before adding mayonnaise\n✓ Keep bound salads chilled at all times\n✓ Potatoes should be cooked whole before peeling\n✓ Add crisp vegetables for texture\n✓ Fold dressings in gently to avoid breaking ingredients\n✓ Mix gently and portion properly"
-    },
+const COMPONENTS_RE = /\b(4 components|four components|components of a salad|salad components|parts of a salad)\b/i;
 
-    fruitSaladGuidelines: {
-        keywords: ["fruit salad preparation", "handle fruit", "acidic liquid", "drain fruit", "discoloration"],
-        answer: " Guidelines for Fruit Salads: \n\n✓ Handle fruit salads carefully to avoid bruising\n✓ Dip some fruits in acidic liquid to prevent discoloration\n✓ Prepare vegetables before fruit salads\n✓ Canned fruits must be well drained\n✓ Place attractive fruit pieces on top\n✓ Arrange attractively"
-    },
+function getBotResponse(userMessage: string): string {
+    const lower = userMessage.toLowerCase().trim();
 
-    composedSaladGuidelines: {
-        keywords: ["composed salad preparation", "separate preparation", "season individually", "contrast", "plating"],
-        answer: " Guidelines for Composed Salads: \n\n✓ Prepare ingredients separately\n✓ Season each ingredient individually\n✓ Add delicate ingredients just before serving\n✓ Create contrast in colors and textures\n✓ Proper plating is important\n✓ Careful arrangement required"
-    },
-
-    gelatinSaladGuidelines: {
-        keywords: ["gelatin salad preparation", "gelatin ratio", "dissolve gelatin", "pineapple papaya", "gelatin liquid"],
-        answer: " Guidelines for Gelatin Salads: \n\n✓ Correct gelatin-to-liquid ratio is important\n✓ Unflavored gelatin must be properly dissolved in cold water first, then hot\n✓ Flavored gelatin is dissolved in hot water\n✓ Raw pineapple and papaya are NOT allowed (enzymes prevent setting)\n✓ Fruits must be drained before adding to gelatin\n✓ Must be refrigerated to set properly"
-    },
-
-    balance: {
-        keywords: ["balance in salad", "color balance", "texture balance", "shape size", "flavor balance"],
-        answer: " Balance in Salad Preparation: \n\nBalance ensures salad ingredients are arranged by color, shape, texture, and flavor to enhance appearance.\n\n• Balance color for visual appeal\n• Balance texture for eating experience\n• Arrange by shape and size\n• Balance flavors for overall taste"
-    },
-
-    harmony: {
-        keywords: ["harmony in salad", "ingredients harmonize", "unity dressing", "complement"],
-        answer: " Harmony in Salad Preparation: \n\nHarmony means choosing ingredients that complement each other and the dressing for a unified taste and presentation.\n\n• Ingredients should harmonize with each other\n• Herbs, spices, or sauces add harmony\n• Unity between dressing and ingredients is important\n• Improves overall appeal"
-    },
-
-    color: {
-        keywords: ["color in salad", "colored vegetables", "eye appeal", "visual", "shredded carrots beets"],
-        answer: " Color in Salad Presentation: \n\nColor adds eye appeal; combining different colored ingredients makes the salad visually attractive.\n\n• Different colored vegetables improve appearance\n• Add shredded carrots, beets, or red cabbage\n• Color affects appetite\n• Using only one color makes salad less appealing"
-    },
-
-    texture: {
-        keywords: ["texture in salad", "contrast texture", "crisp vegetables", "tender meat"],
-        answer: " Texture in Salad: \n\nTexture creates contrast between ingredients, such as crisp vegetables and tender meat or fish, making the salad more appealing.\n\n• Important for eating experience\n• Contrast improves the salad\n• Pair crisp vegetables with meat or fish\n• Makes salad more visually appealing"
-    },
-
-    safetyStorage: {
-        keywords: ["storage", "cold plate", "refrigerate", "1-2 hours", "holding time", "temperature control"],
-        answer: " Safety and Hygienic Practices in Storing Salad: \n\n✓ Plate green salads on a cold plate\n✓ Do not plate more than 1–2 hours before serving\n✓ Add dressing to green salads just before serving\n✓ Refrigerate salads until serving\n✓ Salads held too long will wilt and spoil\n✓ Holding boxes should have high humidity\n✓ Proper temperature control prevents spoilage"
-    },
-
-    hygienePreparation: {
-        keywords: ["hygiene", "washing vegetables", "clean hands", "clean utensils", "personal hygiene", "damaged parts", "why wash vegetables", "importance of washing", "why clean utensils", "why use clean equipment"],
-        answer: " Principles and Practices of Hygiene in Preparing Salads: \n\n✓ Wash salad vegetables thoroughly before preparation\n✓ Wash hands before and after handling food\n✓ Use clean utensils and equipment\n✓ Remove damaged or bruised parts\n✓ Food handlers must observe proper personal hygiene\n\nThis helps prevent contamination and ensures safe and healthy salads."
-    },
-
-    washingProduce: {
-        keywords: ["wash fruits", "wash vegetables", "running water", "scrub", "dry produce", "why running water", "how to wash", "washing produce", "clean produce"],
-        answer: " How to Wash Fruits and Vegetables: \n\n✓ Wash fruits and vegetables before use\n✓ Use clean running water when washing produce\n✓ Remove bruised or damaged areas\n✓ Scrub firm produce properly\n✓ Dry washed produce before use\n\nThis helps remove dirt, bacteria, and contaminants, ensuring food safety and cleanliness."
+    // Greeting
+    if (GREETING_RE.test(lower)) {
+        return "Hello! 👨‍🍳 I'm your Salad Course Assistant. I can help you with:\n\n📚 Module 1 — Classification of Salad\n🥗 Module 2 — Components of a Salad\n🧴 Module 3 — Types of Salad Dressing\n✅ Module 4 — Guidelines in Preparing Salad\n\nWhat would you like to learn about?";
     }
-};
 
+    // Special: 4 components shortcut
+    if (COMPONENTS_RE.test(lower)) {
+        return "The 4 components of a salad are:\n\n🥬 Base — the leafy green foundation\n🥩 Body — the main ingredients (vegetables, meat, seafood, fruits)\n🍋 Dressing — liquid or semi-liquid that adds flavor and moisture\n🌿 Garnish — edible decoration that improves appearance\n\nAsk me about any one of these for more details!";
+    }
+
+    // Search knowledge base — check every keyword of every entry
+    for (const entry of knowledgeBase) {
+        for (const keyword of entry.keywords) {
+            if (lower.includes(keyword.toLowerCase())) {
+                return entry.answer;
+            }
+        }
+    }
+
+    // Fallback
+    return "I'm not sure about that yet. Try asking about:\n\n• Salad classification (by ingredients or function)\n• Salad components (base, body, dressing, garnish)\n• Types of dressing (vinaigrette, emulsified, etc.)\n• Preparation guidelines or hygiene practices\n\nOr pick one of the quick questions below! 😊";
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// COMPONENT
+// ─────────────────────────────────────────────────────────────────────────────
 export default function ChatWidget() {
     const [isOpen, setIsOpen] = useState(false);
+    const [messages, setMessages] = useState<Message[]>([
+        {
+            id: 1,
+            text: "Hello! 👨‍🍳 I'm your Salad Course Assistant. I can help you with:\n\n📚 Module 1 — Classification of Salad\n🥗 Module 2 — Components of a Salad\n🧴 Module 3 — Types of Salad Dressing\n✅ Module 4 — Guidelines in Preparing Salad\n\nWhat would you like to learn about?",
+            sender: "bot",
+            timestamp: new Date(),
+        },
+    ]);
+    const [inputMessage, setInputMessage] = useState("");
+    const [isTyping, setIsTyping] = useState(false);
+    const messagesEndRef = useRef<HTMLDivElement>(null);
 
+    // Listen for external open event
     useEffect(() => {
         const openChat = () => setIsOpen(true);
         window.addEventListener("open-chat", openChat);
         return () => window.removeEventListener("open-chat", openChat);
     }, []);
 
-    const [messages, setMessages] = useState<Message[]>([
-        {
-            id: 1,
-            text: "Hello! 👨‍🍳 I'm your Salad Course Assistant. I can help you with:\n\n📚 Module 1 - Classification of Salad\n🥗 Module 2 - Components of a Salad\n🧴 Module 3 - Types of Salad Dressing\n✅ Module 4 - Guidelines in Preparing Salad\n\nWhat would you like to learn about?",
-            sender: "bot",
-            timestamp: new Date()
-        }
-    ]);
-    const [inputMessage, setInputMessage] = useState("");
-    const [isTyping, setIsTyping] = useState(false);
-    const messagesEndRef = useRef<HTMLDivElement>(null);
-
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [messages]);
 
-    const getBotResponse = (userMessage: string): string => {
-        const lowerMessage = userMessage.toLowerCase();
+    const sendMessage = (text: string) => {
+        if (!text.trim()) return;
 
-        // Check for greetings
-        if (lowerMessage.match(/\b(hi|hello|hey|greetings|good morning|good afternoon)\b/)) {
-            return knowledgeBase.greetings[Math.floor(Math.random() * knowledgeBase.greetings.length)];
-        }
-
-        // Special handling for general classification questions
-        if (lowerMessage.match(/\b(classification|classify|how.*classified)\b/) && 
-            lowerMessage.match(/\b(salad|salads)\b/) &&
-            !lowerMessage.includes("ingredient") &&
-            !lowerMessage.includes("function")) {
-            return "Salads can be classified in  two ways :\n\n 1. According to Ingredients Used: \n🥬 Green Salads\n🥕 Vegetables, Grain Legumes & Pasta Salads\n🥄 Bound Salads\n🍎 Fruit Salads\n🎨 Composed Salads\n🍮 Gelatin Salads\n\n 2. According to Function in the Meal: \n🥗 Appetizer Salads\n🍽️ Accompaniment/Side Dish Salads\n🥩 Main Course Salads\n🍋 Separate Course Salads\n🍰 Dessert Salads\n\nWhich classification would you like to learn more about?";
-        }
-
-        // Search through all knowledge base entries
-        for (const [key, data] of Object.entries(knowledgeBase)) {
-            if (key === 'greetings') continue;
-
-            const entry = data as { keywords: string[], answer: string };
-            
-            // Check if any keyword matches the user message
-            const matchedKeyword = entry.keywords.some(keyword =>
-                lowerMessage.includes(keyword.toLowerCase())
-            );
-
-            if (matchedKeyword) {
-                return entry.answer;
-            }
-        }
-
-        // If no match found, provide helpful response
-        const defaultResponses = [
-            "I can help you with:\n\n📚 Module 1 - Classification of salads\n🥗 Module 2 - Components (base, body, garnish, dressing)\n🧴 Module 3 - Types of dressing\n✅ Module 4 - Preparation guidelines\n\nWhich topic interests you?",
-            "I'm here to help with the salad preparation course! Try asking me about:\n\n• Salad classification and types\n• Salad components and structure\n• Different dressing types and ratios\n• Preparation and safety guidelines\n\nWhat would you like to know?",
-            "That's an interesting question! I specialize in salad preparation. I can explain:\n\n✓ How salads are classified\n✓ The 4 main components of salads\n✓ Different types of dressings\n✓ Best practices for preparation\n✓ Safety and hygiene practices\n\nAsk me anything about these topics!"
-        ];
-
-        return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
-    };
-
-    const handleSendMessage = () => {
-        if (inputMessage.trim() === "") return;
-
-        const newUserMessage: Message = {
-            id: messages.length + 1,
-            text: inputMessage,
+        const userMsg: Message = {
+            id: Date.now(),
+            text,
             sender: "user",
-            timestamp: new Date()
+            timestamp: new Date(),
         };
 
-        setMessages([...messages, newUserMessage]);
+        setMessages(prev => [...prev, userMsg]);
         setInputMessage("");
         setIsTyping(true);
 
         setTimeout(() => {
-            const botResponseText = getBotResponse(inputMessage);
-
-            const botResponse: Message = {
-                id: messages.length + 2,
-                text: botResponseText,
+            const botMsg: Message = {
+                id: Date.now() + 1,
+                text: getBotResponse(text),
                 sender: "bot",
-                timestamp: new Date()
+                timestamp: new Date(),
             };
-
-            setMessages(prev => [...prev, botResponse]);
+            setMessages(prev => [...prev, botMsg]);
             setIsTyping(false);
-        }, 800 + Math.random() * 800);
+        }, 600 + Math.random() * 600);
     };
 
     const handleKeyPress = (e: React.KeyboardEvent) => {
         if (e.key === "Enter" && !e.shiftKey) {
             e.preventDefault();
-            handleSendMessage();
+            sendMessage(inputMessage);
         }
     };
 
-    const handleQuickQuestion = (question: string) => {
-        setInputMessage(question);
-    };
+    const showQuickQuestions = messages.length === 1 && !isTyping;
 
     return (
         <>
+            {/* Floating button */}
             {!isOpen && (
                 <button
                     onClick={() => setIsOpen(true)}
-                    className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all flex items-center justify-center z-50 group"
+                    className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all flex items-center justify-center z-50"
                     aria-label="Open chat"
                 >
                     <ChefHat className="w-6 h-6" />
-                    <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white animate-pulse"></span>
+                    <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white animate-pulse" />
                 </button>
             )}
 
+            {/* Chat window */}
             {isOpen && (
                 <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-white rounded-2xl shadow-2xl flex flex-col z-50 border border-green-200">
-                    <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white p-4 rounded-t-2xl flex items-center justify-between">
+
+                    {/* Header */}
+                    <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white p-4 rounded-t-2xl flex items-center justify-between flex-shrink-0">
                         <div className="flex items-center gap-3">
                             <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
                                 <ChefHat className="w-6 h-6 text-green-600" />
@@ -343,59 +714,56 @@ export default function ChatWidget() {
                         </button>
                     </div>
 
-                    <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
-                        {messages.map((message) => (
+                    {/* Messages */}
+                    <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50">
+                        {messages.map(msg => (
                             <div
-                                key={message.id}
-                                className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"}`}
+                                key={msg.id}
+                                className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}
                             >
                                 <div
-                                    className={`max-w-[85%] rounded-2xl px-4 py-2 ${message.sender === "user"
+                                    className={`max-w-[85%] rounded-2xl px-4 py-2.5 ${
+                                        msg.sender === "user"
                                             ? "bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-br-sm"
-                                            : "bg-white text-gray-800 border border-gray-200 rounded-bl-sm"
-                                        }`}
+                                            : "bg-white text-gray-800 border border-gray-200 rounded-bl-sm shadow-sm"
+                                    }`}
                                 >
-                                    <p className="text-sm whitespace-pre-line">{message.text}</p>
-                                    <span
-                                        className={`text-xs mt-1 block ${message.sender === "user" ? "text-green-100" : "text-gray-400"
-                                            }`}
-                                    >
-                                        {message.timestamp.toLocaleTimeString([], {
-                                            hour: "2-digit",
-                                            minute: "2-digit"
-                                        })}
+                                    <p className="text-sm whitespace-pre-line leading-relaxed">{msg.text}</p>
+                                    <span className={`text-xs mt-1 block ${msg.sender === "user" ? "text-green-100" : "text-gray-400"}`}>
+                                        {msg.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
                                     </span>
                                 </div>
                             </div>
                         ))}
 
+                        {/* Typing indicator */}
                         {isTyping && (
                             <div className="flex justify-start">
-                                <div className="bg-white border border-gray-200 rounded-2xl rounded-bl-sm px-4 py-3">
+                                <div className="bg-white border border-gray-200 rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm">
                                     <div className="flex gap-1">
-                                        <div className="w-2 h-2 bg-green-500 rounded-full animate-bounce"></div>
-                                        <div className="w-2 h-2 bg-green-500 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></div>
-                                        <div className="w-2 h-2 bg-green-500 rounded-full animate-bounce" style={{ animationDelay: "0.4s" }}></div>
+                                        {[0, 0.2, 0.4].map((delay, i) => (
+                                            <div
+                                                key={i}
+                                                className="w-2 h-2 bg-green-500 rounded-full animate-bounce"
+                                                style={{ animationDelay: `${delay}s` }}
+                                            />
+                                        ))}
                                     </div>
                                 </div>
                             </div>
                         )}
 
-                        {messages.length === 1 && !isTyping && (
-                            <div className="space-y-2">
-                                <p className="text-xs text-gray-500 text-center mb-2">Quick questions:</p>
-                                {[
-                                    "How are salads classified?",
-                                    "What are the 4 components?",
-                                    "What is vinaigrette?",
-                                    "How to wash vegetables?"
-                                ].map((question, idx) => (
+                        {/* Quick questions */}
+                        {showQuickQuestions && (
+                            <div className="space-y-2 pt-1">
+                                <p className="text-xs text-gray-500 text-center font-semibold">Quick questions:</p>
+                                {quickQuestions.map((q, idx) => (
                                     <button
                                         key={idx}
-                                        onClick={() => handleQuickQuestion(question)}
-                                        className="w-full text-left px-3 py-2 bg-white border border-green-200 rounded-lg text-sm text-gray-700 hover:bg-green-50 hover:border-green-300 transition-colors"
+                                        onClick={() => sendMessage(q)}
+                                        className="w-full text-left px-3 py-2 bg-white border border-green-200 rounded-xl text-sm text-gray-700 hover:bg-green-50 hover:border-green-400 transition-all font-medium"
                                     >
-                                        {question}
+                                        {q}
                                     </button>
                                 ))}
                             </div>
@@ -404,28 +772,27 @@ export default function ChatWidget() {
                         <div ref={messagesEndRef} />
                     </div>
 
-                    <div className="p-4 border-t border-gray-200 bg-white rounded-b-2xl">
+                    {/* Input */}
+                    <div className="p-4 border-t border-gray-200 bg-white rounded-b-2xl flex-shrink-0">
                         <div className="flex gap-2">
                             <input
                                 type="text"
                                 value={inputMessage}
-                                onChange={(e) => setInputMessage(e.target.value)}
+                                onChange={e => setInputMessage(e.target.value)}
                                 onKeyPress={handleKeyPress}
                                 placeholder="Ask about salad preparation..."
-                                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm"
+                                className="flex-1 px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm"
                             />
                             <button
-                                onClick={handleSendMessage}
-                                disabled={inputMessage.trim() === ""}
-                                className="bg-gradient-to-r from-green-600 to-emerald-600 text-white p-2 rounded-lg hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                                onClick={() => sendMessage(inputMessage)}
+                                disabled={!inputMessage.trim()}
+                                className="bg-gradient-to-r from-green-600 to-emerald-600 text-white p-2.5 rounded-xl hover:shadow-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed"
                                 aria-label="Send message"
                             >
                                 <Send className="w-5 h-5" />
                             </button>
                         </div>
-                        <p className="text-xs text-gray-400 mt-2 text-center">
-                            Press Enter to send
-                        </p>
+                        <p className="text-xs text-gray-400 mt-2 text-center">Press Enter to send</p>
                     </div>
                 </div>
             )}

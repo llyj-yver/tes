@@ -52,11 +52,9 @@ const saladComponents = {
     name: "Garnish",
     description: "Decorative and flavorful elements that add visual appeal, texture, and complementary tastes to complete the dish.",
     examples: [
-      { label: "Cucumber Slices", image: "/image/garnish/Cucumber slices.jpg" },
-      { label: "Croutons", image: "/image/garnish/croutons.jpg" },
-      { label: "Nuts", image: "/image/garnish/Nuts.jpeg" },
-      { label: "Seeds", image: "/image/garnish/seeds.jpg" },
-      { label: "Fresh Herbs", image: "/image/garnish/Fresh herbs.jpg" },
+      { label: "Cucumber Slices", image: "/image/mods2/garnish/Cucumber slices .jpeg" },
+      { label: "Croutons", image: "/image/mods2/garnish/Croutons .jpeg" },
+      { label: "Nuts", image: "/image/mods2/garnish/Nuts.jpeg" },
     ],
     nutrients: [
       { name: "Antioxidants", description: "Fights inflammation and cell damage" },
@@ -73,9 +71,9 @@ const saladComponents = {
     name: "Dressing",
     description: "The liquid seasoning that brings all components together, adding moisture, flavor, and helping to unify the salad's taste profile.",
     examples: [
-      { label: "Vinaigrette", image: "/image/dressing/vinaigrette.png" },
-      { label: "Ranch", image: "/image/dressing/RANCH.png" },
-      { label: "Caesar", image: "/image/dressing/CAESAR.png" },
+      { label: "Vinaigrette", image: "/image/mods2/dressing/vinaigrette.png" },
+      { label: "Ranch", image: "/image/mods2/dressing/RANCH .png" },
+      { label: "Caesar", image: "/image/mods2/dressing/CAESAR.png" },
     ],
     nutrients: [
       { name: "Healthy Fats", description: "Oil-based dressings support heart health" },
