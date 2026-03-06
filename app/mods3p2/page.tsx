@@ -709,7 +709,7 @@ export default function DressingGame() {
               ))}
             </div>
             <a
-              href="/module3"
+              href="/navigation"
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = "scale(1.06)"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = "scale(1)"; }}
               style={{ display: "inline-block", padding: "16px 56px", borderRadius: 50, background: "linear-gradient(135deg, #fde047, #a3e635)", color: "#1a1a1a", fontSize: 14, fontWeight: 800, letterSpacing: 2, textTransform: "uppercase", textDecoration: "none", boxShadow: "0 12px 48px rgba(163,230,53,0.4)", transition: "transform 0.2s", fontFamily: "inherit" }}

@@ -11,32 +11,78 @@ const saladComponents = {
   base: {
     name: "Base",
     description: "The foundation of your salad, typically made of leafy greens that provide the primary texture and serve as the canvas for other ingredients.",
-    examples: ["Lettuce", "Spinach", "Arugula", "Mixed Greens", "Kale"],
-    nutrients: ["Fiber", "Vitamin A", "Vitamin C", "Vitamin K", "Folate", "Iron", "Antioxidants"],
+    examples: [
+      { label: "Lettuce", image: "/image/mods2/base/lettuce.jpg" },
+      { label: "Spinach", image: "/image/mods2/base/spinach.jpg" },
+      { label: "Arugula", image: "/image/mods2/base/arugula.jpg" },
+    ],
+    nutrients: [
+      { name: "Fiber", description: "Supports healthy digestion" },
+      { name: "Vitamin A", description: "Boosts eye and skin health" },
+      { name: "Vitamin C", description: "Strengthens the immune system" },
+      { name: "Vitamin K", description: "Essential for blood clotting" },
+      { name: "Folate", description: "Supports cell growth and repair" },
+      { name: "Iron", description: "Carries oxygen in the blood" },
+      { name: "Antioxidants", description: "Protects cells from damage" },
+    ],
     nutrientDescription: "Provides essential vitamins, minerals, and fiber that support digestion, immunity, and overall health.",
     color: "from-emerald-500 to-green-600"
   },
   body: {
     name: "Body",
     description: "The main substance of the salad that adds bulk, protein, and variety. This is where the salad gets its character and nutritional value.",
-    examples: ["Grilled Chicken", "Chickpeas", "Quinoa", "Tofu", "Hard-boiled Eggs", "Cheese"],
-    nutrients: ["Protein", "Healthy Fats", "Iron", "Calcium", "Magnesium", "B Vitamins", "Complex Carbohydrates"],
+    examples: [
+      { label: "Grilled Chicken", image: "/image/mods2/body/Grilled-Chicken.jpg" },
+      { label: "Tofu", image: "/image/mods2/body/tofu.jpg" },
+      { label: "Hard-boiled Eggs", image: "/image/mods2/body/Hard-boiled Eggs.jpeg" },
+    ],
+    nutrients: [
+      { name: "Protein", description: "Builds and repairs muscle tissue" },
+      { name: "Healthy Fats", description: "Fuels the brain and body" },
+      { name: "Iron", description: "Prevents fatigue and anemia" },
+      { name: "Calcium", description: "Strengthens bones and teeth" },
+      { name: "Magnesium", description: "Regulates nerve and muscle function" },
+      { name: "B Vitamins", description: "Converts food into energy" },
+      { name: "Complex Carbohydrates", description: "Provides sustained, steady energy" },
+    ],
     nutrientDescription: "Supplies protein and key nutrients that help build muscles, provide energy, and keep you full longer.",
     color: "from-amber-500 to-orange-600"
   },
   garnish: {
     name: "Garnish",
     description: "Decorative and flavorful elements that add visual appeal, texture, and complementary tastes to complete the dish.",
-    examples: ["Cherry Tomatoes", "Cucumber Slices", "Croutons", "Nuts", "Seeds", "Fresh Herbs"],
-    nutrients: ["Antioxidants", "Vitamin C", "Vitamin E", "Fiber", "Healthy Fats (from nuts & seeds)", "Phytonutrients"],
+    examples: [
+      { label: "Cucumber Slices", image: "/image/garnish/Cucumber slices.jpg" },
+      { label: "Croutons", image: "/image/garnish/croutons.jpg" },
+      { label: "Nuts", image: "/image/garnish/Nuts.jpeg" },
+      { label: "Seeds", image: "/image/garnish/seeds.jpg" },
+      { label: "Fresh Herbs", image: "/image/garnish/Fresh herbs.jpg" },
+    ],
+    nutrients: [
+      { name: "Antioxidants", description: "Fights inflammation and cell damage" },
+      { name: "Vitamin C", description: "Boosts immunity and skin repair" },
+      { name: "Vitamin E", description: "Protects cells from oxidative stress" },
+      { name: "Fiber", description: "Aids digestion and keeps you full" },
+      { name: "Healthy Fats", description: "From nuts and seeds for heart health" },
+      { name: "Phytonutrients", description: "Plant compounds that prevent disease" },
+    ],
     nutrientDescription: "Adds extra vitamins, antioxidants, and healthy fats that enhance flavor and boost nutritional value.",
     color: "from-rose-500 to-pink-600"
   },
   dressing: {
     name: "Dressing",
     description: "The liquid seasoning that brings all components together, adding moisture, flavor, and helping to unify the salad's taste profile.",
-    examples: ["Vinaigrette", "Ranch", "Caesar", "Balsamic", "Olive Oil & Lemon"],
-    nutrients: ["Healthy Fats (if oil-based)", "Vitamin E", "Omega-3 (if made with certain oils)", "Small amounts of vitamins depending on ingredients"],
+    examples: [
+      { label: "Vinaigrette", image: "/image/dressing/vinaigrette.png" },
+      { label: "Ranch", image: "/image/dressing/RANCH.png" },
+      { label: "Caesar", image: "/image/dressing/CAESAR.png" },
+    ],
+    nutrients: [
+      { name: "Healthy Fats", description: "Oil-based dressings support heart health" },
+      { name: "Vitamin E", description: "Antioxidant found in olive oil" },
+      { name: "Omega-3", description: "Reduces inflammation in the body" },
+      { name: "Polyphenols", description: "Plant compounds with anti-inflammatory benefits" },
+    ],
     nutrientDescription: "Provides healthy fats and enhances nutrient absorption, especially fat-soluble vitamins.",
     color: "from-yellow-500 to-amber-600"
   }
@@ -209,13 +255,12 @@ const Module2 = () => {
                   <button
                     key={spot.id}
                     onClick={() => handleHotspotClick(spot.id)}
-                    className={`flex items-center gap-1.5 px-4 py-2 rounded-2xl text-sm font-extrabold transition-all border-2 ${
-                      activeHotspot === spot.id
-                        ? 'bg-gradient-to-r from-yellow-300 via-lime-400 to-green-400 text-green-900 border-green-400 shadow-md'
-                        : viewedComponents.has(spot.id)
-                          ? 'bg-green-50 text-green-700 border-green-300 hover:border-green-500'
-                          : 'bg-white text-green-600 border-green-200 hover:border-green-400'
-                    }`}
+                    className={`flex items-center gap-1.5 px-4 py-2 rounded-2xl text-sm font-extrabold transition-all border-2 ${activeHotspot === spot.id
+                      ? 'bg-gradient-to-r from-yellow-300 via-lime-400 to-green-400 text-green-900 border-green-400 shadow-md'
+                      : viewedComponents.has(spot.id)
+                        ? 'bg-green-50 text-green-700 border-green-300 hover:border-green-500'
+                        : 'bg-white text-green-600 border-green-200 hover:border-green-400'
+                      }`}
                   >
                     {viewedComponents.has(spot.id) && <CheckCircle2 className="w-3.5 h-3.5" />}
                     {spot.label}
@@ -271,6 +316,7 @@ const Module2 = () => {
                       </motion.p>
 
                       {/* Examples */}
+                      {/* Examples */}
                       <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -278,17 +324,27 @@ const Module2 = () => {
                         className="bg-gradient-to-br from-green-50 to-lime-50 rounded-2xl p-5 border-2 border-green-200 mb-4"
                       >
                         <span className="font-extrabold text-green-900 text-base block mb-3">Examples:</span>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="grid grid-cols-3 gap-2">
                           {component.examples.map((example, idx) => (
-                            <motion.span
+                            <motion.div
                               key={idx}
                               initial={{ opacity: 0, scale: 0.8 }}
                               animate={{ opacity: 1, scale: 1 }}
                               transition={{ delay: 0.3 + idx * 0.05 }}
-                              className="bg-white text-green-700 px-3 py-1.5 rounded-xl text-sm font-semibold border-2 border-green-200 shadow-sm hover:border-green-400 transition-colors"
+                              className="flex flex-col items-center gap-1.5 bg-white rounded-xl border-2 border-green-200 shadow-sm hover:border-green-400 hover:shadow-md transition-all overflow-hidden group"
                             >
-                              {example}
-                            </motion.span>
+                              <div className="relative w-full aspect-square overflow-hidden">
+                                <Image
+                                  src={example.image}
+                                  alt={example.label}
+                                  fill
+                                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                              </div>
+                              <span className="text-green-700 text-xs font-semibold pb-2 px-1 text-center leading-tight">
+                                {example.label}
+                              </span>
+                            </motion.div>
                           ))}
                         </div>
                       </motion.div>
@@ -301,24 +357,29 @@ const Module2 = () => {
                         className="bg-gradient-to-br from-emerald-50 to-lime-50 rounded-2xl p-5 border-2 border-emerald-200"
                       >
                         <span className="font-extrabold text-green-900 text-base block mb-3">Nutrients:</span>
-                        <div className="flex flex-wrap gap-2 mb-3">
+                        <div className="flex flex-col gap-2 mb-3">
                           {component.nutrients.map((nutrient, idx) => (
-                            <motion.span
+                            <motion.div
                               key={idx}
-                              initial={{ opacity: 0, scale: 0.8 }}
-                              animate={{ opacity: 1, scale: 1 }}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: 0.4 + idx * 0.05 }}
-                              className="bg-white text-emerald-700 px-3 py-1.5 rounded-xl text-sm font-semibold border-2 border-emerald-200 shadow-sm hover:border-emerald-400 transition-colors"
+                              className="flex items-start gap-2"
                             >
-                              {nutrient}
-                            </motion.span>
+                              <span className="text-emerald-700 font-extrabold text-sm min-w-fit">
+                                {nutrient.name}:
+                              </span>
+                              <span className="text-green-600 text-sm leading-snug">
+                                {nutrient.description}
+                              </span>
+                            </motion.div>
                           ))}
                         </div>
                         <motion.p
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ delay: 0.5 }}
-                          className="text-green-700 text-sm leading-relaxed italic"
+                          className="text-green-700 text-sm leading-relaxed italic border-t border-emerald-200 pt-3 mt-1"
                         >
                           {component.nutrientDescription}
                         </motion.p>
@@ -380,11 +441,10 @@ const Module2 = () => {
             disabled={!allViewed}
             whileHover={allViewed ? { scale: 1.05, y: -2 } : {}}
             whileTap={allViewed ? { scale: 0.95 } : {}}
-            className={`px-10 py-4 rounded-2xl font-extrabold text-lg flex items-center gap-3 transition-all ${
-              allViewed
-                ? 'bg-gradient-to-r from-yellow-300 via-lime-400 to-green-400 text-green-900 shadow-xl hover:shadow-2xl hover:shadow-lime-500/30'
-                : 'bg-gray-100 text-gray-400 cursor-not-allowed border-2 border-gray-200'
-            }`}
+            className={`px-10 py-4 rounded-2xl font-extrabold text-lg flex items-center gap-3 transition-all ${allViewed
+              ? 'bg-gradient-to-r from-yellow-300 via-lime-400 to-green-400 text-green-900 shadow-xl hover:shadow-2xl hover:shadow-lime-500/30'
+              : 'bg-gray-100 text-gray-400 cursor-not-allowed border-2 border-gray-200'
+              }`}
           >
             <CheckCircle2 className="h-6 w-6" />
             {allViewed ? 'Complete Module 2 →' : 'View all components to continue'}

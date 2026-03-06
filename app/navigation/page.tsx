@@ -18,6 +18,7 @@ import {
 import { useModules } from "../components/ModuleContext";
 import ChatWidget from "../components/ChatWidget";
 import ResearchersButton from "../components/ResearchersButton";
+import { motion } from "framer-motion";
 
 // ─────────────────────────────────────────────
 // REFERENCES DATA — edit these to your actual sources
@@ -361,6 +362,36 @@ export default function NavigationPage() {
                                 </div>
                             ))}
 
+                            {/* ── Activity Button ── */}
+                            {/* Activity Card */}
+                            <div className="bg-gradient-to-br from-white to-lime-50 rounded-3xl shadow-sm border-2 border-lime-300 overflow-hidden hover:shadow-lg transition-all">
+                                <div className="p-6">
+                                    <div className="flex items-start gap-5">
+                                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-lime-400 to-green-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                                            <span className="text-2xl">🏆</span>
+                                        </div>
+                                        <div className="flex-1">
+                                            <div className="flex items-center gap-2 mb-1">
+                                                <span className="text-xs font-extrabold text-lime-500 uppercase tracking-wider">
+                                                    Practical Assessment
+                                                </span>
+                                            </div>
+                                            <h3 className="text-xl font-extrabold text-green-900 mb-2">Activity</h3>
+                                            <p className="text-green-700 mb-5 leading-relaxed">
+                                                Create and present a well-balanced salad demonstrating your understanding of classification, components, and dressing preparation.
+                                            </p>
+                                            <button
+                                                onClick={() => window.location.href = "../activity"}
+                                                className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-yellow-300 via-lime-400 to-green-400 text-green-900 font-extrabold rounded-2xl hover:shadow-xl hover:shadow-lime-500/30 hover:scale-105 transition-all"
+                                            >
+                                                <span>🏆</span>
+                                                Take Activity
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             {/* Final Quiz Card */}
                             <div className="bg-gradient-to-br from-white to-yellow-50 rounded-3xl shadow-sm border-2 border-yellow-300 overflow-hidden hover:shadow-lg transition-all">
                                 <div className="p-6">
@@ -426,7 +457,7 @@ export default function NavigationPage() {
                                 </div>
                                 <div className="p-5">
                                     <p className="text-green-700 text-sm font-medium mb-4 leading-relaxed">
-                                        This course was developed by a dedicated team of culinary educators and researchers.
+                                        This website was developed by Bachelor of Technology and Livelihood Education major in Home Economics students from the University of Rizal System – Morong Campus to provide structured and educational content about salads and salad dressings.
                                     </p>
                                     {/* Drop your component right here */}
                                     <ResearchersButton />

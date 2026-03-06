@@ -64,10 +64,6 @@ export default function HomePage() {
               {/* Stats */}
               <div className="flex flex-wrap items-center gap-4">
                 <div className="flex items-center gap-2 text-white bg-white/10 backdrop-blur-md px-5 py-3 rounded-full border border-white/20">
-                  <Award className="w-5 h-5 text-yellow-300" />
-                  <span className="font-semibold">Beginner Friendly</span>
-                </div>
-                <div className="flex items-center gap-2 text-white bg-white/10 backdrop-blur-md px-5 py-3 rounded-full border border-white/20">
                   <CheckCircle2 className="w-5 h-5 text-lime-300" />
                   <span className="font-semibold">2025 Edition</span>
                 </div>
@@ -166,21 +162,13 @@ export default function HomePage() {
         </div>
 
         {/* Course Highlights */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           <div className="group bg-gradient-to-br from-white to-green-50 p-8 rounded-3xl border-2 border-green-200 hover:border-green-400 hover:shadow-2xl transition-all hover:-translate-y-2">
             <div className="w-16 h-16 bg-gradient-to-br from-lime-400 to-green-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
               <BookOpen className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-bold text-green-900 mb-3">Structured Learning</h3>
             <p className="text-green-700 leading-relaxed">From basics of salad components to proper preparation guidelines.</p>
-          </div>
-
-          <div className="group bg-gradient-to-br from-white to-yellow-50 p-8 rounded-3xl border-2 border-yellow-200 hover:border-yellow-400 hover:shadow-2xl transition-all hover:-translate-y-2">
-            <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
-              <Award className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-2xl font-bold text-yellow-900 mb-3">Certificate</h3>
-            <p className="text-yellow-800 leading-relaxed">Earn a certificate upon completion to showcase your skills</p>
           </div>
 
           <div className="group bg-gradient-to-br from-white to-lime-50 p-8 rounded-3xl border-2 border-lime-200 hover:border-lime-400 hover:shadow-2xl transition-all hover:-translate-y-2">
@@ -227,8 +215,7 @@ export default function HomePage() {
                   "4 comprehensive modules",
                   "2 hours of content",
                   "Practical demonstrations",
-                  "Final assessment quiz",
-                  "Certificate of completion"
+                  "Final assessment quiz"
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3">
                     <div className="w-7 h-7 rounded-full bg-gradient-to-br from-lime-400 to-green-500 flex items-center justify-center flex-shrink-0 shadow-md">

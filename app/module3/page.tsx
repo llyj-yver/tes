@@ -657,7 +657,7 @@ export default function DressingFlipbook() {
               <button
                 onClick={() => {
                   setCompleted((prev) => new Set([...prev, dressing.id]));
-                  window.location.href = "/navigation";
+                  window.location.href = "/mods3p2";
                 }}
                 className="flex items-center gap-2 px-6 py-3 rounded-2xl font-extrabold text-sm transition-all hover:scale-105 hover:shadow-xl text-green-900"
                 style={{ background: "linear-gradient(to right, #fde68a, #bef264, #4ade80)" }}
