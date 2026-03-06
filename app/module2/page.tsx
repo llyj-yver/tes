@@ -33,7 +33,7 @@ const saladComponents = {
     description: "The main substance of the salad that adds bulk, protein, and variety. This is where the salad gets its character and nutritional value.",
     examples: [
       { label: "Grilled Chicken", image: "/image/mods2/body/Grilled-Chicken.jpg" },
-      { label: "Tofu", image: "/image/mods2/body/tofu.jpg" },
+      { label: "Tofu", image: "/image/mods2/body/Tofu.jpg" },
       { label: "Hard-boiled Eggs", image: "/image/mods2/body/Hard-boiled Eggs.jpeg" },
     ],
     nutrients: [
