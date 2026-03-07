@@ -651,33 +651,6 @@ export default function NavigationPage() {
                     <div className="lg:col-span-1">
                         <div className="sticky top-8 space-y-4">
 
-                            {/* Progress Card */}
-                            <div className="bg-white rounded-3xl shadow-sm border-2 border-green-200 overflow-hidden">
-                                <div className="w-full h-48 bg-gradient-to-br from-green-100 to-emerald-100 flex items-center justify-center relative overflow-hidden">
-                                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(74,222,128,0.2),transparent_70%)]" />
-                                    <span className="text-6xl relative z-10">🥗</span>
-                                </div>
-                                <div className="p-6">
-                                    <h3 className="font-extrabold text-xl text-green-900 mb-4">Your Progress</h3>
-                                    <div className="space-y-3 mb-6">
-                                        <div className="flex justify-between text-sm">
-                                            <span className="text-green-600 font-medium">Completed</span>
-                                            <span className="font-extrabold text-green-700">{completedCount}/{modules.length}</span>
-                                        </div>
-                                        <div className="flex justify-between text-sm">
-                                            <span className="text-green-600 font-medium">Time Invested</span>
-                                            <span className="font-extrabold text-green-700">0h 0m</span>
-                                        </div>
-                                    </div>
-                                    <div className="w-full bg-green-100 rounded-full h-2 mb-6">
-                                        <div className="bg-gradient-to-r from-lime-500 to-green-600 h-2 rounded-full transition-all duration-500" style={{ width: `${progressPercent}%` }} />
-                                    </div>
-                                    <button className="w-full py-3 bg-gradient-to-r from-yellow-300 via-lime-400 to-green-400 text-green-900 font-extrabold rounded-2xl hover:shadow-xl hover:shadow-lime-500/30 transition-all hover:scale-105">
-                                        Continue Learning
-                                    </button>
-                                </div>
-                            </div>
-
                             {/* ── Researchers sidebar card ── */}
                             <div className="bg-gradient-to-br from-white to-lime-50 rounded-3xl border-2 border-green-200 hover:border-green-400 hover:shadow-lg transition-all overflow-hidden">
                                 <div className="bg-gradient-to-r from-lime-600 via-green-600 to-emerald-600 px-5 py-3 flex items-center gap-2">
