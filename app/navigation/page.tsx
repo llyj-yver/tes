@@ -480,10 +480,6 @@ export default function NavigationPage() {
                                     <Clock className="w-5 h-5 text-yellow-300" />
                                     <span className="font-semibold">2 Hours Total</span>
                                 </div>
-                                <div className="flex items-center gap-2 text-white bg-white/10 backdrop-blur-md px-5 py-3 rounded-full border border-white/20">
-                                    <Award className="w-5 h-5 text-lime-300" />
-                                    <span className="font-semibold">Certificate Included</span>
-                                </div>
                             </div>
                         </div>
 

@@ -35,37 +35,37 @@ const dressingData: DressingType[] = [
       {
         title: "Gather Your Ingredients",
         description: "You'll need good quality olive oil, vinegar (red wine, white, or balsamic), and a pinch of salt. The ratio is always 3 parts oil to 1 part vinegar.",
-        visual: "🫒 🍶 🧂",
+        visual: "/image/mods3/OIL & VINEGAR DRESSING/step 1.png",
         tip: "Quality matters — use extra virgin olive oil for the best flavor.",
       },
       {
         title: "Measure Your Oil",
         description: "Pour 3 tablespoons of olive oil into a small bowl or jar. Olive oil forms the smooth, rich base of the dressing.",
-        visual: "🥄 → 🥣",
+        visual: "/image/mods3/OIL & VINEGAR DRESSING/step 2.png",
         tip: "Use a clear jar so you can see the layers before mixing.",
       },
       {
         title: "Add the Vinegar",
         description: "Add 1 tablespoon of vinegar. The acidity of the vinegar balances the richness of the oil and brightens all the flavors.",
-        visual: "🍶 → 🥣",
+        visual: "/image/mods3/OIL & VINEGAR DRESSING/step 3.png",
         tip: "Balsamic gives sweetness; red wine vinegar gives sharpness.",
       },
       {
         title: "Season with Salt",
         description: "Add a generous pinch of salt. Salt is essential — it draws out the flavors and ties the dressing together.",
-        visual: "🧂 ✨",
+        visual: "/image/mods3/OIL & VINEGAR DRESSING/step 4.png",
         tip: "Taste as you go — seasoning is personal!",
       },
       {
         title: "Shake or Stir",
         description: "If using a jar, seal and shake vigorously for 10 seconds. If using a bowl, whisk quickly. The mixture will briefly combine but will separate — that's normal!",
-        visual: "🫙 ↔️ 🫙",
+        visual: "/image/mods3/OIL & VINEGAR DRESSING/step 5.png",
         tip: "This is a temporary emulsion — shake again right before serving.",
       },
       {
         title: "Ready to Serve!",
         description: "Drizzle immediately over your salad. Oil and vinegar dressing works best on hearty greens like Italian salad, Greek salad, or a simple house salad.",
-        visual: "🥗 ✅",
+        visual: "/image/mods3/OIL & VINEGAR DRESSING/step 6.png",
         tip: "Dress the salad just before serving so greens don't wilt.",
       },
     ],
@@ -82,37 +82,37 @@ const dressingData: DressingType[] = [
       {
         title: "Gather Your Ingredients",
         description: "You'll need egg yolk (the emulsifier), oil, and lemon juice. The egg yolk is the secret — it contains lecithin which permanently bonds oil and water.",
-        visual: "🥚 🫒 🍋",
+        visual: "/image/mods3/EMULSIFIED DRESSING/1.jpeg",
         tip: "Use room temperature eggs for smoother emulsification.",
       },
       {
         title: "Start with the Egg Yolk",
         description: "Place one egg yolk in a bowl. This is your emulsifier — it will act as the bridge between the oil and the lemon juice.",
-        visual: "🥚 → 🥣",
+        visual: "/image/mods3/EMULSIFIED DRESSING/2.jpeg",
         tip: "Separate yolk carefully — no egg white should get in.",
       },
       {
         title: "Add Lemon Juice",
         description: "Add a tablespoon of fresh lemon juice to the yolk and whisk together. This starts building the base of the dressing.",
-        visual: "🍋 + 🥚 → 🌀",
+        visual: "/image/mods3/EMULSIFIED DRESSING/3.jpeg",
         tip: "Fresh lemon is much better than bottled here.",
       },
       {
         title: "Drizzle in Oil — Slowly!",
         description: "This is the critical step. Add oil ONE DROP AT A TIME while whisking constantly. Going too fast breaks the emulsion. Slowly increase to a thin stream.",
-        visual: "🫒 💧💧💧 → 🌀",
+        visual: "/image/mods3/EMULSIFIED DRESSING/4.jpeg",
         tip: "Patience is everything — rushing this step will cause it to break.",
       },
       {
         title: "Watch it Thicken",
         description: "As you keep whisking and adding oil, the dressing will suddenly thicken and turn creamy and pale. This is emulsification happening in real time!",
-        visual: "💛 → 🍦",
+        visual: "/image/mods3/EMULSIFIED DRESSING/5.jpeg",
         tip: "If it breaks (goes oily), add another yolk and whisk again slowly.",
       },
       {
         title: "Ready to Serve!",
         description: "Your emulsified dressing is stable — it won't separate! Use it for Caesar salad, Thousand Island, or Honey Mustard dressings.",
-        visual: "🥬 ✅",
+        visual: "/image/mods3/EMULSIFIED DRESSING/final picture_.jpg",
         tip: "Refrigerate and use within 2 days since it contains raw egg.",
       },
     ],
@@ -129,37 +129,37 @@ const dressingData: DressingType[] = [
       {
         title: "Gather Your Ingredients",
         description: "For yogurt-based dressings, you'll need plain yogurt, fresh herbs, and lemon juice. These dressings are lighter, tangy, and incredibly fresh.",
-        visual: "🥛 🌿 🍋",
+        visual: "/image/mods3/OTHER DRESSING/step 1.png",
         tip: "Greek yogurt makes a thicker, creamier dressing.",
       },
       {
         title: "Spoon the Yogurt",
         description: "Add 3–4 tablespoons of plain yogurt to a bowl. Yogurt replaces oil as the base, making this a lighter alternative to traditional dressings.",
-        visual: "🥛 → 🥣",
+        visual: "/image/mods3/OTHER DRESSING/step 2.png",
         tip: "Full-fat yogurt gives the best texture and flavor.",
       },
       {
         title: "Chop Fresh Herbs",
         description: "Finely chop your herbs — parsley, mint, dill, or cilantro all work beautifully. Fresh herbs are what makes this dressing vibrant and alive.",
-        visual: "🌿 🔪 ✨",
+        visual: "/image/mods3/OTHER DRESSING/step 3.png",
         tip: "Add herbs at the end to preserve their bright green color.",
       },
       {
         title: "Add Lemon Juice",
         description: "Squeeze in fresh lemon juice. The acidity brightens the yogurt and brings all the flavors together — this is what makes it taste fresh, not flat.",
-        visual: "🍋 → 🥣",
+        visual: "/image/mods3/OTHER DRESSING/step 4.png",
         tip: "Start with half a lemon and taste before adding more.",
       },
       {
         title: "Mix & Season",
         description: "Stir everything together gently. Season with salt and pepper. Unlike oil-based dressings, this stays naturally combined — no shaking needed!",
-        visual: "🥄 🌀 🧂",
+        visual: "/image/mods3/OTHER DRESSING/step 5.png",
         tip: "Let it sit for 5 minutes before serving so flavors meld.",
       },
       {
         title: "Ready to Serve!",
         description: "Perfect for Tahini salad, Yogurt Herb, or Avocado Lime dressings. These pair beautifully with Mediterranean and Middle Eastern style salads.",
-        visual: "🥙 ✅",
+        visual: "/image/mods3/OTHER DRESSING/step 6.png",
         tip: "Also works as a dip for pita or vegetables!",
       },
     ],
@@ -176,37 +176,37 @@ const dressingData: DressingType[] = [
       {
         title: "Gather Your Ingredients",
         description: "You'll need oil, vinegar, and mustard. Mustard acts as a partial emulsifier — it helps the dressing stay mixed longer than plain oil and vinegar, but it will still eventually separate.",
-        visual: "🫒 🍶 🌭",
+        visual: "/image/mods3/TEMPORARY EMULSION/step 1.png",
         tip: "Dijon mustard works best for a smoother, more stable mix.",
       },
       {
         title: "Add Mustard First",
         description: "Place a teaspoon of Dijon mustard in a jar. The mustard's lecithin will help temporarily bind the oil and vinegar together.",
-        visual: "🌭 → 🫙",
+        visual: "/image/mods3/TEMPORARY EMULSION/step 2.png",
         tip: "Mustard is the key — don't skip it for a proper vinaigrette.",
       },
       {
         title: "Add Vinegar",
         description: "Pour in 1 tablespoon of vinegar. Red wine vinegar is classic for a French vinaigrette, giving it a bright, sharp character.",
-        visual: "🍶 → 🫙",
+        visual: "/image/mods3/TEMPORARY EMULSION/step 3.png",
         tip: "Champagne vinegar gives a lighter, more elegant result.",
       },
       {
         title: "Add Oil",
         description: "Pour in 3 tablespoons of oil. Unlike an emulsified dressing, you can add it all at once — we're not building a permanent bond here.",
-        visual: "🫒 → 🫙",
+        visual: "/image/mods3/TEMPORARY EMULSION/step 4.png",
         tip: "A neutral oil like sunflower lets the vinegar flavor shine.",
       },
       {
         title: "Shake Vigorously",
         description: "Seal the jar and shake hard for 15–20 seconds. Watch it combine into a cloudy, unified dressing. If you leave it, it will slowly separate back.",
-        visual: "🫙 ↔️↔️↔️ 🫙",
+        visual: "/image/mods3/TEMPORARY EMULSION/step 5.png",
         tip: "The cloudiness means the emulsion is working!",
       },
       {
         title: "Ready to Serve — Use Immediately!",
         description: "Pour straight away over your salad. This is perfect for Vinaigrette, French Dressing, or Citrus Vinaigrette. Shake again if it separates.",
-        visual: "🥗 ⚡ ✅",
+        visual: "/image/mods3/TEMPORARY EMULSION/step 6.png",
         tip: "Make it fresh each time for the best flavor.",
       },
     ],
@@ -223,37 +223,37 @@ const dressingData: DressingType[] = [
       {
         title: "Gather Your Ingredients",
         description: "You'll need egg yolk, oil, and vinegar. Like emulsified dressing, egg yolk is the hero here — but the technique creates an even more stable, permanent texture.",
-        visual: "🥚 🫒 🍶",
+        visual: "/image/mods3/PERMANENT DRESSING/step 1.jpg",
         tip: "This is the base technique for making mayonnaise!",
       },
       {
         title: "Whisk the Egg Yolk",
         description: "Start with just the egg yolk in a large bowl. Whisk it alone for 30 seconds until it lightens in color slightly.",
-        visual: "🥚 🌀 → 💛",
+        visual: "/image/mods3/PERMANENT DRESSING/step 2.jpg",
         tip: "A wider bowl gives you more control during whisking.",
       },
       {
         title: "Add Vinegar",
         description: "Add a teaspoon of vinegar and whisk into the yolk. This helps stabilize the emulsion from the start.",
-        visual: "🍶 + 💛 → 🌀",
+        visual: "/image/mods3/PERMANENT DRESSING/step 3.jpg",
         tip: "White wine vinegar is classic for mayonnaise-style dressings.",
       },
       {
         title: "Add Oil — Drop by Drop",
         description: "Very slowly drizzle in oil while whisking constantly. This is even more critical than emulsified — go one drop at a time at first. The mixture must absorb each drop before you add more.",
-        visual: "💧💧💧 🌀 → 🍦",
+        visual: "/image/mods3/PERMANENT DRESSING/step 4.jpg",
         tip: "Use a squeeze bottle for perfect control over the oil flow.",
       },
       {
         title: "It Becomes Thick & Stable",
         description: "The dressing becomes very thick — almost like a cream. Unlike temporary emulsion, this will NOT separate even when left to sit. The bond is permanent.",
-        visual: "🍦 ≠ 💧",
+        visual: "/image/mods3/PERMANENT DRESSING/step 5.jpg",
         tip: "If it gets too thick, whisk in a few drops of warm water.",
       },
       {
         title: "Ready to Store & Serve!",
         description: "This dressing keeps in the fridge for up to a week without separating. Use it as the base for Ranch, Blue Cheese, or Green Goddess dressings.",
-        visual: "🧀 🌿 ✅",
+        visual: "/image/mods3/PERMANENT DRESSING/step 6.jpg",
         tip: "Add herbs, garlic, or cheese to customize the flavor.",
       },
     ],
@@ -270,37 +270,37 @@ const dressingData: DressingType[] = [
       {
         title: "Gather Your Ingredients",
         description: "You'll need flour, eggs, sugar, and vinegar. Unlike other dressings, this one is cooked on a stove — the heat activates the starch and eggs to create a smooth, pudding-like texture.",
-        visual: "🌾 🥚 🍬 🍶",
+        visual: "/image/mods3/COOKED SALAD DRESSING/step 1.png",
         tip: "This is the only dressing that needs a pot and heat!",
       },
       {
         title: "Mix Dry Ingredients",
         description: "Whisk together flour and sugar in a small saucepan. The flour is your thickener — it will absorb moisture and swell when heated.",
-        visual: "🌾 + 🍬 → 🥣",
+        visual: "/image/mods3/COOKED SALAD DRESSING/step 2.png",
         tip: "Sift the flour first to avoid lumps in your dressing.",
       },
       {
         title: "Add Eggs & Vinegar",
         description: "Beat the eggs and add them to the pan along with the vinegar. Stir everything together into a smooth, liquid mixture before turning on the heat.",
-        visual: "🥚 🍶 → 🌀",
+        visual: "/image/mods3/COOKED SALAD DRESSING/step 3.png",
         tip: "Mix cold so the eggs don't scramble before cooking.",
       },
       {
         title: "Cook Over Medium Heat",
         description: "Place the pan on medium heat and stir constantly with a wooden spoon or whisk. Never stop stirring — the bottom can scorch quickly.",
-        visual: "🔥 🥄 🌀",
+        visual: "/image/mods3/COOKED SALAD DRESSING/step 4.png",
         tip: "Low and slow wins — high heat will curdle the eggs.",
       },
       {
         title: "Watch it Thicken",
         description: "After 5–7 minutes of stirring, the mixture will suddenly thicken into a smooth, glossy, pudding-like consistency. Remove from heat immediately.",
-        visual: "🌡️ → 🍮",
+        visual: "/image/mods3/COOKED SALAD DRESSING/step 5.png",
         tip: "It thickens fast at the end — don't walk away!",
       },
       {
         title: "Cool & Serve!",
         description: "Let the dressing cool slightly before using. It's perfect for Fruit Salad, Waldorf, Ambrosia, or Boiled Dressing — sweet salads that need a gentle, warm flavor.",
-        visual: "🍇 🍎 ✅",
+        visual: "/image/mods3/COOKED SALAD DRESSING/step 6.png",
         tip: "Refrigerate leftovers — it keeps for up to 3 days.",
       },
     ],
@@ -471,11 +471,10 @@ export default function DressingFlipbook() {
             <button
               key={d.id}
               onClick={() => selectDressing(i)}
-              className={`w-full text-left px-5 py-3 flex items-center gap-3 transition-all border-l-4 ${
-                selectedDressing === i
+              className={`w-full text-left px-5 py-3 flex items-center gap-3 transition-all border-l-4 ${selectedDressing === i
                   ? "border-lime-400 bg-white/10 text-white"
                   : "border-transparent text-green-300 hover:bg-white/5 hover:text-white"
-              }`}
+                }`}
             >
               <span className="text-xl">{d.emoji}</span>
               <div className="flex-1 min-w-0">
@@ -544,7 +543,7 @@ export default function DressingFlipbook() {
           </div>
 
           {/* Step Card */}
-          <div className="flex-1 flex flex-col justify-center px-8 py-8 overflow-hidden">
+          <div className="flex-1 flex flex-col justify-center items-center px-8 py-8 overflow-hidden">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={`${dressing.id}-${currentStep}`}
@@ -554,14 +553,18 @@ export default function DressingFlipbook() {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.35, ease: "easeInOut" }}
-                className="max-w-2xl"
+                className="max-w-2xl w-full"
               >
                 {/* Visual card */}
                 <div
-                  className="bg-white rounded-3xl p-8 mb-6 text-center border-2 shadow-lg"
+                  className="bg-white rounded-3xl p-8 mb-6 flex flex-col items-center justify-center border-2 shadow-lg"
                   style={{ borderColor: dressing.color + "44", boxShadow: `0 8px 32px ${dressing.color}22` }}
                 >
-                  <div className="text-5xl tracking-widest mb-4">{step.visual}</div>
+                  <img
+                    src={step.visual}
+                    alt={step.title}
+                    className="w-full max-w-xs h-48 object-cover rounded-2xl mb-4"
+                  />
                   <span
                     className="inline-block text-xs font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full"
                     style={{ background: dressing.color + "22", color: dressing.accent }}
@@ -605,11 +608,10 @@ export default function DressingFlipbook() {
             <button
               onClick={() => goToStep(currentStep - 1)}
               disabled={currentStep === 0}
-              className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-extrabold text-sm transition-all border-2 ${
-                currentStep === 0
+              className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-extrabold text-sm transition-all border-2 ${currentStep === 0
                   ? "opacity-30 cursor-not-allowed border-gray-200 text-gray-400"
                   : "bg-white hover:shadow-md hover:scale-105"
-              }`}
+                }`}
               style={currentStep > 0 ? { borderColor: dressing.color, color: dressing.accent } : {}}
             >
               ← Previous
