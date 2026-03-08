@@ -42,7 +42,7 @@ const quizData: QuizQuestion[] = [
     cDescription: "Dressing should adhere, not slide off.",
     dDescription: "Washing usually uses cool water, not hot.",
     correctAnswer: "a",
-    timePopUp: 28
+    timePopUp: 29
   },
   {
     question: "Why should potatoes be boiled whole before peeling and cutting?",
@@ -68,7 +68,7 @@ const quizData: QuizQuestion[] = [
     cDescription: "Cooling actually adds a step to the process.",
     dDescription: "Vegetables don't grow after being cooked.",
     correctAnswer: "b",
-    timePopUp: 51
+    timePopUp: 52
   },
   {
     question: "Why should we chop all the ingredients into uniform pieces?",
@@ -81,7 +81,7 @@ const quizData: QuizQuestion[] = [
     cDescription: "Uniformity makes it easier to eat, not harder.",
     dDescription: "Correct! Evenly sized pieces look professional and mix better.",
     correctAnswer: "d",
-    timePopUp: 63
+    timePopUp: 64
   },
   {
     question: "Why should cooked ingredients be thoroughly cooled before mixing with mayonnaise?",
@@ -94,7 +94,7 @@ const quizData: QuizQuestion[] = [
     cDescription: "Correct! Heat can cause mayonnaise to break down and breed bacteria.",
     dDescription: "Mayonnaise should not be cooked in a salad.",
     correctAnswer: "c",
-    timePopUp: 72
+    timePopUp: 85
   },
   {
     question: "Why should the dressing be gently mixed into the salad?",
@@ -107,7 +107,7 @@ const quizData: QuizQuestion[] = [
     cDescription: "Correct! Gentle mixing preserves the integrity and texture of the ingredients.",
     dDescription: "Gentle mixing maintains lightness.",
     correctAnswer: "c",
-    timePopUp: 96
+    timePopUp: 98
   },
   {
     question: "How should plating be done?",
@@ -120,7 +120,7 @@ const quizData: QuizQuestion[] = [
     cDescription: "Plating can be done on plates or bowls.",
     dDescription: "Blending turns a salad into a smoothie!",
     correctAnswer: "a",
-    timePopUp: 110
+    timePopUp: 111
   },
   {
     question: "Why is it important to arrange salad ingredients properly according to color, shape, texture, and flavor?",
@@ -133,7 +133,7 @@ const quizData: QuizQuestion[] = [
     cDescription: "Arrangement happens after cooking.",
     dDescription: "The cost remains the same regardless of placement.",
     correctAnswer: "b",
-    timePopUp: 119
+    timePopUp: 120
   },
   {
     question: "What is the main goal of following proper guidelines when making salad?",
@@ -146,7 +146,7 @@ const quizData: QuizQuestion[] = [
     cDescription: "Guidelines don't dictate the count of ingredients.",
     dDescription: "Heaviness is not a quality standard.",
     correctAnswer: "b",
-    timePopUp: 128
+    timePopUp: 126
   }
 ];
 
