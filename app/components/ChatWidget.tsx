@@ -722,11 +722,10 @@ export default function ChatWidget() {
                                 className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}
                             >
                                 <div
-                                    className={`max-w-[85%] rounded-2xl px-4 py-2.5 ${
-                                        msg.sender === "user"
+                                    className={`max-w-[85%] rounded-2xl px-4 py-2.5 ${msg.sender === "user"
                                             ? "bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-br-sm"
                                             : "bg-white text-gray-800 border border-gray-200 rounded-bl-sm shadow-sm"
-                                    }`}
+                                        }`}
                                 >
                                     <p className="text-sm whitespace-pre-line leading-relaxed">{msg.text}</p>
                                     <span className={`text-xs mt-1 block ${msg.sender === "user" ? "text-green-100" : "text-gray-400"}`}>
@@ -781,7 +780,7 @@ export default function ChatWidget() {
                                 onChange={e => setInputMessage(e.target.value)}
                                 onKeyPress={handleKeyPress}
                                 placeholder="Ask about salad preparation..."
-                                className="flex-1 px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm"
+                                className="flex-1 px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm text-black"
                             />
                             <button
                                 onClick={() => sendMessage(inputMessage)}

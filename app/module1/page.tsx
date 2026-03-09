@@ -16,14 +16,31 @@ const salads = [
       {
         name: "Caesar Salad",
         image: "/image/examples/ceasarsalad.png",
-        ingredients: ["Romaine lettuce", "Caesar dressing", "Croutons", "Parmesan cheese", "Black pepper"],
-        process: "Toss romaine lettuce with Caesar dressing until coated. Top with croutons and shaved Parmesan. Season with black pepper and serve immediately."
+        ingredients: [
+          "Romaine lettuce",
+          "Croutons",
+          "Parmesan cheese",
+          "Caesar dressing",
+          "Lemon juice",
+          "Olive oil",
+          "Garlic",
+          "Salt and pepper"
+        ],
+        process: "Step 1: Gather all ingredients. Step 2: Wash the romaine lettuce thoroughly under running water and pat dry with a clean towel. Step 3: Chop the lettuce into bite-size pieces and place them in a large salad bowl. Step 4: Add croutons and grated Parmesan cheese to the lettuce. Step 5: Pour Caesar dressing, a little lemon juice, and olive oil over the salad. Step 6: Toss the salad gently until the lettuce is well coated with the dressing. Step 7: Sprinkle salt and pepper to taste, then serve immediately."
       },
       {
         name: "Garden Salad",
         image: "/image/examples/gardensalad.png",
-        ingredients: ["Mixed greens", "Cherry tomatoes", "Cucumber", "Red onion", "Vinaigrette"],
-        process: "Combine all vegetables in a bowl. Drizzle with vinaigrette and toss lightly. Serve chilled."
+        ingredients: [
+          "Lettuce",
+          "Cucumbers",
+          "Tomatoes",
+          "Carrots",
+          "Red onions",
+          "Salad dressing (Italian or vinaigrette)",
+          "Salt and pepper"
+        ],
+        process: "Step 1: Gather all ingredients. Step 2: Wash all vegetables thoroughly to remove dirt. Step 3: Chop the lettuce and place it in a large salad bowl. Step 4: Slice the cucumbers, tomatoes, carrots, and red onions. Step 5: Add the sliced vegetables on top of the lettuce. Step 6: Pour salad dressing over the vegetables. Step 7: Toss the salad gently until everything is well mixed. Step 8: Add salt and pepper to taste, then serve fresh."
       },
     ],
     keyPoints: ["Small portions", "Crisp greens", "Light vinaigrette", "Served first"]
@@ -39,14 +56,29 @@ const salads = [
       {
         name: "Coleslaw",
         image: "/image/examples/coleslaw.png",
-        ingredients: ["Shredded cabbage", "Carrots", "Mayonnaise", "Vinegar", "Sugar"],
-        process: "Mix shredded cabbage and carrots. Stir together mayo, vinegar, and sugar. Toss with vegetables and chill before serving."
+        ingredients: [
+          "Cabbage (shredded)",
+          "Carrots (grated)",
+          "Mayonnaise",
+          "Vinegar",
+          "Sugar",
+          "Salt and pepper"
+        ],
+        process: "Step 1: Wash the cabbage and carrots. Step 2: Shred the cabbage into thin strips. Step 3: Grate the carrots. Step 4: Place the cabbage and carrots in a large bowl. Step 5: In another bowl, mix the mayonnaise, vinegar, sugar, salt, and pepper. Step 6: Stir until the dressing becomes smooth and creamy. Step 7: Pour the dressing over the cabbage and carrots. Step 8: Mix well until the vegetables are evenly coated. Step 9: Refrigerate for about 30 minutes before serving to improve the flavor."
       },
       {
         name: "Mixed Green Salad",
         image: "/image/examples/mixsalad.png",
-        ingredients: ["Mixed greens", "Bell pepper", "Red onion", "Olive oil", "Lemon juice"],
-        process: "Combine greens and vegetables. Whisk olive oil and lemon juice together, drizzle over salad, and toss gently."
+        ingredients: [
+          "Mixed greens (romaine lettuce or spinach)",
+          "Cucumber",
+          "Cherry tomatoes",
+          "Red onion",
+          "Olive oil",
+          "Lemon juice or vinegar",
+          "Salt and pepper"
+        ],
+        process: "Step 1: Wash all the vegetables thoroughly. Step 2: Chop the lettuce if needed. Step 3: Slice the cucumber and red onion. Step 4: Place the mixed greens in a large bowl. Step 5: Add the cucumber, cherry tomatoes, and red onion. Step 6: In a small bowl, mix the olive oil, lemon juice, salt, and pepper. Step 7: Pour the dressing over the salad. Step 8: Toss gently until the ingredients are well combined. Step 9: Transfer to a serving bowl and serve immediately."
       },
     ],
     keyPoints: ["Complements entrée", "Simple flavors", "Seasonal vegetables", "Balance is key"]
@@ -62,14 +94,38 @@ const salads = [
       {
         name: "Chef Salad",
         image: "/image/examples/chef.png",
-        ingredients: ["Romaine lettuce", "Ham", "Turkey", "Hard-boiled egg", "Cheddar cheese", "Thousand Island dressing"],
-        process: "Layer lettuce with sliced ham, turkey, and egg. Add cheese strips on top. Serve with dressing on the side."
+        ingredients: [
+          "Lettuce (Boston, Bibb, green or red leaf)",
+          "Swiss cheese, cut into strips",
+          "Baked ham, cut into strips",
+          "Smoked turkey or chicken breast, cut into strips",
+          "Roast beef, cut into strips",
+          "Hard-boiled eggs, sliced or wedged",
+          "Avocado, diced",
+          "Cherry or grape tomatoes, halved",
+          "Cucumbers, sliced",
+          "Croutons",
+          "Salad dressing (vinaigrette, ranch, or blue cheese)",
+          "Salt and black pepper"
+        ],
+        process: "Step 1: Wash and dry the lettuce, then tear it into bite-size pieces and place in a large bowl. Step 2: Season with salt and pepper and toss with some dressing. Step 3: Divide the lettuce into serving bowls. Step 4: Arrange the cheese, meats, eggs, and avocado neatly on top of the lettuce. Step 5: Add tomatoes, cucumbers, and croutons. Step 6: Serve with additional dressing if desired."
       },
       {
         name: "Cobb Salad",
         image: "/image/examples/cobb.png",
-        ingredients: ["Romaine lettuce", "Grilled chicken", "Avocado", "Bacon bits", "Blue cheese", "Vinaigrette"],
-        process: "Arrange lettuce as base. Place rows of chicken, avocado, and bacon on top. Crumble blue cheese and drizzle with vinaigrette."
+        ingredients: [
+          "Romaine lettuce, chopped",
+          "Cooked chicken breast, diced",
+          "Crispy bacon, chopped",
+          "Hard-boiled eggs, chopped",
+          "Avocado, diced",
+          "Tomatoes, chopped",
+          "Blue cheese, crumbled",
+          "Green onions, sliced",
+          "Red wine vinaigrette dressing",
+          "Salt and black pepper"
+        ],
+        process: "Step 1: Wash and chop the romaine lettuce and place it in a large serving bowl. Step 2: Arrange the chicken, bacon, eggs, avocado, tomatoes, blue cheese, and green onions in rows on top of the lettuce. Step 3: Season with salt and black pepper. Step 4: Drizzle the salad with red wine vinaigrette dressing. Step 5: Toss gently before serving or serve as arranged."
       },
     ],
     keyPoints: ["Contains protein", "Nutritionally complete", "Substantial portions", "Meal centerpiece"]
@@ -85,14 +141,33 @@ const salads = [
       {
         name: "Waldorf Salad",
         image: "/image/examples/waldrof.png",
-        ingredients: ["Apples", "Celery", "Walnuts", "Grapes", "Mayonnaise", "Lemon juice"],
-        process: "Dice apples and celery. Toss with lemon juice to prevent browning. Mix in walnuts and grapes. Fold in mayonnaise and chill."
+        ingredients: [
+          "Sweet apples",
+          "Seedless red grapes",
+          "Celery",
+          "Walnuts",
+          "Mini marshmallows",
+          "Whipped topping",
+          "Cream cheese",
+          "Vanilla extract",
+          "Lemon juice"
+        ],
+        process: "Step 1: Prepare the Dressing — Whisk together a sweet, creamy base using whipped topping, softened cream cheese, and a dash of vanilla until the mixture is smooth and light. Step 2: Prepare the fruit. Step 3: Slice the celery. Step 4: Combine all ingredients. Step 5: Chill the salad. Step 6: Add the crunch just before serving."
       },
       {
         name: "Ambrosia Salad",
         image: "/image/examples/ambrosia.png",
-        ingredients: ["Mandarin oranges", "Pineapple chunks", "Coconut flakes", "Mini marshmallows", "Whipped cream"],
-        process: "Drain all canned fruits well. Fold together with coconut, marshmallows, and whipped cream. Refrigerate for at least 1 hour before serving."
+        ingredients: [
+          "Whipping cream",
+          "Sour cream",
+          "Mandarin oranges",
+          "Pineapple tidbits or crushed pineapple",
+          "Maraschino cherries",
+          "Sweetened shredded coconut",
+          "Mini fruit-flavored or plain marshmallows",
+          "Walnuts"
+        ],
+        process: "Step 1: Prepare the Base — Whisk together the heavy whipping cream and sour cream until smooth, thick, and well-combined. Step 2: Add Sweeteners — Gently fold in the mini marshmallows and shredded coconut so they begin to absorb the cream and soften slightly. Step 3: Prepare the Fruit — Drain the mandarin oranges, pineapple, and cherries completely, then pat them dry to remove excess moisture. Step 4: Fold the Fruits — Carefully add the prepared fruits to the cream base using a spatula to avoid breaking the delicate segments. Step 5: Incorporate the Crunch — Stir in the chopped nuts last to ensure they remain crisp. Step 6: Chill for Service — Refrigerate for at least 4 hours, or ideally overnight, to allow the marshmallows to expand and flavors to fully meld."
       },
     ],
     keyPoints: ["Sweet dressings", "Fresh fruits", "Light dessert option", "Refreshing finish"]
@@ -106,16 +181,32 @@ const salads = [
     lectureNote: "Dessert salads are served at the end of a meal as a lighter alternative to traditional desserts. They often use fruits, sweet dressings, whipped cream, or gelatin and should be refreshing rather than heavy.",
     examples: [
       {
-        name: "Waldorf Salad",
+        name: "Caesar Salad",
         image: "/image/examples/waldrof.png",
-        ingredients: ["Apples", "Celery", "Walnuts", "Grapes", "Mayonnaise", "Lemon juice"],
-        process: "Dice apples and celery. Toss with lemon juice. Mix in walnuts and grapes. Fold in mayonnaise and serve chilled."
+        ingredients: [
+          "Olive oil",
+          "Egg yolks",
+          "Fresh lemon juice",
+          "Worcestershire sauce",
+          "Anchovy paste",
+          "Garlic",
+          "Mustard"
+        ],
+        process: "Step 1: Prepare the Dressing — Whisk the egg yolks with lemon juice and mustard, then slowly drizzle in the olive oil to create a thick, creamy emulsion. Step 2: Infuse Flavor — Stir in the finely minced garlic, anchovy paste, and Worcestershire sauce until the dressing is pungent and smooth. Step 3: Toss the Greens — Break the romaine leaves into large, bite-sized pieces and toss in a chilled bowl with enough dressing to coat every leaf. Step 4: Add Crunch and Salt — Fold in croutons and a generous handful of shaved Parmesan cheese just before serving to maintain texture. Step 5: Finish and Serve — Plate on a chilled dish and top with an extra crack of black pepper and a final sprinkle of cheese."
       },
       {
-        name: "Ambrosia Salad",
+        name: "Caprese Salad",
         image: "/image/examples/ambrosia.png",
-        ingredients: ["Mandarin oranges", "Pineapple chunks", "Coconut flakes", "Mini marshmallows", "Whipped cream"],
-        process: "Drain fruits thoroughly. Combine with coconut and marshmallows. Fold in whipped cream and refrigerate before serving."
+        ingredients: [
+          "Ripe tomatoes",
+          "Mozzarella cheese (Bocconcini or Buffalo)",
+          "Basil leaves",
+          "Olive oil",
+          "Balsamic glaze",
+          "Flaky sea salt",
+          "Cracked black pepper"
+        ],
+        process: "Step 1: Slice the Base — Slice the tomatoes and fresh mozzarella into uniform rounds approximately 1/4-inch thick. Step 2: Layer for Presentation — On a flat serving platter, alternate the slices of tomato and mozzarella in a circular or linear overlapping pattern. Step 3: Incorporate Aromatics — Tuck a whole, fresh basil leaf between each slice of cheese and tomato so the scent infuses the entire dish. Step 4: Drizzle and Season — Uniformly drizzle olive oil and a small amount of balsamic glaze over the top. Step 5: Final Touch — Sprinkle with sea salt and black pepper immediately before bringing to the table to ensure the tomatoes stay firm and juicy."
       },
     ],
     keyPoints: ["Sweet ingredients", "Served last", "Light dessert option", "Refreshing"]
@@ -131,14 +222,29 @@ const salads = [
       {
         name: "Coleslaw",
         image: "/image/examples/coleslaw.png",
-        ingredients: ["Shredded cabbage", "Carrots", "Mayonnaise", "Apple cider vinegar", "Salt & pepper"],
-        process: "Shred cabbage and carrots. Mix dressing ingredients and toss with vegetables. Chill for 30 minutes before serving."
+        ingredients: [
+          "Cabbage (shredded)",
+          "Carrots (grated)",
+          "Mayonnaise",
+          "Vinegar",
+          "Sugar",
+          "Salt and pepper"
+        ],
+        process: "Step 1: Wash the cabbage and carrots. Step 2: Shred the cabbage into thin strips. Step 3: Grate the carrots. Step 4: Place the cabbage and carrots in a large bowl. Step 5: In another bowl, mix mayonnaise, vinegar, sugar, salt, and pepper. Step 6: Stir until smooth and creamy. Step 7: Pour the dressing over the cabbage and carrots. Step 8: Toss well to coat the vegetables. Step 9: Refrigerate for 30 minutes before serving."
       },
       {
         name: "Side Garden Salad",
         image: "/image/examples/gardensalad.png",
-        ingredients: ["Romaine lettuce", "Tomatoes", "Cucumber", "Croutons", "Italian dressing"],
-        process: "Chop vegetables and place over lettuce. Add croutons and drizzle with Italian dressing just before serving."
+        ingredients: [
+          "Lettuce (romaine or iceberg)",
+          "Cucumber (sliced)",
+          "Cherry tomatoes",
+          "Carrots (shredded)",
+          "Italian dressing",
+          "Cheddar cheese",
+          "Salt and pepper"
+        ],
+        process: "Step 1: Wash all the vegetables thoroughly. Step 2: Chop the lettuce into bite-sized pieces. Step 3: Slice the cucumber and prepare the cherry tomatoes. Step 4: Place the lettuce in a bowl. Step 5: Add cucumber, tomatoes, and shredded carrots. Step 6: Sprinkle salt and pepper. Step 7: Add the dressing. Step 8: Toss the salad gently. Step 9: Serve immediately as a side dish."
       },
     ],
     keyPoints: ["Served with main dish", "Simple flavors", "Light dressing", "Enhances meal"]
@@ -154,14 +260,31 @@ const salads = [
       {
         name: "Caesar Salad",
         image: "/image/examples/caesar.png",
-        ingredients: ["Romaine lettuce", "Caesar dressing", "Croutons", "Parmesan", "Lemon juice"],
-        process: "Wash and dry romaine. Toss with Caesar dressing. Top with croutons, Parmesan, and a squeeze of lemon."
+        ingredients: [
+          "Romaine lettuce",
+          "Croutons",
+          "Parmesan cheese",
+          "Caesar dressing",
+          "Lemon juice",
+          "Olive oil",
+          "Garlic",
+          "Salt and pepper"
+        ],
+        process: "Step 1: Gather all ingredients. Step 2: Wash the romaine lettuce thoroughly under running water and pat dry with a clean towel. Step 3: Chop the lettuce into bite-size pieces and place them in a large salad bowl. Step 4: Add croutons and grated Parmesan cheese to the lettuce. Step 5: Pour Caesar dressing, a little lemon juice, and olive oil over the salad. Step 6: Toss the salad gently until the lettuce is well coated with the dressing. Step 7: Sprinkle salt and pepper to taste, then serve immediately."
       },
       {
         name: "Garden Salad",
         image: "/image/examples/garden.png",
-        ingredients: ["Spinach", "Arugula", "Tomatoes", "Cucumbers", "Olive oil", "Balsamic vinegar"],
-        process: "Combine greens with vegetables. Whisk olive oil and balsamic together and drizzle over. Toss and serve immediately."
+        ingredients: [
+          "Lettuce",
+          "Cucumbers",
+          "Tomatoes",
+          "Carrots",
+          "Red onions",
+          "Salad dressing (Italian or vinaigrette)",
+          "Salt and pepper"
+        ],
+        process: "Step 1: Gather all ingredients. Step 2: Wash all vegetables thoroughly to remove dirt. Step 3: Chop the lettuce and place it in a large salad bowl. Step 4: Slice the cucumbers, tomatoes, carrots, and red onions. Step 5: Add the sliced vegetables on top of the lettuce. Step 6: Pour salad dressing over the vegetables. Step 7: Toss the salad gently until everything is well mixed. Step 8: Add salt and pepper to taste, then serve fresh."
       },
     ],
     keyPoints: ["Leafy greens", "Fresh ingredients", "Light dressing", "Crisp texture"]
@@ -177,14 +300,36 @@ const salads = [
       {
         name: "Pasta Salad",
         image: "/image/examples/pasta.png",
-        ingredients: ["Rotini pasta", "Cherry tomatoes", "Olives", "Bell pepper", "Italian dressing"],
-        process: "Cook pasta and cool completely. Toss with vegetables and Italian dressing. Chill for 1 hour before serving."
+        ingredients: [
+          "Rotini pasta",
+          "Salad dressing (Italian)",
+          "Cucumbers",
+          "Tomatoes",
+          "Green onions",
+          "Parmesan cheese",
+          "Italian seasoning"
+        ],
+        process: "Step 1: Gather all ingredients. Step 2: Bring a large pot of lightly salted water to a boil. Cook pasta for 8 to 12 minutes until al dente, then drain. Step 3: Toss cooked pasta with Italian dressing, cucumbers, tomatoes, and green onions in a large bowl. Step 4: Mix Parmesan cheese and Italian seasoning in a small bowl, then gently mix into the salad. Step 5: Refrigerate for at least 30 minutes before serving for best results."
       },
       {
         name: "Bean Salad",
         image: "/image/examples/beansalad.png",
-        ingredients: ["Kidney beans", "Chickpeas", "Green beans", "Red onion", "Vinegar", "Olive oil"],
-        process: "Drain and rinse beans. Combine with green beans and onion. Toss with vinegar and olive oil. Marinate 30 minutes."
+        ingredients: [
+          "Kidney beans",
+          "White beans or pinto beans",
+          "Canned green beans",
+          "Canned wax beans",
+          "White onion",
+          "Red onion (optional)",
+          "Curly parsley or Italian parsley",
+          "White vinegar",
+          "Olive oil",
+          "Sugar (or pure maple syrup or honey)",
+          "Garlic powder",
+          "Kosher salt",
+          "Black pepper"
+        ],
+        process: "Step 1: Drain and rinse the beans. Thinly slice the onions into slivers. Step 2: Finely chop the parsley. In a large bowl, whisk together the white vinegar, olive oil, sugar, garlic powder, and kosher salt. Step 3: Add the beans, onions, and parsley and stir until coated. Refrigerate for 1 hour to allow the salad to marinate. Store leftovers refrigerated for up to 5 days."
       },
     ],
     keyPoints: ["Hearty ingredients", "Good for buffets", "Served cold", "Well-seasoned"]
@@ -200,14 +345,32 @@ const salads = [
       {
         name: "Potato Salad",
         image: "/image/examples/potato.png",
-        ingredients: ["Potatoes", "Hard-boiled eggs", "Celery", "Mayonnaise", "Mustard", "Salt & pepper"],
-        process: "Boil whole potatoes, cool, then dice. Mix mayo and mustard. Fold in eggs, celery, and potatoes. Chill before serving."
+        ingredients: [
+          "Potatoes",
+          "Eggs",
+          "Mayonnaise",
+          "Sour cream",
+          "Mustard",
+          "Celery",
+          "Pickles",
+          "Salt",
+          "Paprika"
+        ],
+        process: "Step 1: Boil cubed potatoes in water until tender (about 10–15 minutes). Drain and let them cool completely. Step 2: In a separate bowl, mix the mayonnaise, sour cream, mustard, and spices. Step 3: In a large bowl, combine the cooled potatoes, chopped eggs, celery, and pickles. Step 4: Fold the dressing into the potato mixture gently using a spatula to avoid mashing the potatoes. Step 5: Chill in the refrigerator for 1–2 hours before serving."
       },
       {
         name: "Chicken Salad",
         image: "/image/examples/chicken.png",
-        ingredients: ["Cooked chicken breast", "Celery", "Red grapes", "Mayonnaise", "Lemon juice"],
-        process: "Shred cooled chicken. Mix with celery and grapes. Fold in mayo and lemon juice. Refrigerate and serve chilled."
+        ingredients: [
+          "Chicken",
+          "Mayonnaise",
+          "Lemon juice",
+          "Celery",
+          "Green onions",
+          "Salt",
+          "Black pepper"
+        ],
+        process: "Step 1: Place the pre-cooked shredded or cubed chicken in a large mixing bowl. Step 2: Stir in the diced celery and green onions. Step 3: Add the mayonnaise, lemon juice, salt, and pepper. Step 4: Mix until the chicken is thoroughly and evenly coated with the dressing. Step 5: Serve immediately on a bed of lettuce or as a sandwich filling, or chill for better flavor."
       },
     ],
     keyPoints: ["Creamy dressing", "Thick consistency", "Served cold", "Well-mixed"]
@@ -223,14 +386,32 @@ const salads = [
       {
         name: "Fruit Cocktail",
         image: "/image/examples/fruitcocktail.png",
-        ingredients: ["Pineapple chunks", "Peaches", "Pears", "Grapes", "Cherry", "Light syrup"],
-        process: "Drain canned fruits and combine. Add fresh grapes and cherries. Toss in light syrup and chill before serving."
+        ingredients: [
+          "Fruit cocktail",
+          "Fruits of choice (kiwi, strawberries, blueberries, apple, peach, mandarins, mango)",
+          "Orange juice",
+          "Lemon",
+          "Salt",
+          "Mint",
+          "Honey"
+        ],
+        process: "Step 1: In a large bowl, add a drained fruit cocktail. Top with additional diced fruits including kiwi, strawberries, blueberries, apple, peach, mandarins, and mango. Step 2: Add lemon juice, lemon zest, and salt. If using, add honey, fresh mint, and vanilla extract. Step 3: Toss to combine. Serve fresh or store in an airtight container in the fridge for up to 3–5 days."
       },
       {
         name: "Tropical Fruit Salad",
         image: "/image/examples/tropical.png",
-        ingredients: ["Mango", "Papaya", "Pineapple", "Kiwi", "Lime juice", "Honey"],
-        process: "Dice all fruits into bite-sized pieces. Drizzle with lime juice and honey. Toss gently and serve immediately."
+        ingredients: [
+          "Pineapple chunks",
+          "Papaya chunks",
+          "Mango chunks",
+          "Kiwi slices",
+          "Raspberries",
+          "Honey",
+          "Lime juice",
+          "Mint sprigs (optional garnish)",
+          "Lime slices (optional garnish)"
+        ],
+        process: "Step 1: Place the pineapple, papaya, mango, kiwi, and raspberries in a large bowl. Step 2: In a small bowl, whisk together the honey and lime juice until smooth. Step 3: Drizzle the dressing over the fruit and toss gently to coat. Step 4: Serve, garnished with mint sprigs and lime slices if desired."
       },
     ],
     keyPoints: ["Fresh fruits", "Natural sweetness", "Colorful presentation", "Light dressing"]
@@ -246,14 +427,36 @@ const salads = [
       {
         name: "Cobb Salad",
         image: "/image/examples/cobb.png",
-        ingredients: ["Romaine lettuce", "Grilled chicken", "Avocado", "Bacon", "Blue cheese", "Vinaigrette"],
-        process: "Lay lettuce as base. Arrange rows of chicken, avocado, and bacon without mixing. Crumble blue cheese and drizzle dressing."
+        ingredients: [
+          "Romaine lettuce, chopped",
+          "Cooked chicken breast, diced",
+          "Crispy bacon, chopped",
+          "Hard-boiled eggs, chopped",
+          "Avocado, diced",
+          "Tomatoes, chopped",
+          "Blue cheese, crumbled",
+          "Green onions, sliced",
+          "Red wine vinaigrette dressing",
+          "Salt and black pepper"
+        ],
+        process: "Step 1: Wash and chop the romaine lettuce and place it in a large serving bowl. Step 2: Arrange the chicken, bacon, eggs, avocado, tomatoes, blue cheese, and green onions in rows on top of the lettuce. Step 3: Season with salt and black pepper. Step 4: Drizzle the salad with red wine vinaigrette dressing. Step 5: Toss gently before serving or serve as arranged."
       },
       {
         name: "Niçoise Salad",
         image: "/image/examples/nicoise.png",
-        ingredients: ["Mixed greens", "Tuna", "Hard-boiled eggs", "Green beans", "Olives", "Dijon vinaigrette"],
-        process: "Arrange greens on plate. Place tuna, eggs, green beans, and olives in separate sections. Drizzle with Dijon vinaigrette."
+        ingredients: [
+          "Romaine lettuce or mixed greens",
+          "Canned or fresh tuna",
+          "Boiled potatoes, sliced",
+          "Green beans, trimmed and blanched",
+          "Hard-boiled eggs, halved",
+          "Cherry tomatoes, halved",
+          "Black olives (Niçoise olives)",
+          "Olive oil",
+          "Lemon juice or vinaigrette dressing",
+          "Salt and black pepper"
+        ],
+        process: "Step 1: Place the lettuce or greens on a large serving plate. Step 2: Arrange the tuna, potatoes, green beans, eggs, tomatoes, and olives over the lettuce. Step 3: Drizzle with olive oil and lemon juice or vinaigrette dressing. Step 4: Season with salt and black pepper. Step 5: Serve immediately."
       },
     ],
     keyPoints: ["Arranged presentation", "Visual appeal", "Separate components", "Minimal mixing"]
@@ -267,16 +470,34 @@ const salads = [
     lectureNote: "Gelatin salads are popular for special occasions. Proper setting time and temperature are important.",
     examples: [
       {
-        name: "Fruit Gelatin Salad",
+        name: "Tropical Gelatin Fruit Salad",
         image: "/image/examples/gelatinfruit.png",
-        ingredients: ["Flavored gelatin (Jell-O)", "Hot water", "Cold water", "Canned fruit cocktail"],
-        process: "Dissolve gelatin in hot water, add cold water. Drain fruits and stir in. Pour into mold and refrigerate until firm."
+        ingredients: [
+          "Cottage cheese",
+          "Whipped topping",
+          "Pineapple tidbits (drained)",
+          "Mandarin oranges (drained)",
+          "Orange Jello mix"
+        ],
+        process: "Step 1: Mix together the whipped topping and Jello mix until thoroughly combined. Step 2: Add in the cottage cheese and mix completely. Step 3: Add in the fruit and mix. Step 4: Refrigerate for one hour. Serve chilled."
       },
       {
         name: "Vegetable Aspic",
         image: "/image/examples/aspic.png",
-        ingredients: ["Unflavored gelatin", "Vegetable broth", "Diced carrots", "Peas", "Celery"],
-        process: "Dissolve gelatin in warm broth. Add diced vegetables and pour into mold. Refrigerate for 4 hours until fully set."
+        ingredients: [
+          "Packets of agar or xanthan",
+          "Broth",
+          "Corn",
+          "Peas",
+          "Carrot",
+          "Radish",
+          "Red pepper",
+          "Tofu (preferably smoked)",
+          "Pickles",
+          "Parsley",
+          "Vegan ham (optional)"
+        ],
+        process: "Step 1: Prepare dishes or molds (bread forms, cake molds, or small bowls) for shaping the jelly. Step 2: Cut vegetables and tofu according to preference and place them in the dishes. Step 3: Prepare agar or xanthan as described on the package, using a strong broth instead of water for better flavor. Step 4: Pour the jelly mixture into the molds and refrigerate for a few hours until set. Serve as a party snack."
       },
     ],
     keyPoints: ["Gelatin-based", "Chilled before serving", "Decorative", "Firm texture"]
@@ -524,32 +745,65 @@ export default function Module1() {
             </h3>
 
             <div className="space-y-5">
-              {salads[current].examples.map((example, idx) => (
-                <div key={idx} className="bg-gradient-to-br from-green-50 to-lime-50 rounded-2xl border-2 border-green-200 overflow-hidden">
-                  <div className="bg-gradient-to-r from-lime-500 to-green-600 px-4 py-2.5">
-                    <span className="text-white font-extrabold text-sm">{example.name}</span>
-                  </div>
-                  <div className="p-4 grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <p className="text-xs font-extrabold text-green-500 uppercase tracking-wider mb-2">Ingredients</p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {example.ingredients.map((ing, iIdx) => (
-                          <span
-                            key={iIdx}
-                            className="bg-white text-green-700 text-xs font-semibold px-2.5 py-1 rounded-full border-2 border-green-200"
-                          >
-                            {ing}
-                          </span>
-                        ))}
+              {salads[current].examples.map((example, idx) => {
+                // Parse "Step N: ..." into an array of step strings
+                const steps = example.process
+                  .split(/(?=Step\s+\d+[:.])/)
+                  .map((s) => s.replace(/^Step\s+\d+[:.]\s*/i, "").trim())
+                  .filter(Boolean);
+
+                return (
+                  <div
+                    key={idx}
+                    className="bg-gradient-to-br from-green-50 to-lime-50 rounded-2xl border-2 border-green-200 overflow-hidden"
+                  >
+                    {/* Example header */}
+                    <div className="bg-gradient-to-r from-lime-500 to-green-600 px-4 py-2.5">
+                      <span className="text-white font-extrabold text-sm">{example.name}</span>
+                    </div>
+
+                    <div className="p-4 grid sm:grid-cols-2 gap-4">
+                      {/* Ingredients */}
+                      <div>
+                        <p className="text-xs font-extrabold text-green-500 uppercase tracking-wider mb-2">
+                          Ingredients
+                        </p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {example.ingredients.map((ing, iIdx) => (
+                            <span
+                              key={iIdx}
+                              className="bg-white text-green-700 text-xs font-semibold px-2.5 py-1 rounded-full border-2 border-green-200"
+                            >
+                              {ing}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Process — numbered steps */}
+                      <div>
+                        <p className="text-xs font-extrabold text-green-500 uppercase tracking-wider mb-2">
+                          Process
+                        </p>
+                        <ol className="space-y-2">
+                          {steps.map((step, sIdx) => (
+                            <li key={sIdx} className="flex items-start gap-2.5">
+                              {/* Step number badge */}
+                              <span className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-br from-lime-400 to-green-500 flex items-center justify-center mt-0.5">
+                                <span className="text-white text-[10px] font-extrabold leading-none">
+                                  {sIdx + 1}
+                                </span>
+                              </span>
+                              {/* Step text */}
+                              <span className="text-green-800 text-xs leading-relaxed">{step}</span>
+                            </li>
+                          ))}
+                        </ol>
                       </div>
                     </div>
-                    <div>
-                      <p className="text-xs font-extrabold text-green-500 uppercase tracking-wider mb-2">Process</p>
-                      <p className="text-green-800 text-sm leading-relaxed">{example.process}</p>
-                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Key Points */}
@@ -557,7 +811,10 @@ export default function Module1() {
               <h4 className="font-extrabold text-green-900 mb-3">Key Points:</h4>
               <div className="grid grid-cols-2 gap-2">
                 {salads[current].keyPoints.map((point, idx) => (
-                  <div key={idx} className="bg-green-50 border-2 border-green-200 rounded-2xl px-4 py-2.5 text-sm flex items-center gap-2 hover:border-green-400 transition-colors">
+                  <div
+                    key={idx}
+                    className="bg-green-50 border-2 border-green-200 rounded-2xl px-4 py-2.5 text-sm flex items-center gap-2 hover:border-green-400 transition-colors"
+                  >
                     <div className="w-5 h-5 rounded-full bg-gradient-to-br from-lime-400 to-green-500 flex items-center justify-center flex-shrink-0">
                       <span className="text-white text-xs font-bold">✓</span>
                     </div>

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -109,14 +108,6 @@ const rubricData = [
   },
 ];
 
-const saladTypes = [
-  "Green Salad",
-  "Vegetable Salad",
-  "Fruit Salad",
-  "Pasta Salad",
-  "Protein Salad",
-];
-
 const instructionSteps = [
   {
     num: 1,
@@ -182,7 +173,6 @@ const ActivityPage = () => {
 
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
-              {/* Badge */}
               <div className="inline-flex items-center gap-2 bg-white/15 border border-white/25 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-bold text-lime-200 mb-4">
                 <Sparkles className="w-4 h-4 text-yellow-300" />
                 Practical Activity
@@ -279,24 +269,12 @@ const ActivityPage = () => {
                     </div>
                   </motion.div>
                 ))}
-
-                {/* Alert box */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                  className="flex gap-3 bg-amber-50 border-2 border-amber-200 rounded-2xl p-5 mt-2"
-                >
-                  <AlertCircle className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
-                  <p className="text-amber-800 text-sm font-semibold leading-relaxed">
-                    Make sure to remove the background from your photo so that only the salad or ingredients are visible before uploading.
-                  </p>
-                </motion.div>
               </div>
 
-              {/* Right: Salad types + score guide */}
-              <div className="space-y-6">
-                {/* Salad Types Card */}
+              {/* Right: Submit + Alert + Scoring Guide */}
+              <div className="space-y-6 mt-12">
+
+                {/* Submit Card */}
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -305,43 +283,33 @@ const ActivityPage = () => {
                 >
                   <div className="bg-gradient-to-r from-lime-500 to-green-600 px-6 py-4">
                     <h3 className="text-white font-extrabold text-lg flex items-center gap-2">
-                      <Leaf className="w-5 h-5" /> Choose a Salad Type
+                      <Upload className="w-5 h-5" /> Submit Your Work
                     </h3>
                   </div>
-                  <div className="p-5 space-y-2">
-                    {saladTypes.map((type, idx) => (
-                      <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-green-50 border border-green-100 hover:border-green-300 transition-all">
-                        <div className="w-2 h-2 rounded-full bg-gradient-to-br from-lime-400 to-green-500" />
-                        <span className="font-semibold text-green-800">{type}</span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
+                  <div className="p-5 space-y-4">
+                    <p className="text-green-700 text-sm leading-relaxed">
+                      Upload your photo and written description through the form. Your response will be saved automatically to Google Drive.
+                    </p>
 
-                {/* Required Components */}
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="bg-white rounded-3xl border-2 border-green-200 overflow-hidden shadow-sm"
-                >
-                  <div className="bg-gradient-to-r from-emerald-500 to-green-600 px-6 py-4">
-                    <h3 className="text-white font-extrabold text-lg flex items-center gap-2">
-                      <CheckCircle2 className="w-5 h-5" /> Required Components
-                    </h3>
-                  </div>
-                  <div className="p-5 space-y-2">
-                    {[
-                      { name: "Base", color: "bg-emerald-100 text-emerald-700 border-emerald-200" },
-                      { name: "Body", color: "bg-amber-100 text-amber-700 border-amber-200" },
-                      { name: "Garnish", color: "bg-rose-100 text-rose-700 border-rose-200" },
-                      { name: "Dressing", color: "bg-yellow-100 text-yellow-700 border-yellow-200" },
-                    ].map((comp, idx) => (
-                      <div key={idx} className={`flex items-center gap-3 p-3 rounded-xl border-2 ${comp.color}`}>
-                        <CheckCircle2 className="w-4 h-4 shrink-0" />
-                        <span className="font-bold">{comp.name}</span>
-                      </div>
-                    ))}
+                    {/* Alert */}
+                    <div className="flex gap-3 bg-amber-50 border-2 border-amber-200 rounded-2xl p-4">
+                      <AlertCircle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                      <p className="text-amber-800 text-xs font-semibold leading-relaxed">
+                        Remove the background from your photo so that only the salad is visible before uploading.
+                      </p>
+                    </div>
+
+                    {/* Button */}
+                    {/* 👇 Replace href with your actual Google Form link */}
+                    <a
+                      href="https://forms.gle/YOUR_FORM_LINK_HERE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2.5 w-full bg-gradient-to-r from-lime-500 to-green-600 hover:from-lime-400 hover:to-green-500 text-white font-extrabold text-sm px-6 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 active:translate-y-0"
+                    >
+                      <Upload className="w-4 h-4" />
+                      Open Submission Form
+                    </a>
                   </div>
                 </motion.div>
 
@@ -349,7 +317,7 @@ const ActivityPage = () => {
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.4 }}
+                  transition={{ delay: 0.3 }}
                   className="bg-white rounded-3xl border-2 border-green-200 overflow-hidden shadow-sm"
                 >
                   <div className="bg-gradient-to-r from-yellow-400 to-amber-500 px-6 py-4">
@@ -371,6 +339,7 @@ const ActivityPage = () => {
                     ))}
                   </div>
                 </motion.div>
+
               </div>
             </motion.div>
           )}
@@ -430,7 +399,6 @@ const ActivityPage = () => {
                     transition={{ delay: idx * 0.07 }}
                     className={`bg-gradient-to-br ${item.bg} rounded-2xl border-2 ${item.border} overflow-hidden shadow-sm`}
                   >
-                    {/* Header */}
                     <button
                       onClick={() => setExpandedRubric(expandedRubric === idx ? null : idx)}
                       className="w-full flex items-center justify-between p-5 text-left hover:brightness-95 transition-all"
@@ -455,7 +423,6 @@ const ActivityPage = () => {
                       </div>
                     </button>
 
-                    {/* Expanded levels */}
                     <AnimatePresence>
                       {expandedRubric === idx && (
                         <motion.div
