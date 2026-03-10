@@ -182,7 +182,7 @@ const salads = [
     examples: [
       {
         name: "Caesar Salad",
-        image: "/image/examples/waldrof.png",
+        image: "/image/examples/gege.png",
         ingredients: [
           "Olive oil",
           "Egg yolks",
@@ -196,7 +196,7 @@ const salads = [
       },
       {
         name: "Caprese Salad",
-        image: "/image/examples/ambrosia.png",
+        image: "/image/examples/caprese.png",
         ingredients: [
           "Ripe tomatoes",
           "Mozzarella cheese (Bocconcini or Buffalo)",
