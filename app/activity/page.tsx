@@ -283,7 +283,7 @@ const ActivityPage = () => {
                   return isLast ? (
                     <a
                       key={idx}
-                      href="https://forms.gle/aXd5zNjBBe3KnwRM8"
+                      href="https://drive.google.com/drive/folders/1IYZk7tWadQWqmGH2Ydd3BI7flwZGjivs?usp=sharing"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block"
