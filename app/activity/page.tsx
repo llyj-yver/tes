@@ -125,20 +125,13 @@ const instructionSteps = [
   },
   {
     num: 3,
-    icon: <Camera className="w-5 h-5" />,
-    title: "Take a Clear Photo",
-    desc: "Capture your finished salad. Remove the background so only the salad is visible.",
-    color: "from-yellow-500 to-amber-500",
-  },
-  {
-    num: 4,
     icon: <FileText className="w-5 h-5" />,
     title: "Write a Description",
     desc: "5–7 sentences covering the salad type, components, dressing choice, and nutritional value.",
     color: "from-rose-500 to-pink-500",
   },
   {
-    num: 5,
+    num: 4,
     icon: <Upload className="w-5 h-5" />,
     title: "Submit Before Deadline",
     desc: "Upload to the designated submission folder before the deadline.",
@@ -146,7 +139,6 @@ const instructionSteps = [
   },
 ];
 
-// ── Component ────────────────────────────────────────────────────────────────
 const ActivityPage = () => {
   const router = useRouter();
   const [expandedRubric, setExpandedRubric] = useState<number | null>(null);
@@ -249,71 +241,61 @@ const ActivityPage = () => {
                   Activity Instructions
                 </h2>
 
-                {instructionSteps.map((step, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: idx * 0.08 }}
-                    className="flex gap-4 bg-white rounded-2xl p-5 border-2 border-green-100 hover:border-green-300 hover:shadow-md transition-all group"
-                  >
-                    <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center text-white shrink-0 shadow-md group-hover:scale-110 transition-transform`}>
-                      {step.icon}
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xs font-extrabold text-green-400 uppercase tracking-wider">Step {step.num}</span>
+                {instructionSteps.map((step, idx) => {
+                  const isLast = idx === instructionSteps.length - 1;
+
+                  const content = (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.08 }}
+                      className={`flex gap-4 bg-white rounded-2xl p-5 border-2 transition-all group ${
+                        isLast
+                          ? "border-lime-400 hover:border-lime-500 hover:shadow-lg cursor-pointer ring-2 ring-lime-100"
+                          : "border-green-100 hover:border-green-300 hover:shadow-md"
+                      }`}
+                    >
+                      <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center text-white shrink-0 shadow-md group-hover:scale-110 transition-transform`}>
+                        {step.icon}
                       </div>
-                      <h3 className="font-extrabold text-green-900 text-lg mb-1">{step.title}</h3>
-                      <p className="text-green-700 leading-relaxed">{step.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-xs font-extrabold text-green-400 uppercase tracking-wider">Step {step.num}</span>
+                          {isLast && (
+                            <span className="text-xs font-extrabold text-lime-600 bg-lime-100 px-2 py-0.5 rounded-full flex items-center gap-1">
+                              <Upload className="w-3 h-3" /> Click to Submit
+                            </span>
+                          )}
+                        </div>
+                        <h3 className="font-extrabold text-green-900 text-lg mb-1">{step.title}</h3>
+                        <p className="text-green-700 leading-relaxed">{step.desc}</p>
+                        {isLast && (
+                          <div className="mt-3 flex items-center gap-2 text-lime-600 font-bold text-sm">
+                            <Upload className="w-4 h-4" />
+                            Open Submission Form →
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
+                  );
 
-              {/* Right: Submit + Alert + Scoring Guide */}
-              <div className="space-y-6 mt-12">
-
-                {/* Submit Card */}
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="bg-white rounded-3xl border-2 border-green-200 overflow-hidden shadow-sm"
-                >
-                  <div className="bg-gradient-to-r from-lime-500 to-green-600 px-6 py-4">
-                    <h3 className="text-white font-extrabold text-lg flex items-center gap-2">
-                      <Upload className="w-5 h-5" /> Submit Your Work
-                    </h3>
-                  </div>
-                  <div className="p-5 space-y-4">
-                    <p className="text-green-700 text-sm leading-relaxed">
-                      Upload your photo and written description through the form. Your response will be saved automatically to Google Drive.
-                    </p>
-
-                    {/* Alert */}
-                    <div className="flex gap-3 bg-amber-50 border-2 border-amber-200 rounded-2xl p-4">
-                      <AlertCircle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
-                      <p className="text-amber-800 text-xs font-semibold leading-relaxed">
-                        Remove the background from your photo so that only the salad is visible before uploading.
-                      </p>
-                    </div>
-
-                    {/* Button */}
-                    {/* 👇 Replace href with your actual Google Form link */}
+                  return isLast ? (
                     <a
+                      key={idx}
                       href="https://forms.gle/aXd5zNjBBe3KnwRM8"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2.5 w-full bg-gradient-to-r from-lime-500 to-green-600 hover:from-lime-400 hover:to-green-500 text-white font-extrabold text-sm px-6 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 active:translate-y-0"
+                      className="block"
                     >
-                      <Upload className="w-4 h-4" />
-                      Open Submission Form
+                      {content}
                     </a>
-                  </div>
-                </motion.div>
+                  ) : content;
+                })}
+              </div>
 
-                {/* Scoring Guide */}
+              {/* Right: Scoring Guide */}
+              <div className="space-y-6 mt-12">
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -339,7 +321,6 @@ const ActivityPage = () => {
                     ))}
                   </div>
                 </motion.div>
-
               </div>
             </motion.div>
           )}
