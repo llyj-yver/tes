@@ -14,6 +14,9 @@ import {
     ExternalLink,
     X,
     FileText,
+    ClipboardList,
+    Menu,
+    Home,
 } from "lucide-react";
 import { useModules } from "../components/ModuleContext";
 import ChatWidget from "../components/ChatWidget";
@@ -467,203 +470,312 @@ const references = [
 // ─────────────────────────────────────────────
 // REFERENCES MODAL
 // ─────────────────────────────────────────────
+// ─────────────────────────────────────────────
+// TYPE BADGE COLORS
+// ─────────────────────────────────────────────
 const typeColors: Record<string, string> = {
     Book: "bg-lime-100 text-lime-800 border-lime-300",
     Journal: "bg-emerald-100 text-emerald-800 border-emerald-300",
     Website: "bg-yellow-100 text-yellow-800 border-yellow-300",
 };
-
-function ReferencesModal({ onClose }: { onClose: () => void }) {
+ 
+// ─────────────────────────────────────────────
+// HAMBURGER NAV
+// ─────────────────────────────────────────────
+function HamburgerNav({
+    modules,
+    open,
+    onClose,
+}: {
+    modules: { id: number; title: string; href: string }[];
+    open: boolean;
+    onClose: () => void;
+}) {
+ 
+    const navLinks = [
+        { label: "Home", href: "/", icon: <Home className="w-4 h-4" /> },
+        { label: "Activity", href: "../activity", icon: <ClipboardList className="w-4 h-4" /> },
+        { label: "Final Quiz", href: "../quiz", icon: <Award className="w-4 h-4" /> },
+    ];
+ 
     return (
-        <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
-            style={{ background: "rgba(10,40,20,0.55)", backdropFilter: "blur(8px)" }}
-            onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
-        >
+        <>
+            {/* Backdrop */}
+ 
+            {/* Backdrop */}
+            {open && (
+                <div
+                    className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm"
+                    onClick={onClose}
+                />
+            )}
+ 
+            {/* Slide-in drawer */}
             <div
-                className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border-2 border-green-200 overflow-hidden max-h-[90vh] flex flex-col"
-                style={{ animation: "modalIn 0.35s cubic-bezier(0.34,1.56,0.64,1) both" }}
+                className={`fixed top-0 left-0 z-50 h-full w-72 bg-white shadow-2xl flex flex-col transition-transform duration-300 ease-in-out ${
+                    open ? "translate-x-0" : "-translate-x-full"
+                }`}
             >
-                {/* Header */}
-                <div className="bg-gradient-to-br from-lime-600 via-green-600 to-emerald-700 px-8 py-7 relative overflow-hidden flex-shrink-0">
-                    <div className="absolute inset-0 opacity-20 pointer-events-none">
-                        <div className="absolute top-0 left-0 w-48 h-48 bg-yellow-300 rounded-full blur-3xl" />
-                        <div className="absolute bottom-0 right-0 w-40 h-40 bg-green-300 rounded-full blur-3xl" />
+                {/* Drawer header */}
+                <div className="bg-gradient-to-br from-lime-600 via-green-600 to-emerald-700 px-6 py-6 flex items-center justify-between flex-shrink-0">
+                    <div>
+                        <p className="text-lime-200 text-xs font-bold uppercase tracking-widest mb-0.5">Navigation</p>
+                        <h2 className="text-white font-extrabold text-lg leading-tight">FCS Food Prep</h2>
                     </div>
                     <button
                         onClick={onClose}
-                        className="absolute top-4 right-4 w-9 h-9 rounded-xl bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-all hover:rotate-90 duration-300 border border-white/20 z-10"
+                        className="w-9 h-9 flex items-center justify-center rounded-xl bg-white/15 hover:bg-white/30 text-white border border-white/20 transition-all hover:rotate-90 duration-300"
                     >
                         <X className="w-4 h-4" />
                     </button>
-                    <div className="relative z-10">
-                        <p className="text-lime-200 text-xs font-bold uppercase tracking-widest mb-1">Sources & Citations</p>
-                        <h2 className="text-2xl font-extrabold text-white">References</h2>
-                        <p className="text-green-100 text-sm mt-1">Materials used across all modules</p>
-                    </div>
                 </div>
-
-                {/* Scrollable body */}
-                <div className="overflow-y-auto p-6 space-y-5">
-                    {references.map((group, gIdx) => (
-                        <div key={gIdx} className="bg-gradient-to-br from-white to-green-50 rounded-2xl border-2 border-green-200 overflow-hidden">
-                            <div className={`px-5 py-3 bg-gradient-to-r ${group.moduleColor} flex items-center gap-2`}>
-                                <BookOpen className="w-4 h-4 text-white" />
-                                <span className="text-white font-extrabold text-sm">{group.module}</span>
-                            </div>
-                            <div className="p-4 space-y-3">
-                                {group.sources.map((src, sIdx) => (
-                                    <div key={sIdx} className="flex items-start gap-3 p-3 bg-white rounded-xl border-2 border-green-100 hover:border-green-300 transition-all">
-                                        <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-lime-100 to-green-200 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                            <FileText className="w-4 h-4 text-green-700" />
-                                        </div>
-                                        <div className="flex-1 min-w-0">
-                                            <p className="font-extrabold text-green-900 text-sm leading-snug mb-0.5">{src.title}</p>
-                                            <p className="text-green-600 text-xs font-medium">{src.author} • {src.year}</p>
-                                        </div>
-                                        <div className="flex items-center gap-2 flex-shrink-0">
-                                            <span className={`text-xs font-extrabold px-2.5 py-1 rounded-full border-2 ${typeColors[src.type] ?? "bg-gray-100 text-gray-600 border-gray-200"}`}>
-                                                {src.type}
-                                            </span>
-                                            <a
-                                                href={src.url}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="w-8 h-8 rounded-xl bg-green-50 hover:bg-gradient-to-r hover:from-yellow-300 hover:via-lime-400 hover:to-green-400 text-green-600 hover:text-green-900 border-2 border-green-200 hover:border-green-400 flex items-center justify-center transition-all hover:scale-105"
-                                                title="Open source"
-                                            >
-                                                <ExternalLink className="w-3.5 h-3.5" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+ 
+                {/* Drawer body */}
+                <div className="flex-1 overflow-y-auto p-4 space-y-1">
+                    {/* Top-level links */}
+                    {navLinks.map((link) => (
+                        <a
+                            key={link.href}
+                            href={link.href}
+                            onClick={onClose}
+                            className="flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold text-green-800 hover:bg-gradient-to-r hover:from-lime-50 hover:to-green-50 hover:text-green-900 border-2 border-transparent hover:border-green-200 transition-all text-sm"
+                        >
+                            <span className="text-green-500">{link.icon}</span>
+                            {link.label}
+                        </a>
+                    ))}
+ 
+                    {/* Divider + Modules */}
+                    <div className="pt-3 pb-1 px-4">
+                        <p className="text-xs font-extrabold text-green-400 uppercase tracking-widest">Modules</p>
+                    </div>
+                    {modules.map((mod, idx) => (
+                        <a
+                            key={mod.id}
+                            href={mod.href}
+                            onClick={onClose}
+                            className="flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold text-green-800 hover:bg-gradient-to-r hover:from-lime-50 hover:to-green-50 hover:text-green-900 border-2 border-transparent hover:border-green-200 transition-all text-sm"
+                        >
+                            <span className="w-6 h-6 rounded-lg bg-gradient-to-br from-lime-400 to-green-500 text-white flex items-center justify-center text-xs font-extrabold flex-shrink-0">
+                                {idx + 1}
+                            </span>
+                            <span className="truncate">{mod.title}</span>
+                        </a>
                     ))}
                 </div>
-
-                {/* Footer */}
-                <div className="px-6 py-4 border-t-2 border-green-100 bg-green-50 flex-shrink-0">
-                    <p className="text-xs text-green-500 font-medium text-center">
-                        All references are cited in accordance with academic standards.
-                    </p>
+ 
+                {/* Drawer footer */}
+                <div className="px-4 py-4 border-t-2 border-green-100 bg-green-50 flex-shrink-0">
+                    <p className="text-xs text-green-500 font-medium text-center">Salads &amp; Salad Dressings</p>
                 </div>
             </div>
-            <style>{`@keyframes modalIn { from { opacity:0; transform:scale(0.88) translateY(24px); } to { opacity:1; transform:scale(1) translateY(0); } }`}</style>
+        </>
+    );
+}
+ 
+// ─────────────────────────────────────────────
+// REFERENCES ACCORDION (footer)
+// ─────────────────────────────────────────────
+function ReferencesAccordion() {
+    const [openIdx, setOpenIdx] = useState<number | null>(null);
+ 
+    return (
+        <div>
+            {/* Section heading */}
+            <div className="flex items-center gap-3 mb-5">
+                <div className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center">
+                    <FileText className="w-5 h-5 text-lime-200" />
+                </div>
+                <div>
+                    <h4 className="text-white font-extrabold text-lg">References</h4>
+                    <p className="text-green-300 text-xs">Materials used across all modules — click a group to expand</p>
+                </div>
+            </div>
+ 
+            {/* Accordion list — single column, full width */}
+            <div className="space-y-2">
+                {references.map((group, gIdx) => {
+                    const isOpen = openIdx === gIdx;
+                    return (
+                        <div
+                            key={gIdx}
+                            className="rounded-2xl overflow-hidden border border-white/15 bg-white/[0.07] backdrop-blur-sm"
+                        >
+                            {/* Accordion header / toggle */}
+                            <button
+                                onClick={() => setOpenIdx(isOpen ? null : gIdx)}
+                                className={`w-full flex items-center justify-between px-4 py-3 text-left transition-colors ${
+                                    isOpen ? "bg-white/15" : "hover:bg-white/10"
+                                }`}
+                            >
+                                <div className="flex items-center gap-3">
+                                    {/* Colored dot matching the module gradient */}
+                                    <span className={`w-2.5 h-2.5 rounded-full bg-gradient-to-br ${group.moduleColor} flex-shrink-0`} />
+                                    <span className="text-white font-bold text-sm">{group.module}</span>
+                                    <span className="text-white/40 text-xs font-medium">
+                                        {group.sources.length} source{group.sources.length !== 1 ? "s" : ""}
+                                    </span>
+                                </div>
+                                {isOpen
+                                    ? <ChevronUp className="w-4 h-4 text-lime-300 flex-shrink-0" />
+                                    : <ChevronDown className="w-4 h-4 text-white/50 flex-shrink-0" />}
+                            </button>
+ 
+                            {/* Expandable sources */}
+                            {isOpen && (
+                                <div className="px-4 pb-4 pt-2 grid sm:grid-cols-2 gap-2 bg-white/[0.04]">
+                                    {group.sources.map((src, sIdx) => (
+                                        <div
+                                            key={sIdx}
+                                            className="flex items-start gap-2 p-2.5 bg-white/10 rounded-xl hover:bg-white/[0.18] transition-all"
+                                        >
+                                            <div className="flex-1 min-w-0">
+                                                <p className="font-bold text-white text-xs leading-snug">{src.title}</p>
+                                                <p className="text-green-300 text-xs mt-0.5">{src.author} · {src.year}</p>
+                                            </div>
+                                            <div className="flex items-center gap-1.5 flex-shrink-0 mt-0.5">
+                                                <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-white/20 text-lime-200 border border-white/20 whitespace-nowrap">
+                                                    {src.type}
+                                                </span>
+                                                <a
+                                                    href={src.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="w-6 h-6 rounded-lg bg-white/15 hover:bg-lime-400 hover:text-green-900 text-white flex items-center justify-center transition-all"
+                                                    title="Open source"
+                                                >
+                                                    <ExternalLink className="w-3 h-3" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 }
-
+ 
 // ─────────────────────────────────────────────
 // MAIN PAGE
 // ─────────────────────────────────────────────
 export default function NavigationPage() {
     const { modules } = useModules();
     const [expandedModule, setExpandedModule] = useState<number | null>(null);
-    const [showReferences, setShowReferences] = useState(false);
-
-    const completedCount = modules.filter(m => m.completed).length;
+    const [navOpen, setNavOpen] = useState(false);
+ 
+    const completedCount = modules.filter((m) => m.completed).length;
     const progressPercent = (completedCount / modules.length) * 100;
-
+ 
     return (
         <div className="min-h-screen bg-gradient-to-br from-green-50 via-lime-50 to-emerald-50">
-
+ 
+            {/* ── Hamburger Nav Drawer ── */}
+            <HamburgerNav modules={modules} open={navOpen} onClose={() => setNavOpen(false)} />
+ 
             {/* ── Hero Header ── */}
             <div className="bg-gradient-to-br from-lime-600 via-green-600 to-emerald-700 text-white relative overflow-hidden">
-
-                {/* ── Background image ── */}
+ 
+                {/* Background image */}
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                     style={{ backgroundImage: "url('/image/landingpage/bg.png')" }}
                 />
-
-                {/* ── Medium green overlay (60% opacity) ── */}
+ 
+                {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-lime-700/60 via-green-700/60 to-emerald-800/60" />
-
-                {/* ── Decorative blobs ── */}
+ 
+                {/* Decorative blobs */}
                 <div className="absolute inset-0 opacity-20 pointer-events-none">
                     <div className="absolute top-10 left-10 w-72 h-72 bg-yellow-300 rounded-full blur-3xl" />
                     <div className="absolute bottom-0 right-10 w-96 h-96 bg-green-300 rounded-full blur-3xl" />
                 </div>
-
+ 
                 <div className="max-w-7xl mx-auto px-6 py-12 relative z-10">
-                    {/* Breadcrumb */}
+                    {/* Breadcrumb row with hamburger button */}
                     <div className="flex items-center gap-3 text-sm mb-6">
-                        <span onClick={() => window.location.href = '/'} className="text-lime-200 font-semibold hover:text-white cursor-pointer transition-colors">
+                        {/* Hamburger button — lives in the hero header */}
+                        <button
+                            onClick={() => setNavOpen(true)}
+                            className="w-10 h-10 flex items-center justify-center bg-white/15 backdrop-blur-md rounded-2xl border border-white/30 hover:bg-white/25 transition-all flex-shrink-0"
+                            aria-label="Open navigation"
+                        >
+                            <Menu className="w-5 h-5 text-white" />
+                        </button>
+                        <span
+                            onClick={() => (window.location.href = "/")}
+                            className="text-lime-200 font-semibold hover:text-white cursor-pointer transition-colors"
+                        >
                             Home
                         </span>
                         <span className="text-white/40">›</span>
-                        <span className="text-white/80 font-medium">FCS Food Preparation: </span>
+                        <span className="text-white/80 font-medium">FCS Food Preparation</span>
                     </div>
-
-                    {/* Title + action buttons */}
-                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
-                        <div>
-                            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-                                <span className="bg-gradient-to-r from-yellow-200 via-lime-200 to-green-200 bg-clip-text text-transparent">
-                                    FCS Food Preparation:
-                                </span>
-                                <br />
-                                <span className="text-white text-3xl md:text-4xl">Salads and Salad Dressings</span>
-                            </h1>
-                            <p className="text-green-100 text-lg mb-6 max-w-2xl leading-relaxed">
-                                Gain comprehensive knowledge of salad classification, components, types of dressings, and proper preparation guidelines. Designed for learners in Food and Consumer Services (FCS).
-                            </p>
-                            {/* Stats chips */}
-                            <div className="flex flex-wrap items-center gap-3">
-                                <div className="flex items-center gap-2 text-white bg-white/10 backdrop-blur-md px-5 py-3 rounded-full border border-white/20">
-                                    <BookOpen className="w-5 h-5 text-lime-300" />
-                                    <span className="font-semibold">{modules.length} Modules</span>
-                                </div>
-                                <div className="flex items-center gap-2 text-white bg-white/10 backdrop-blur-md px-5 py-3 rounded-full border border-white/20">
-                                    <Clock className="w-5 h-5 text-yellow-300" />
-                                    <span className="font-semibold">2 Hours Total</span>
-                                </div>
+ 
+                    {/* Title */}
+                    <div>
+                        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+                            <span className="bg-gradient-to-r from-yellow-200 via-lime-200 to-green-200 bg-clip-text text-transparent">
+                                FCS Food Preparation:
+                            </span>
+                            <br />
+                            <span className="text-white text-3xl md:text-4xl">Salads and Salad Dressings</span>
+                        </h1>
+                        <p className="text-green-100 text-lg mb-6 max-w-2xl leading-relaxed">
+                            Gain comprehensive knowledge of salad classification, components, types of dressings, and proper preparation guidelines. Designed for learners in Food and Consumer Services (FCS).
+                        </p>
+                        <div className="flex flex-wrap items-center gap-3">
+                            <div className="flex items-center gap-2 text-white bg-white/10 backdrop-blur-md px-5 py-3 rounded-full border border-white/20">
+                                <BookOpen className="w-5 h-5 text-lime-300" />
+                                <span className="font-semibold">{modules.length} Modules</span>
                             </div>
-                        </div>
-
-                        {/* ── Action buttons top-right of hero ── */}
-                        <div className="flex flex-col gap-3 lg:items-end">
-                            <ResearchersButton />
-                            <button
-                                onClick={() => setShowReferences(true)}
-                                className="flex items-center gap-2 px-5 py-3 bg-white/10 backdrop-blur-md text-white font-extrabold rounded-2xl hover:bg-white/20 transition-all text-sm border-2 border-white/20 whitespace-nowrap"
-                            >
-                                <FileText className="w-4 h-4 text-lime-300" />
-                                View References
-                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-
+ 
             {/* ── Main Content ── */}
             <div className="max-w-7xl mx-auto px-4 py-10">
                 <div className="grid lg:grid-cols-3 gap-8">
-
+ 
                     {/* Course Content */}
                     <div className="lg:col-span-2">
                         {/* Progress Card */}
                         <div className="bg-white rounded-3xl shadow-sm border-2 border-green-200 p-6 mb-6">
                             <h2 className="text-2xl font-extrabold text-green-900 mb-1">Course Content</h2>
-                            <p className="text-green-600 font-medium mb-5">{modules.length} modules • {completedCount} completed</p>
+                            <p className="text-green-600 font-medium mb-5">
+                                {modules.length} modules • {completedCount} completed
+                            </p>
                             <div>
                                 <div className="flex justify-between text-sm mb-2">
                                     <span className="font-semibold text-green-700">{progressPercent.toFixed(0)}% Complete</span>
-                                    <span className="font-semibold text-green-500">{completedCount}/{modules.length}</span>
+                                    <span className="font-semibold text-green-500">
+                                        {completedCount}/{modules.length}
+                                    </span>
                                 </div>
                                 <div className="w-full bg-green-100 rounded-full h-2.5">
-                                    <div className="bg-gradient-to-r from-lime-500 to-green-600 h-2.5 rounded-full transition-all duration-500" style={{ width: `${progressPercent}%` }} />
+                                    <div
+                                        className="bg-gradient-to-r from-lime-500 to-green-600 h-2.5 rounded-full transition-all duration-500"
+                                        style={{ width: `${progressPercent}%` }}
+                                    />
                                 </div>
                             </div>
                         </div>
-
+ 
                         {/* Module List */}
                         <div className="space-y-4">
                             {modules.map((module, index) => (
-                                <div key={module.id} className="bg-white rounded-3xl shadow-sm border-2 border-green-200 overflow-hidden hover:border-green-400 hover:shadow-lg transition-all">
+                                <div
+                                    key={module.id}
+                                    className="bg-white rounded-3xl shadow-sm border-2 border-green-200 overflow-hidden hover:border-green-400 hover:shadow-lg transition-all"
+                                >
                                     <button
-                                        onClick={() => setExpandedModule(expandedModule === module.id ? null : module.id)}
+                                        onClick={() =>
+                                            setExpandedModule(expandedModule === module.id ? null : module.id)
+                                        }
                                         className="w-full p-6 flex items-start gap-4 text-left hover:bg-green-50 transition-colors"
                                     >
                                         <div className="flex-shrink-0">
@@ -686,51 +798,52 @@ export default function NavigationPage() {
                                                 <h3 className="text-lg font-extrabold text-green-900">
                                                     Module {module.id}: {module.title}
                                                 </h3>
-                                                {expandedModule === module.id
-                                                    ? <ChevronUp className="w-5 h-5 text-green-400 flex-shrink-0" />
-                                                    : <ChevronDown className="w-5 h-5 text-green-400 flex-shrink-0" />}
+                                                {expandedModule === module.id ? (
+                                                    <ChevronUp className="w-5 h-5 text-green-400 flex-shrink-0" />
+                                                ) : (
+                                                    <ChevronDown className="w-5 h-5 text-green-400 flex-shrink-0" />
+                                                )}
                                             </div>
                                             <div className="flex items-center gap-4 text-sm text-green-600 font-medium">
-                                                <span className="flex items-center gap-1"><BookOpen className="w-4 h-4" />{module.lessons} lessons</span>
-                                                <span className="flex items-center gap-1"><Clock className="w-4 h-4" />{module.duration}</span>
+                                                <span className="flex items-center gap-1">
+                                                    <BookOpen className="w-4 h-4" />
+                                                    {module.lessons} lessons
+                                                </span>
                                             </div>
                                         </div>
                                     </button>
-
+ 
                                     {expandedModule === module.id && (
                                         <div className="px-6 pb-6 pt-0 border-t border-green-100">
-                                            <p className="text-green-800 mb-5 mt-4 leading-relaxed">{module.description}</p>
+                                            <p className="text-green-800 mb-5 mt-4 leading-relaxed">
+                                                {module.description}
+                                            </p>
                                             <div className="flex items-center gap-3 flex-wrap">
                                                 <button
-                                                    onClick={() => window.location.href = module.href}
+                                                    onClick={() => (window.location.href = module.href)}
                                                     disabled={module.locked}
-                                                    className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-extrabold transition-all ${module.locked
-                                                        ? "bg-gray-100 text-gray-400 cursor-not-allowed border-2 border-gray-200"
-                                                        : module.completed
+                                                    className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-extrabold transition-all ${
+                                                        module.locked
+                                                            ? "bg-gray-100 text-gray-400 cursor-not-allowed border-2 border-gray-200"
+                                                            : module.completed
                                                             ? "bg-green-50 text-green-700 hover:bg-green-100 border-2 border-green-300 hover:border-green-400"
                                                             : "bg-gradient-to-r from-yellow-300 via-lime-400 to-green-400 text-green-900 hover:shadow-xl hover:shadow-lime-500/30 hover:scale-105"
-                                                        }`}
+                                                    }`}
                                                 >
-                                                    {module.locked ? <><Lock className="w-5 h-5" /> Locked</>
-                                                        : module.completed ? <><CheckCircle2 className="w-5 h-5" /> Review Module</>
-                                                            : <><PlayCircle className="w-5 h-5" /> Start Module</>}
-                                                </button>
-
-                                                {/* Per-module Sources shortcut */}
-                                                <button
-                                                    onClick={() => setShowReferences(true)}
-                                                    className="flex items-center gap-1.5 px-4 py-3 rounded-2xl font-semibold text-sm text-green-600 hover:text-green-800 bg-green-50 hover:bg-green-100 border-2 border-green-200 hover:border-green-400 transition-all"
-                                                >
-                                                    <FileText className="w-4 h-4" />
-                                                    Sources
+                                                    {module.locked ? (
+                                                        <><Lock className="w-5 h-5" /> Locked</>
+                                                    ) : module.completed ? (
+                                                        <><CheckCircle2 className="w-5 h-5" /> Review Module</>
+                                                    ) : (
+                                                        <><PlayCircle className="w-5 h-5" /> Start Module</>
+                                                    )}
                                                 </button>
                                             </div>
                                         </div>
                                     )}
                                 </div>
                             ))}
-
-                            {/* ── Activity Button ── */}
+ 
                             {/* Activity Card */}
                             <div className="bg-gradient-to-br from-white to-lime-50 rounded-3xl shadow-sm border-2 border-lime-300 overflow-hidden hover:shadow-lg transition-all">
                                 <div className="p-6">
@@ -749,17 +862,17 @@ export default function NavigationPage() {
                                                 Create and present a well-balanced salad demonstrating your understanding of classification, components, and dressing preparation.
                                             </p>
                                             <button
-                                                onClick={() => window.location.href = "../activity"}
+                                                onClick={() => (window.location.href = "../activity")}
                                                 className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-yellow-300 via-lime-400 to-green-400 text-green-900 font-extrabold rounded-2xl hover:shadow-xl hover:shadow-lime-500/30 hover:scale-105 transition-all"
                                             >
                                                 <span>🏆</span>
-                                                Take Activity
+                                                Try this!
                                             </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
+ 
                             {/* Final Quiz Card */}
                             <div className="bg-gradient-to-br from-white to-yellow-50 rounded-3xl shadow-sm border-2 border-yellow-300 overflow-hidden hover:shadow-lg transition-all">
                                 <div className="p-6">
@@ -773,11 +886,11 @@ export default function NavigationPage() {
                                                 Test your understanding of salad preparation concepts from all modules. Make sure you've reviewed all modules before attempting the quiz.
                                             </p>
                                             <button
-                                                onClick={() => window.location.href = "../quiz"}
+                                                onClick={() => (window.location.href = "../quiz")}
                                                 className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-yellow-300 via-lime-400 to-green-400 text-green-900 font-extrabold rounded-2xl hover:shadow-xl hover:shadow-lime-500/30 hover:scale-105 transition-all"
                                             >
                                                 <Award className="w-5 h-5" />
-                                                Take Final Quiz
+                                                Try this!
                                             </button>
                                         </div>
                                     </div>
@@ -785,12 +898,12 @@ export default function NavigationPage() {
                             </div>
                         </div>
                     </div>
-
+ 
                     {/* ── Sidebar ── */}
                     <div className="lg:col-span-1">
                         <div className="sticky top-8 space-y-4">
-
-                            {/* ── Researchers sidebar card ── */}
+ 
+                            {/* Researchers sidebar card */}
                             <div className="bg-gradient-to-br from-white to-lime-50 rounded-3xl border-2 border-green-200 hover:border-green-400 hover:shadow-lg transition-all overflow-hidden">
                                 <div className="bg-gradient-to-r from-lime-600 via-green-600 to-emerald-600 px-5 py-3 flex items-center gap-2">
                                     <Users className="w-4 h-4 text-lime-200" />
@@ -798,41 +911,12 @@ export default function NavigationPage() {
                                 </div>
                                 <div className="p-5">
                                     <p className="text-green-700 text-sm font-medium mb-4 leading-relaxed">
-                                        This website was developed by Bachelor of Technology and Livelihood Education major in Home Economics students from the University of Rizal System – Morong Campus to provide structured and educational content about salads and salad dressings.
+                                        This website was developed by Bachelor of Technology and Livelihood Education major in Home Economics students from the University of Rizal System – Morong Campus.
                                     </p>
-                                    {/* Drop your component right here */}
                                     <ResearchersButton />
                                 </div>
                             </div>
-
-                            {/* ── References sidebar card ── */}
-                            <div className="bg-gradient-to-br from-white to-green-50 rounded-3xl border-2 border-green-200 hover:border-green-400 hover:shadow-lg transition-all overflow-hidden">
-                                <div className="bg-gradient-to-r from-emerald-600 to-green-600 px-5 py-3 flex items-center gap-2">
-                                    <FileText className="w-4 h-4 text-lime-200" />
-                                    <span className="text-white font-extrabold text-sm">References</span>
-                                </div>
-                                <div className="p-5">
-                                    <p className="text-green-700 text-sm font-medium mb-4 leading-relaxed">
-                                        All course materials are backed by verified academic and professional sources.
-                                    </p>
-                                    <div className="space-y-2 mb-4">
-                                        {["Books", "Journals", "Websites"].map((type) => (
-                                            <div key={type} className="flex items-center gap-2 text-xs font-semibold text-green-700">
-                                                <div className="w-2 h-2 rounded-full bg-gradient-to-r from-lime-400 to-green-500" />
-                                                {type}
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <button
-                                        onClick={() => setShowReferences(true)}
-                                        className="w-full flex items-center justify-center gap-2 py-2.5 bg-green-50 hover:bg-green-100 text-green-700 font-extrabold rounded-2xl border-2 border-green-300 hover:border-green-500 transition-all text-sm hover:scale-105"
-                                    >
-                                        <FileText className="w-4 h-4" />
-                                        View All References
-                                    </button>
-                                </div>
-                            </div>
-
+ 
                             {/* Study Tips */}
                             <div className="bg-gradient-to-br from-white to-green-50 rounded-3xl p-6 border-2 border-green-200 hover:border-green-400 hover:shadow-lg transition-all">
                                 <h3 className="font-extrabold text-green-900 mb-4 flex items-center gap-2">
@@ -852,10 +936,90 @@ export default function NavigationPage() {
                     </div>
                 </div>
             </div>
-
-            {/* ── References Modal ── */}
-            {showReferences && <ReferencesModal onClose={() => setShowReferences(false)} />}
-
+ 
+            {/* ══════════════════════════════════════════
+                FOOTER WITH REFERENCES
+            ══════════════════════════════════════════ */}
+            <footer className="bg-gradient-to-br from-lime-700 via-green-700 to-emerald-800 text-white mt-16 relative overflow-hidden">
+ 
+                {/* Decorative blobs */}
+                <div className="absolute inset-0 opacity-10 pointer-events-none">
+                    <div className="absolute top-0 left-0 w-72 h-72 bg-yellow-300 rounded-full blur-3xl" />
+                    <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-300 rounded-full blur-3xl" />
+                </div>
+ 
+                <div className="max-w-7xl mx-auto px-6 py-12 relative z-10">
+ 
+                    {/* Footer top — brand + quick links */}
+                    <div className="grid md:grid-cols-3 gap-10 mb-10">
+ 
+                        {/* Brand */}
+                        <div>
+                            <h3 className="text-xl font-extrabold text-white mb-2">FCS Food Preparation</h3>
+                            <p className="text-green-200 text-sm leading-relaxed">
+                                Salads &amp; Salad Dressings — a structured learning module developed by BTLE Home Economics students of URS Morong Campus.
+                            </p>
+                        </div>
+ 
+                        {/* Quick Links */}
+                        <div>
+                            <h4 className="text-lime-300 text-xs font-extrabold uppercase tracking-widest mb-3">Quick Links</h4>
+                            <ul className="space-y-2">
+                                {[
+                                    { label: "Home", href: "/" },
+                                    { label: "Activity", href: "../activity" },
+                                    { label: "Final Quiz", href: "../quiz" },
+                                ].map((link) => (
+                                    <li key={link.href}>
+                                        <a
+                                            href={link.href}
+                                            className="text-green-200 hover:text-white text-sm font-semibold transition-colors flex items-center gap-2"
+                                        >
+                                            <span className="w-1.5 h-1.5 rounded-full bg-lime-400" />
+                                            {link.label}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+ 
+                        {/* Modules quick links */}
+                        <div>
+                            <h4 className="text-lime-300 text-xs font-extrabold uppercase tracking-widest mb-3">Modules</h4>
+                            <ul className="space-y-2">
+                                {modules.map((mod, idx) => (
+                                    <li key={mod.id}>
+                                        <a
+                                            href={mod.href}
+                                            className="text-green-200 hover:text-white text-sm font-semibold transition-colors flex items-center gap-2"
+                                        >
+                                            <span className="w-1.5 h-1.5 rounded-full bg-lime-400" />
+                                            Module {idx + 1}: {mod.title}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+ 
+                    {/* Divider */}
+                    <div className="border-t border-white/20 mb-8" />
+ 
+                    {/* References section */}
+                    <ReferencesAccordion />
+ 
+                    {/* Divider */}
+                    <div className="border-t border-white/20 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
+                        <p className="text-green-300 text-xs font-medium">
+                            © {new Date().getFullYear()} University of Rizal System – Morong Campus. All rights reserved.
+                        </p>
+                        <p className="text-green-300 text-xs font-medium">
+                            All references cited in accordance with academic standards.
+                        </p>
+                    </div>
+                </div>
+            </footer>
+ 
             {/* Floating Chat Widget */}
             <ChatWidget />
         </div>

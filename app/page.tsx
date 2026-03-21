@@ -72,7 +72,6 @@ export default function HomePage() {
               <div className="flex items-center gap-4 text-sm">
                 <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-5 py-3 rounded-xl">
                   <Clock className="w-5 h-5 text-yellow-300" />
-                  <span className="font-semibold text-white">2 hours</span>
                 </div>
                 <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-5 py-3 rounded-xl">
                   <BookOpen className="w-5 h-5 text-lime-300" />
@@ -213,7 +212,6 @@ export default function HomePage() {
               <div className="space-y-3">
                 {[
                   "4 comprehensive modules",
-                  "2 hours of content",
                   "Practical demonstrations",
                   "Final assessment quiz"
                 ].map((item, idx) => (
