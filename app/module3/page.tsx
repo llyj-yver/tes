@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, Award, BookOpen, ChevronRight } from "lucide-react";
+import { CheckCircle2, Award, BookOpen, ChevronRight, X } from "lucide-react";
 
 interface Step {
   title: string;
@@ -20,6 +20,9 @@ interface DressingType {
   accent: string;
   bg: string;
   steps: Step[];
+  trivia: string[];
+  taste: string[];
+  texture: string[];
 }
 
 const dressingData: DressingType[] = [
@@ -31,6 +34,19 @@ const dressingData: DressingType[] = [
     color: "#4caf72",
     accent: "#1a4a2e",
     bg: "#f0faf4",
+    trivia: [
+      "Also called a vinaigrette.",
+      "Basic ratio: 3 parts oil to 1 part vinegar.",
+      "It's one of the oldest and simplest dressings used in cooking.",
+      "Needs shaking before use because oil and vinegar separate naturally.",
+    ],
+    taste: [
+      "Sharp and aggressive — the acidity of the vinegar hits the tongue first and very sharply.",
+    ],
+    texture: [
+      "Thin and watery with very low viscosity — feels like a thin liquid rather than a sauce.",
+      "Has a slight slickness from the oil coating the mouth.",
+    ],
     steps: [
       {
         title: "Gather Your Ingredients",
@@ -78,41 +94,54 @@ const dressingData: DressingType[] = [
     color: "#7bc67e",
     accent: "#2d6a4f",
     bg: "#f4fbf6",
+    trivia: [
+      "Uses an emulsifier (like egg yolk or mustard) to bind oil and liquid together.",
+      "Does not separate easily once properly emulsified.",
+      "Mayonnaise is a classic example of an emulsified dressing.",
+      "Known for its stable and creamy texture.",
+    ],
+    taste: [
+      "Mellowed acidity — the emulsification softens the sharpness of the vinegar or lemon juice, creating a smoother, rounder flavor.",
+    ],
+    texture: [
+      "Creamy and viscous — much thicker than a simple vinaigrette.",
+      "Adhesive — it clings to salad leaves and ingredients rather than dripping off.",
+    ],
     steps: [
       {
         title: "Gather Your Ingredients",
         description: "You'll need egg yolk (the emulsifier), oil, and lemon juice. The egg yolk is the secret — it contains lecithin which permanently bonds oil and water.",
-        visual: "/image/mods3/EMULSIFIED DRESSING/1.jpeg",
+        visual: "/image/mods3/EMULSIFIED DRESSING/s1.jpg",
         tip: "Use room temperature eggs for smoother emulsification.",
       },
       {
         title: "Start with the Egg Yolk",
         description: "Place one egg yolk in a bowl. This is your emulsifier — it will act as the bridge between the oil and the lemon juice.",
-        visual: "/image/mods3/EMULSIFIED DRESSING/2.jpeg",
+        visual: "/image/mods3/EMULSIFIED DRESSING/s2.jpg",
         tip: "Separate yolk carefully — no egg white should get in.",
       },
       {
         title: "Add Lemon Juice",
         description: "Add a tablespoon of fresh lemon juice to the yolk and whisk together. This starts building the base of the dressing.",
-        visual: "/image/mods3/EMULSIFIED DRESSING/3.jpeg",
+        visual: "/image/mods3/EMULSIFIED DRESSING/s3.jpg",
         tip: "Fresh lemon is much better than bottled here.",
       },
       {
         title: "Drizzle in Oil — Slowly!",
         description: "This is the critical step. Add oil ONE DROP AT A TIME while whisking constantly. Going too fast breaks the emulsion. Slowly increase to a thin stream.",
-        visual: "/image/mods3/EMULSIFIED DRESSING/4.jpeg",
+        visual: "/image/mods3/EMULSIFIED DRESSING/s4.jpg",
         tip: "Patience is everything — rushing this step will cause it to break.",
       },
       {
         title: "Watch it Thicken",
         description: "As you keep whisking and adding oil, the dressing will suddenly thicken and turn creamy and pale. This is emulsification happening in real time!",
-        visual: "/image/mods3/EMULSIFIED DRESSING/5.jpeg",
+        visual: "/image/mods3/EMULSIFIED DRESSING/s5.jpg",
         tip: "If it breaks (goes oily), add another yolk and whisk again slowly.",
       },
       {
         title: "Ready to Serve!",
         description: "Your emulsified dressing is stable — it won't separate! Use it for Caesar salad, Thousand Island, or Honey Mustard dressings.",
-        visual: "/image/mods3/EMULSIFIED DRESSING/final picture_.jpg",
+        visual: "/image/mods3/EMULSIFIED DRESSING/s6.jpg",
         tip: "Refrigerate and use within 2 days since it contains raw egg.",
       },
     ],
@@ -125,6 +154,21 @@ const dressingData: DressingType[] = [
     color: "#52b788",
     accent: "#1b4332",
     bg: "#edf7f1",
+    trivia: [
+      "\"Other dressings\" are specialty dressings that don't fall neatly under vinaigrettes or creamy emulsions.",
+      "Includes fruit-based, cooked, yogurt-based, and sweet-savory dressings.",
+      "Asian-style soy-based dressings are a popular example of this category.",
+      "The flavor profile depends entirely on the base ingredient used.",
+    ],
+    taste: [
+      "Can be sweet (like fruit dressings), savory or umami (like soy-based dressings), or sweet and tangy at the same time.",
+      "Overall: very flexible — the flavor depends on the ingredients (honey, yogurt, herbs, soy sauce, etc.).",
+    ],
+    texture: [
+      "Can be thick or thin depending on the ingredients used.",
+      "Some are slightly creamy (if yogurt or fruit purée is used); others are smooth or slightly pulpy.",
+      "Feels like anything from a light drizzle to a semi-creamy coating.",
+    ],
     steps: [
       {
         title: "Gather Your Ingredients",
@@ -172,6 +216,22 @@ const dressingData: DressingType[] = [
     color: "#74c69d",
     accent: "#1b4332",
     bg: "#f0faf5",
+    trivia: [
+      "A temporary emulsion separates quickly because oil and water-based ingredients don't naturally mix.",
+      "You have to shake or whisk it right before every use!",
+      "Mustard is key — it acts as a partial emulsifier to help it stay mixed a little longer.",
+      "Classic vinaigrette is the most common temporary emulsion dressing.",
+    ],
+    taste: [
+      "Bright and tangy from vinegar or lemon juice, with a slightly sharp or zesty edge.",
+      "Balanced by the smooth, mild flavor of oil — sometimes a little salty or slightly sweet depending on added ingredients.",
+      "Overall: refreshing, light, and a bit punchy.",
+    ],
+    texture: [
+      "Thin and runny — not creamy at all.",
+      "Feels light on the tongue, slightly oily but not thick.",
+      "Compared to creamy dressings, this feels more like a light liquid coating.",
+    ],
     steps: [
       {
         title: "Gather Your Ingredients",
@@ -219,6 +279,22 @@ const dressingData: DressingType[] = [
     color: "#40916c",
     accent: "#1b4332",
     bg: "#eaf6f0",
+    trivia: [
+      "A permanent emulsion stays mixed because of an emulsifier (like egg yolk) that keeps oil and water from ever separating.",
+      "Mayonnaise is the most famous permanent emulsion dressing.",
+      "The technique used here is the same base method for making mayonnaise from scratch.",
+      "Once made, it holds its shape and texture for days in the refrigerator.",
+    ],
+    taste: [
+      "Rich and creamy with a mild but slightly tangy flavor (depending on lemon or vinegar used).",
+      "Smooth, balanced, and sometimes slightly savory.",
+      "Overall: creamy, rich, and mellow.",
+    ],
+    texture: [
+      "Thick and smooth — coats the mouth more heavily than any vinaigrette.",
+      "Creamy and stable — will not separate even when left to sit.",
+      "Feels spreadable and velvety.",
+    ],
     steps: [
       {
         title: "Gather Your Ingredients",
@@ -266,6 +342,22 @@ const dressingData: DressingType[] = [
     color: "#95d5b2",
     accent: "#1b4332",
     bg: "#f2fbf6",
+    trivia: [
+      "This is the only dressing type that requires a pot and heat to prepare.",
+      "Because it is cooked, the texture becomes more stable and smooth.",
+      "Commonly used in coleslaw, vegetable salads, and fruit salads.",
+      "Gives a more homemade and classic taste compared to regular mayonnaise.",
+    ],
+    taste: [
+      "Sweet and tangy — a pleasant balance of sugar and vinegar.",
+      "Slightly creamy and rich, but not too heavy — mild and smooth on the palate.",
+      "Imagine a mix of mayonnaise with a gentle sweet-sour flavor.",
+    ],
+    texture: [
+      "Smooth and creamy, slightly thick but not overly dense.",
+      "Similar to a soft custard or light pudding — it spreads easily and coats ingredients well.",
+      "Think of a velvety layer that wraps gently around each piece of salad.",
+    ],
     steps: [
       {
         title: "Gather Your Ingredients",
@@ -307,8 +399,94 @@ const dressingData: DressingType[] = [
   },
 ];
 
-// Which localStorage key this module uses
-const MODULE_KEY = "module3"; // adjust to whatever key matches your ModuleContext
+const MODULE_KEY = "module3";
+
+// ── Trivia Modal ─────────────────────────────────────────────────────────────
+function TriviaModal({
+  dressing,
+  onClose,
+}: {
+  dressing: DressingType;
+  onClose: () => void;
+}) {
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      style={{ background: "rgba(10,40,20,0.6)", backdropFilter: "blur(8px)" }}
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.88, y: 24 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.88, y: 24 }}
+        transition={{ duration: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
+        className="relative w-full max-w-md bg-white rounded-3xl shadow-2xl border-2 overflow-hidden"
+        style={{ borderColor: dressing.color + "66" }}
+      >
+        {/* Header */}
+        <div
+          className="px-7 py-6 relative overflow-hidden"
+          style={{ background: `linear-gradient(135deg, ${dressing.color}cc, ${dressing.accent})` }}
+        >
+          <div className="absolute inset-0 opacity-20 pointer-events-none">
+            <div className="absolute -top-6 -left-6 w-32 h-32 bg-yellow-300 rounded-full blur-3xl" />
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-white rounded-full blur-3xl" />
+          </div>
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 w-8 h-8 rounded-xl bg-white/20 hover:bg-white/35 text-white flex items-center justify-center transition-all hover:rotate-90 duration-300 border border-white/30 z-10"
+          >
+            <X className="w-4 h-4" />
+          </button>
+          <div className="relative z-10 flex items-center gap-4">
+            <span className="text-4xl">{dressing.emoji}</span>
+            <div>
+              <p className="text-white/70 text-xs font-bold uppercase tracking-widest mb-0.5">Did You Know?</p>
+              <h3 className="text-white font-extrabold text-xl leading-snug">{dressing.name}</h3>
+            </div>
+          </div>
+        </div>
+
+        {/* Trivia items */}
+        <div className="p-6 space-y-3">
+          {dressing.trivia.map((fact, i) => (
+            <div
+              key={i}
+              className="flex items-start gap-3 p-3.5 rounded-2xl border-2"
+              style={{ background: dressing.color + "12", borderColor: dressing.color + "33" }}
+            >
+              <span
+                className="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-extrabold flex-shrink-0 mt-0.5"
+                style={{ background: dressing.color }}
+              >
+                {i + 1}
+              </span>
+              <p className="text-sm leading-relaxed" style={{ color: dressing.accent }}>
+                {fact}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="px-6 pb-6">
+          <button
+            onClick={onClose}
+            className="w-full py-3 rounded-2xl font-extrabold text-sm text-white transition-all hover:opacity-90 hover:scale-[1.02]"
+            style={{ background: `linear-gradient(to right, ${dressing.color}, ${dressing.accent})` }}
+          >
+            Got it!
+          </button>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
 
 export default function DressingFlipbook() {
   const [selectedDressing, setSelectedDressing] = useState<number>(0);
@@ -317,12 +495,13 @@ export default function DressingFlipbook() {
   const [completed, setCompleted] = useState<Set<string>>(new Set());
   const [isModuleComplete, setIsModuleComplete] = useState<boolean>(false);
   const [showCompletionBanner, setShowCompletionBanner] = useState<boolean>(false);
+  const [showTrivia, setShowTrivia] = useState<boolean>(false);
 
   const dressing = dressingData[selectedDressing];
   const step = dressing.steps[currentStep];
   const totalSteps = dressing.steps.length;
+  const isFinalStep = currentStep === totalSteps - 1;
 
-  // Check if already completed on mount
   useEffect(() => {
     const saved = localStorage.getItem("completedModules");
     if (saved) {
@@ -331,7 +510,6 @@ export default function DressingFlipbook() {
     }
   }, []);
 
-  // Mark module complete when all dressings are done
   useEffect(() => {
     if (completed.size === dressingData.length && !isModuleComplete) {
       const saved = localStorage.getItem("completedModules");
@@ -347,7 +525,6 @@ export default function DressingFlipbook() {
   const goToStep = (next: number) => {
     setDirection(next > currentStep ? 1 : -1);
     setCurrentStep(next);
-    // Mark dressing complete when reaching last step
     if (next === dressing.steps.length - 1) {
       setCompleted((prev) => new Set([...prev, dressing.id]));
     }
@@ -359,8 +536,12 @@ export default function DressingFlipbook() {
     setDirection(1);
   };
 
+  // Auto-popup trivia whenever the active dressing changes
+  useEffect(() => {
+    setShowTrivia(true);
+  }, [selectedDressing]);
+
   const handleNextDressing = () => {
-    // Mark current as complete too
     setCompleted((prev) => new Set([...prev, dressing.id]));
     const next = (selectedDressing + 1) % dressingData.length;
     selectDressing(next);
@@ -377,16 +558,14 @@ export default function DressingFlipbook() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-lime-50 to-emerald-50 flex flex-col">
 
-      {/* ── Hero Header (matches landing page) ── */}
+      {/* ── Hero Header ── */}
       <div className="bg-gradient-to-br from-lime-600 via-green-600 to-emerald-700 text-white relative overflow-hidden">
-        {/* Decorative blobs */}
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           <div className="absolute top-10 left-10 w-64 h-64 bg-yellow-300 rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-10 w-80 h-80 bg-green-300 rounded-full blur-3xl" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 py-10 relative z-10">
-          {/* Back button */}
           <button
             onClick={() => window.location.href = "/navigation"}
             className="flex items-center gap-2 text-lime-200 hover:text-white transition-colors mb-6 group"
@@ -471,10 +650,11 @@ export default function DressingFlipbook() {
             <button
               key={d.id}
               onClick={() => selectDressing(i)}
-              className={`w-full text-left px-5 py-3 flex items-center gap-3 transition-all border-l-4 ${selectedDressing === i
+              className={`w-full text-left px-5 py-3 flex items-center gap-3 transition-all border-l-4 ${
+                selectedDressing === i
                   ? "border-lime-400 bg-white/10 text-white"
                   : "border-transparent text-green-300 hover:bg-white/5 hover:text-white"
-                }`}
+              }`}
             >
               <span className="text-xl">{d.emoji}</span>
               <div className="flex-1 min-w-0">
@@ -490,7 +670,6 @@ export default function DressingFlipbook() {
             </button>
           ))}
 
-          {/* Back to course link in sidebar */}
           <div className="mt-auto pt-6 px-5">
             <button
               onClick={() => window.location.href = "/navigation"}
@@ -542,135 +721,185 @@ export default function DressingFlipbook() {
             </p>
           </div>
 
-          {/* Step Card */}
-          <div className="flex-1 flex flex-col justify-center items-center px-8 py-8 overflow-hidden">
-            <AnimatePresence mode="wait" custom={direction}>
-              <motion.div
-                key={`${dressing.id}-${currentStep}`}
-                custom={direction}
-                variants={slideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.35, ease: "easeInOut" }}
-                className="max-w-2xl w-full"
-              >
-                {/* Visual card */}
-                <div
-                  className="bg-white rounded-3xl p-8 mb-6 flex flex-col items-center justify-center border-2 shadow-lg"
-                  style={{ borderColor: dressing.color + "44", boxShadow: `0 8px 32px ${dressing.color}22` }}
-                >
-                  <img
-                    src={step.visual}
-                    alt={step.title}
-                    className="w-full max-w-xs h-48 object-cover rounded-2xl mb-4"
-                  />
-                  <span
-                    className="inline-block text-xs font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full"
-                    style={{ background: dressing.color + "22", color: dressing.accent }}
-                  >
-                    Step {currentStep + 1}
-                  </span>
-                </div>
+          {/* ── 3-column layout: Prev | Content | Next ── */}
+          <div className="flex-1 flex items-center gap-4 px-6 py-8 overflow-y-auto">
 
-                {/* Text */}
-                <h3 className="text-2xl font-extrabold mb-3" style={{ color: dressing.accent }}>
-                  {step.title}
-                </h3>
-                <p className="text-lg leading-relaxed text-gray-700 mb-5">
-                  {step.description}
-                </p>
-
-                {/* Tip box — matches landing page card style */}
-                <div
-                  className="rounded-2xl p-4 flex items-start gap-3 border-2"
-                  style={{ background: dressing.color + "18", borderColor: dressing.color + "55" }}
-                >
-                  <span className="text-lg mt-0.5">💡</span>
-                  <div>
-                    <span className="text-xs font-extrabold uppercase tracking-widest" style={{ color: dressing.accent }}>
-                      Chef&apos;s Tip:{" "}
-                    </span>
-                    <span className="text-sm leading-relaxed" style={{ color: dressing.accent + "cc" }}>
-                      {step.tip}
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Navigation footer */}
-          <div
-            className="px-8 py-5 flex justify-between items-center border-t-2"
-            style={{ borderColor: dressing.color + "33" }}
-          >
-            <button
-              onClick={() => goToStep(currentStep - 1)}
-              disabled={currentStep === 0}
-              className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-extrabold text-sm transition-all border-2 ${currentStep === 0
-                  ? "opacity-30 cursor-not-allowed border-gray-200 text-gray-400"
-                  : "bg-white hover:shadow-md hover:scale-105"
+            {/* ── Left: Previous button ── */}
+            <div className="flex-shrink-0 flex items-center justify-center w-14">
+              <button
+                onClick={() => goToStep(currentStep - 1)}
+                disabled={currentStep === 0}
+                className={`w-12 h-12 rounded-2xl font-extrabold text-lg transition-all border-2 flex items-center justify-center ${
+                  currentStep === 0
+                    ? "opacity-20 cursor-not-allowed border-gray-200 text-gray-400"
+                    : "bg-white hover:shadow-lg hover:scale-110"
                 }`}
-              style={currentStep > 0 ? { borderColor: dressing.color, color: dressing.accent } : {}}
-            >
-              ← Previous
-            </button>
-
-            {/* Dot indicators */}
-            <div className="flex gap-2">
-              {dressing.steps.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => goToStep(i)}
-                  className="h-2 rounded-full transition-all duration-300 cursor-pointer"
-                  style={{
-                    width: i === currentStep ? 24 : 8,
-                    background: i === currentStep ? dressing.color : dressing.color + "44",
-                  }}
-                />
-              ))}
+                style={currentStep > 0 ? { borderColor: dressing.color, color: dressing.accent } : {}}
+                title="Previous step"
+              >
+                ←
+              </button>
             </div>
 
-            {currentStep < totalSteps - 1 ? (
-              <button
-                onClick={() => goToStep(currentStep + 1)}
-                className="flex items-center gap-2 px-6 py-3 rounded-2xl font-extrabold text-sm transition-all hover:scale-105 hover:shadow-lg text-green-900"
-                style={{
-                  background: `linear-gradient(to right, #fde68a, #bef264, ${dressing.color})`,
-                  boxShadow: `0 4px 16px ${dressing.color}55`,
-                }}
-              >
-                Next Step
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            ) : completed.size < dressingData.length - 1 ? (
-              /* More dressings remaining */
-              <button
-                onClick={handleNextDressing}
-                className="flex items-center gap-2 px-6 py-3 rounded-2xl font-extrabold text-sm transition-all hover:scale-105 hover:shadow-xl text-green-900"
-                style={{ background: "linear-gradient(to right, #fde68a, #bef264, #4ade80)" }}
-              >
-                Next Dressing
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            ) : (
-              /* All done — go back to navigation */
-              <button
-                onClick={() => {
-                  setCompleted((prev) => new Set([...prev, dressing.id]));
-                  window.location.href = "/mods3p2";
-                }}
-                className="flex items-center gap-2 px-6 py-3 rounded-2xl font-extrabold text-sm transition-all hover:scale-105 hover:shadow-xl text-green-900"
-                style={{ background: "linear-gradient(to right, #fde68a, #bef264, #4ade80)" }}
-              >
-                <Award className="w-4 h-4" />
-                Back to Course →
-              </button>
-            )}
+            {/* ── Center: Step content ── */}
+            <div className="flex-1 flex justify-center overflow-y-auto">
+              <AnimatePresence mode="wait" custom={direction}>
+                <motion.div
+                  key={`${dressing.id}-${currentStep}`}
+                  custom={direction}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.35, ease: "easeInOut" }}
+                  className="max-w-2xl w-full"
+                >
+                  {/* Visual card */}
+                  <div
+                    className="bg-white rounded-3xl p-8 mb-6 flex flex-col items-center justify-center border-2 shadow-lg"
+                    style={{ borderColor: dressing.color + "44", boxShadow: `0 8px 32px ${dressing.color}22` }}
+                  >
+                    <img
+                      src={step.visual}
+                      alt={step.title}
+                      className="w-full max-w-xs h-48 object-cover rounded-2xl mb-4"
+                    />
+                    <span
+                      className="inline-block text-xs font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full"
+                      style={{ background: dressing.color + "22", color: dressing.accent }}
+                    >
+                      Step {currentStep + 1}
+                    </span>
+                  </div>
+
+                  {/* Text */}
+                  <h3 className="text-2xl font-extrabold mb-3" style={{ color: dressing.accent }}>
+                    {step.title}
+                  </h3>
+                  <p className="text-lg leading-relaxed text-gray-700 mb-5">
+                    {step.description}
+                  </p>
+
+                  {/* Tip box */}
+                  <div
+                    className="rounded-2xl p-4 flex items-start gap-3 border-2 mb-5"
+                    style={{ background: dressing.color + "18", borderColor: dressing.color + "55" }}
+                  >
+                    <span className="text-lg mt-0.5">💡</span>
+                    <div>
+                      <span className="text-xs font-extrabold uppercase tracking-widest" style={{ color: dressing.accent }}>
+                        Chef&apos;s Tip:{" "}
+                      </span>
+                      <span className="text-sm leading-relaxed" style={{ color: dressing.accent + "cc" }}>
+                        {step.tip}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Taste & Texture — only on the final step */}
+                  {isFinalStep && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 16 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2, duration: 0.4 }}
+                      className="grid sm:grid-cols-2 gap-4"
+                    >
+                      {/* Taste */}
+                      <div
+                        className="rounded-2xl p-5 border-2"
+                        style={{ background: dressing.color + "14", borderColor: dressing.color + "44" }}
+                      >
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="text-xl">👅</span>
+                          <h4 className="font-extrabold text-sm uppercase tracking-widest" style={{ color: dressing.accent }}>
+                            Taste Profile
+                          </h4>
+                        </div>
+                        <ul className="space-y-2">
+                          {dressing.taste.map((t, i) => (
+                            <li key={i} className="flex items-start gap-2 text-sm leading-relaxed" style={{ color: dressing.accent + "cc" }}>
+                              <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: dressing.color }} />
+                              {t}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Texture */}
+                      <div
+                        className="rounded-2xl p-5 border-2"
+                        style={{ background: dressing.color + "14", borderColor: dressing.color + "44" }}
+                      >
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="text-xl">🤌</span>
+                          <h4 className="font-extrabold text-sm uppercase tracking-widest" style={{ color: dressing.accent }}>
+                            Texture (Mouthfeel)
+                          </h4>
+                        </div>
+                        <ul className="space-y-2">
+                          {dressing.texture.map((t, i) => (
+                            <li key={i} className="flex items-start gap-2 text-sm leading-relaxed" style={{ color: dressing.accent + "cc" }}>
+                              <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: dressing.color }} />
+                              {t}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </motion.div>
+                  )}
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* ── Right: Next button ── */}
+            <div className="flex-shrink-0 flex items-center justify-center w-14">
+              {currentStep < totalSteps - 1 ? (
+                <button
+                  onClick={() => goToStep(currentStep + 1)}
+                  className="w-12 h-12 rounded-2xl font-extrabold text-lg transition-all hover:scale-110 hover:shadow-lg flex items-center justify-center text-green-900 border-2"
+                  style={{
+                    background: `linear-gradient(135deg, #fde68a, #bef264, ${dressing.color})`,
+                    borderColor: dressing.color,
+                    boxShadow: `0 4px 16px ${dressing.color}55`,
+                  }}
+                  title="Next step"
+                >
+                  →
+                </button>
+              ) : completed.size < dressingData.length - 1 ? (
+                <button
+                  onClick={handleNextDressing}
+                  className="w-12 h-12 rounded-2xl font-extrabold text-lg transition-all hover:scale-110 hover:shadow-xl flex items-center justify-center text-green-900 border-2 border-lime-400"
+                  style={{ background: "linear-gradient(135deg, #fde68a, #bef264, #4ade80)" }}
+                  title="Next dressing"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              ) : (
+                <button
+                  onClick={() => {
+                    setCompleted((prev) => new Set([...prev, dressing.id]));
+                    window.location.href = "/mods3p2";
+                  }}
+                  className="w-12 h-12 rounded-2xl font-extrabold text-lg transition-all hover:scale-110 hover:shadow-xl flex items-center justify-center text-green-900 border-2 border-lime-400"
+                  style={{ background: "linear-gradient(135deg, #fde68a, #bef264, #4ade80)" }}
+                  title="Finish"
+                >
+                  <Award className="w-5 h-5" />
+                </button>
+              )}
+            </div>
+
           </div>
         </div>
       </div>
+
+      {/* ── Trivia Modal ── */}
+      <AnimatePresence>
+        {showTrivia && (
+          <TriviaModal dressing={dressing} onClose={() => setShowTrivia(false)} />
+        )}
+      </AnimatePresence>
     </div>
   );
 }

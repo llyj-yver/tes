@@ -27,6 +27,7 @@ import { motion } from "framer-motion";
 // REFERENCES DATA — edit these to your actual sources
 // ─────────────────────────────────────────────
 const references = [
+    // ─── Module 1 ─────────────────────────────────────────────────────────────
     {
         module: "Module 1",
         moduleColor: "from-lime-400 to-green-500",
@@ -40,244 +41,13 @@ const references = [
             },
         ],
     },
+
+    // ─── Module 2 (all sources merged into one group) ─────────────────────────
     {
-        module: "Module 2 – Base Images",
+        module: "Module 2",
         moduleColor: "from-emerald-400 to-green-500",
         sources: [
-            {
-                title: "Lettuce – Lettuce Info",
-                author: "lettuceinfo.org",
-                year: "2023",
-                url: "https://lettuceinfo.org/products/arugula/",
-                type: "Image",
-            },
-            {
-                title: "Spinach – Bedford Tennessee",
-                author: "bedford.tennessee.edu",
-                year: "2023",
-                url: "https://bedford.tennessee.edu/spinach/",
-                type: "Image",
-            },
-            {
-                title: "Arugula – Lettuce Info",
-                author: "lettuceinfo.org",
-                year: "2023",
-                url: "https://lettuceinfo.org/products/arugula/",
-                type: "Image",
-            },
-            {
-                title: "Kale – Healthy Food",
-                author: "healthyfood.com",
-                year: "2023",
-                url: "https://www.healthyfood.com/healthy-shopping/in-season-mid-winter-kale/",
-                type: "Image",
-            },
-        ],
-    },
-    {
-        module: "Module 2 – Body Images",
-        moduleColor: "from-amber-400 to-orange-500",
-        sources: [
-            {
-                title: "Body Ingredient 1",
-                author: "rb.gy",
-                year: "2023",
-                url: "https://rb.gy/ch7isr",
-                type: "Image",
-            },
-            {
-                title: "Body Ingredient 2",
-                author: "blinkurls.com",
-                year: "2023",
-                url: "https://blinkurls.com/R0W8j2",
-                type: "Image",
-            },
-            {
-                title: "Body Ingredient 3",
-                author: "blinkurls.com",
-                year: "2023",
-                url: "https://blinkurls.com/O5vj1N",
-                type: "Image",
-            },
-            {
-                title: "Body Ingredient 4",
-                author: "blinkurls.com",
-                year: "2023",
-                url: "https://blinkurls.com/Od6yqB",
-                type: "Image",
-            },
-        ],
-    },
-    {
-        module: "Module 2 – Garnish Images",
-        moduleColor: "from-rose-400 to-pink-500",
-        sources: [
-            {
-                title: "Garnish Image 1",
-                author: "tinywebs.info",
-                year: "2023",
-                url: "https://tinywebs.info/xqQ3fy",
-                type: "Image",
-            },
-            {
-                title: "Garnish Image 2",
-                author: "tinywebs.info",
-                year: "2023",
-                url: "https://tinywebs.info/Eci9f4",
-                type: "Image",
-            },
-            {
-                title: "Garnish Image 3",
-                author: "tinywebs.info",
-                year: "2023",
-                url: "https://tinywebs.info/Y9VtUz",
-                type: "Image",
-            },
-            {
-                title: "Garnish Image 4",
-                author: "tinywebs.info",
-                year: "2023",
-                url: "https://tinywebs.info/TTdIHf",
-                type: "Image",
-            },
-            {
-                title: "Garnish Image 5",
-                author: "tinywebs.info",
-                year: "2023",
-                url: "https://tinywebs.info/7aLy0C",
-                type: "Image",
-            },
-            {
-                title: "Garnish Image 6",
-                author: "tinywebs.info",
-                year: "2023",
-                url: "https://tinywebs.info/drZtQ8",
-                type: "Image",
-            },
-        ],
-    },
-    {
-        module: "Module 2 – Dressing Images",
-        moduleColor: "from-yellow-400 to-amber-500",
-        sources: [
-            {
-                title: "Dressing Image 1",
-                author: "tinywebs.info",
-                year: "2023",
-                url: "https://tinywebs.info/1gbpPq",
-                type: "Image",
-            },
-            {
-                title: "Dressing Image 2",
-                author: "tinywebs.info",
-                year: "2023",
-                url: "https://tinywebs.info/HHZ1f0",
-                type: "Image",
-            },
-            {
-                title: "Dressing Image 3",
-                author: "tinywebs.info",
-                year: "2023",
-                url: "https://tinywebs.info/emQfXz",
-                type: "Image",
-            },
-            {
-                title: "Other Dressing 1",
-                author: "tinywebs.info",
-                year: "2023",
-                url: "https://tinywebs.info/YAnQ3v",
-                type: "Image",
-            },
-            {
-                title: "Other Dressing 2",
-                author: "tinywebs.info",
-                year: "2023",
-                url: "https://tinywebs.info/TTdIHf",
-                type: "Image",
-            },
-            {
-                title: "Other Dressing 3",
-                author: "tinywebs.info",
-                year: "2023",
-                url: "https://tinywebs.info/ZAaQjU",
-                type: "Image",
-            },
-            {
-                title: "Oil & Vinegar Dressing 1",
-                author: "tinywebs.info",
-                year: "2023",
-                url: "https://tinywebs.info/vRR2id",
-                type: "Image",
-            },
-            {
-                title: "Oil & Vinegar Dressing 2",
-                author: "tinywebs.info",
-                year: "2023",
-                url: "https://tinywebs.info/0vhDFU",
-                type: "Image",
-            },
-            {
-                title: "Oil & Vinegar Dressing 3",
-                author: "tinywebs.info",
-                year: "2023",
-                url: "https://tinywebs.info/fcc9Lb",
-                type: "Image",
-            },
-            {
-                title: "Temporary Emulsion 1",
-                author: "tinywebs.info",
-                year: "2023",
-                url: "https://tinywebs.info/IB082t",
-                type: "Image",
-            },
-            {
-                title: "Temporary Emulsion 2",
-                author: "tinywebs.info",
-                year: "2023",
-                url: "https://tinywebs.info/j9mN1N",
-                type: "Image",
-            },
-            {
-                title: "Temporary Emulsion 3",
-                author: "tinywebs.info",
-                year: "2023",
-                url: "https://tinywebs.info/jDWLQa",
-                type: "Image",
-            },
-            {
-                title: "Temporary Emulsion 4",
-                author: "Google Photos",
-                year: "2023",
-                url: "https://share.google/maxeT2HMHEwdHy0yt",
-                type: "Image",
-            },
-            {
-                title: "Temporary Emulsion 5",
-                author: "Google Photos",
-                year: "2023",
-                url: "https://share.google/wWzm0YQcc4tbotuwI",
-                type: "Image",
-            },
-            {
-                title: "Temporary Emulsion 6",
-                author: "Google Photos",
-                year: "2023",
-                url: "https://share.google/5EwqouaCiQKvGdfrK",
-                type: "Image",
-            },
-            {
-                title: "Temporary Emulsion 7",
-                author: "Google Photos",
-                year: "2023",
-                url: "https://share.google/kD04ucq09nUZYb0Wl",
-                type: "Image",
-            },
-        ],
-    },
-    {
-        module: "Module 2 – Written Reference",
-        moduleColor: "from-green-400 to-emerald-500",
-        sources: [
+            // Written Reference
             {
                 title: "Module 5: Prepare Salad and Dressing",
                 author: "Scribd",
@@ -285,8 +55,224 @@ const references = [
                 url: "https://www.scribd.com/document/469212585/MODULE-5-PREPARE-SALAD-AND-DRESSING",
                 type: "Module",
             },
+            // Base Images
+            {
+                title: "Lettuce – Base Image",
+                author: "lettuceinfo.org",
+                year: "2023",
+                url: "https://lettuceinfo.org/products/arugula/",
+                type: "Image",
+            },
+            {
+                title: "Spinach – Base Image",
+                author: "bedford.tennessee.edu",
+                year: "2023",
+                url: "https://bedford.tennessee.edu/spinach/",
+                type: "Image",
+            },
+            {
+                title: "Arugula – Base Image",
+                author: "lettuceinfo.org",
+                year: "2023",
+                url: "https://lettuceinfo.org/products/arugula/",
+                type: "Image",
+            },
+            {
+                title: "Kale – Base Image",
+                author: "healthyfood.com",
+                year: "2023",
+                url: "https://www.healthyfood.com/healthy-shopping/in-season-mid-winter-kale/",
+                type: "Image",
+            },
+            // Body Images
+            {
+                title: "Body Ingredient 1 – Body Image",
+                author: "rb.gy",
+                year: "2023",
+                url: "https://rb.gy/ch7isr",
+                type: "Image",
+            },
+            {
+                title: "Body Ingredient 2 – Body Image",
+                author: "blinkurls.com",
+                year: "2023",
+                url: "https://blinkurls.com/R0W8j2",
+                type: "Image",
+            },
+            {
+                title: "Body Ingredient 3 – Body Image",
+                author: "blinkurls.com",
+                year: "2023",
+                url: "https://blinkurls.com/O5vj1N",
+                type: "Image",
+            },
+            {
+                title: "Body Ingredient 4 – Body Image",
+                author: "blinkurls.com",
+                year: "2023",
+                url: "https://blinkurls.com/Od6yqB",
+                type: "Image",
+            },
+            // Garnish Images
+            {
+                title: "Garnish Image 1 – Garnish",
+                author: "tinywebs.info",
+                year: "2023",
+                url: "https://tinywebs.info/xqQ3fy",
+                type: "Image",
+            },
+            {
+                title: "Garnish Image 2 – Garnish",
+                author: "tinywebs.info",
+                year: "2023",
+                url: "https://tinywebs.info/Eci9f4",
+                type: "Image",
+            },
+            {
+                title: "Garnish Image 3 – Garnish",
+                author: "tinywebs.info",
+                year: "2023",
+                url: "https://tinywebs.info/Y9VtUz",
+                type: "Image",
+            },
+            {
+                title: "Garnish Image 4 – Garnish",
+                author: "tinywebs.info",
+                year: "2023",
+                url: "https://tinywebs.info/TTdIHf",
+                type: "Image",
+            },
+            {
+                title: "Garnish Image 5 – Garnish",
+                author: "tinywebs.info",
+                year: "2023",
+                url: "https://tinywebs.info/7aLy0C",
+                type: "Image",
+            },
+            {
+                title: "Garnish Image 6 – Garnish",
+                author: "tinywebs.info",
+                year: "2023",
+                url: "https://tinywebs.info/drZtQ8",
+                type: "Image",
+            },
+            // Dressing Images
+            {
+                title: "Dressing Image 1 – Dressing",
+                author: "tinywebs.info",
+                year: "2023",
+                url: "https://tinywebs.info/1gbpPq",
+                type: "Image",
+            },
+            {
+                title: "Dressing Image 2 – Dressing",
+                author: "tinywebs.info",
+                year: "2023",
+                url: "https://tinywebs.info/HHZ1f0",
+                type: "Image",
+            },
+            {
+                title: "Dressing Image 3 – Dressing",
+                author: "tinywebs.info",
+                year: "2023",
+                url: "https://tinywebs.info/emQfXz",
+                type: "Image",
+            },
+            {
+                title: "Other Dressing 1 – Dressing",
+                author: "tinywebs.info",
+                year: "2023",
+                url: "https://tinywebs.info/YAnQ3v",
+                type: "Image",
+            },
+            {
+                title: "Other Dressing 2 – Dressing",
+                author: "tinywebs.info",
+                year: "2023",
+                url: "https://tinywebs.info/TTdIHf",
+                type: "Image",
+            },
+            {
+                title: "Other Dressing 3 – Dressing",
+                author: "tinywebs.info",
+                year: "2023",
+                url: "https://tinywebs.info/ZAaQjU",
+                type: "Image",
+            },
+            {
+                title: "Oil & Vinegar Dressing 1 – Dressing",
+                author: "tinywebs.info",
+                year: "2023",
+                url: "https://tinywebs.info/vRR2id",
+                type: "Image",
+            },
+            {
+                title: "Oil & Vinegar Dressing 2 – Dressing",
+                author: "tinywebs.info",
+                year: "2023",
+                url: "https://tinywebs.info/0vhDFU",
+                type: "Image",
+            },
+            {
+                title: "Oil & Vinegar Dressing 3 – Dressing",
+                author: "tinywebs.info",
+                year: "2023",
+                url: "https://tinywebs.info/fcc9Lb",
+                type: "Image",
+            },
+            {
+                title: "Temporary Emulsion 1 – Dressing",
+                author: "tinywebs.info",
+                year: "2023",
+                url: "https://tinywebs.info/IB082t",
+                type: "Image",
+            },
+            {
+                title: "Temporary Emulsion 2 – Dressing",
+                author: "tinywebs.info",
+                year: "2023",
+                url: "https://tinywebs.info/j9mN1N",
+                type: "Image",
+            },
+            {
+                title: "Temporary Emulsion 3 – Dressing",
+                author: "tinywebs.info",
+                year: "2023",
+                url: "https://tinywebs.info/jDWLQa",
+                type: "Image",
+            },
+            {
+                title: "Temporary Emulsion 4 – Dressing",
+                author: "Google Photos",
+                year: "2023",
+                url: "https://share.google/maxeT2HMHEwdHy0yt",
+                type: "Image",
+            },
+            {
+                title: "Temporary Emulsion 5 – Dressing",
+                author: "Google Photos",
+                year: "2023",
+                url: "https://share.google/wWzm0YQcc4tbotuwI",
+                type: "Image",
+            },
+            {
+                title: "Temporary Emulsion 6 – Dressing",
+                author: "Google Photos",
+                year: "2023",
+                url: "https://share.google/5EwqouaCiQKvGdfrK",
+                type: "Image",
+            },
+            {
+                title: "Temporary Emulsion 7 – Dressing",
+                author: "Google Photos",
+                year: "2023",
+                url: "https://share.google/kD04ucq09nUZYb0Wl",
+                type: "Image",
+            },
         ],
     },
+
+    // ─── Module 3 ─────────────────────────────────────────────────────────────
     {
         module: "Module 3",
         moduleColor: "from-emerald-400 to-teal-500",
@@ -300,6 +286,8 @@ const references = [
             },
         ],
     },
+
+    // ─── Module 4 ─────────────────────────────────────────────────────────────
     {
         module: "Module 4",
         moduleColor: "from-yellow-400 to-lime-500",
@@ -313,66 +301,13 @@ const references = [
             },
         ],
     },
+
+    // ─── Module 5 (sorted by type: Module → Article → Website → Recipe) ──────
     {
         module: "Module 5",
         moduleColor: "from-cyan-400 to-blue-500",
         sources: [
-            {
-                title: "Classic Restaurant Caesar Salad",
-                author: "Allrecipes",
-                year: "2023",
-                url: "https://www.allrecipes.com/recipe/229063/classic-restaurant-caesar-salad",
-                type: "Recipe",
-            },
-            {
-                title: "Garden Salad",
-                author: "Allrecipes",
-                year: "2023",
-                url: "https://www.allrecipes.com/recipe/14369/garden-salad",
-                type: "Recipe",
-            },
-            {
-                title: "Coleslaw Recipe",
-                author: "Simply Recipes",
-                year: "2023",
-                url: "https://www.simplyrecipes.com/recipes/coleslaw",
-                type: "Recipe",
-            },
-            {
-                title: "Allrecipes General Recipe Source",
-                author: "Allrecipes",
-                year: "2023",
-                url: "https://www.allrecipes.com",
-                type: "Website",
-            },
-            {
-                title: "Chef's Salad Recipe",
-                author: "Food Network",
-                year: "2023",
-                url: "https://www.foodnetwork.com/recipes/food-network-kitchen/chefs-salad-recipe-2011625.amp",
-                type: "Recipe",
-            },
-            {
-                title: "Cobb Salad Recipe",
-                author: "Allrecipes",
-                year: "2023",
-                url: "https://www.allrecipes.com/recipe/14415/cobb-salad",
-                type: "Recipe",
-            },
-            {
-                title: "Waldorf Salad",
-                author: "FoodieCrush",
-                year: "2023",
-                url: "https://www.foodiecrush.com",
-                type: "Recipe",
-            },
-            {
-                title: "Ambrosia Salad",
-                author: "Life Love and Sugar",
-                year: "2023",
-                url: "https://www.lifeloveandsugar.com/ambrosia-salad",
-                type: "Recipe",
-            },
+            // Article
             {
                 title: "Caesar Salad",
                 author: "Wikipedia",
@@ -380,18 +315,20 @@ const references = [
                 url: "https://en.wikipedia.org/wiki/Caesar_salad",
                 type: "Article",
             },
+            // Website
             {
-                title: "How to Make Caprese Salad – The Real Italian Recipe",
-                author: "Vincenzo's Plate",
-                year: "2023",
-                url: "https://www.vincenzosplate.com/how-to-make-caprese-salad-the-real-italian-recipe",
-                type: "Recipe",
-            },
-            {
-                title: "Simple Pasta Salad",
+                title: "Allrecipes General Recipe Source",
                 author: "Allrecipes",
                 year: "2023",
-                url: "https://www.allrecipes.com/recipe/86353/simple-pasta-salad",
+                url: "https://www.allrecipes.com",
+                type: "Website",
+            },
+            // Recipes — sorted alphabetically by title
+            {
+                title: "Ambrosia Salad",
+                author: "Life Love and Sugar",
+                year: "2023",
+                url: "https://www.lifeloveandsugar.com/ambrosia-salad",
                 type: "Recipe",
             },
             {
@@ -402,10 +339,24 @@ const references = [
                 type: "Recipe",
             },
             {
-                title: "Simple Potato Salad",
-                author: "Inspired Taste",
+                title: "Caprese Salad – The Real Italian Recipe",
+                author: "Vincenzo's Plate",
                 year: "2023",
-                url: "https://www.inspiredtaste.net/22809/simple-potato-salad-recipe",
+                url: "https://www.vincenzosplate.com/how-to-make-caprese-salad-the-real-italian-recipe",
+                type: "Recipe",
+            },
+            {
+                title: "Chef's Salad",
+                author: "Food Network",
+                year: "2023",
+                url: "https://www.foodnetwork.com/recipes/food-network-kitchen/chefs-salad-recipe-2011625.amp",
+                type: "Recipe",
+            },
+            {
+                title: "Classic Caesar Salad",
+                author: "Allrecipes",
+                year: "2023",
+                url: "https://www.allrecipes.com/recipe/229063/classic-restaurant-caesar-salad",
                 type: "Recipe",
             },
             {
@@ -416,10 +367,17 @@ const references = [
                 type: "Recipe",
             },
             {
-                title: "Tropical Fruit Salad",
-                author: "Dinner at the Zoo",
+                title: "Cobb Salad",
+                author: "Allrecipes",
                 year: "2023",
-                url: "https://www.dinneratthezoo.com/tropical-fruit-salad",
+                url: "https://www.allrecipes.com/recipe/14415/cobb-salad",
+                type: "Recipe",
+            },
+            {
+                title: "Coleslaw",
+                author: "Simply Recipes",
+                year: "2023",
+                url: "https://www.simplyrecipes.com/recipes/coleslaw",
                 type: "Recipe",
             },
             {
@@ -430,10 +388,45 @@ const references = [
                 type: "Recipe",
             },
             {
-                title: "Niçoise Salad",
+                title: "Garden Salad",
+                author: "Allrecipes",
+                year: "2023",
+                url: "https://www.allrecipes.com/recipe/14369/garden-salad",
+                type: "Recipe",
+            },
+            {
+                title: "Nicoise Salad",
                 author: "Simply Recipes",
                 year: "2023",
                 url: "https://www.simplyrecipes.com/recipes/nicoise_salad",
+                type: "Recipe",
+            },
+            {
+                title: "Simple Pasta Salad",
+                author: "Allrecipes",
+                year: "2023",
+                url: "https://www.allrecipes.com/recipe/86353/simple-pasta-salad",
+                type: "Recipe",
+            },
+            {
+                title: "Simple Potato Salad",
+                author: "Inspired Taste",
+                year: "2023",
+                url: "https://www.inspiredtaste.net/22809/simple-potato-salad-recipe",
+                type: "Recipe",
+            },
+            {
+                title: "Tropical Fruit Salad",
+                author: "Dinner at the Zoo",
+                year: "2023",
+                url: "https://www.dinneratthezoo.com/tropical-fruit-salad",
+                type: "Recipe",
+            },
+            {
+                title: "Tropical Gelatin Fruit Salad",
+                author: "Birds Eye Meeple",
+                year: "2023",
+                url: "https://birdseyemeeple.com/tropical-gelatin-fruit-salad",
                 type: "Recipe",
             },
             {
@@ -444,14 +437,16 @@ const references = [
                 type: "Recipe",
             },
             {
-                title: "Tropical Gelatin Fruit Salad",
-                author: "Birds Eye Meeple",
+                title: "Waldorf Salad",
+                author: "FoodieCrush",
                 year: "2023",
-                url: "https://birdseyemeeple.com/tropical-gelatin-fruit-salad",
+                url: "https://www.foodiecrush.com",
                 type: "Recipe",
             },
         ],
     },
+
+    // ─── AI-Generated Images ──────────────────────────────────────────────────
     {
         module: "AI-Generated Images",
         moduleColor: "from-purple-400 to-pink-500",
@@ -803,12 +798,6 @@ export default function NavigationPage() {
                                                 ) : (
                                                     <ChevronDown className="w-5 h-5 text-green-400 flex-shrink-0" />
                                                 )}
-                                            </div>
-                                            <div className="flex items-center gap-4 text-sm text-green-600 font-medium">
-                                                <span className="flex items-center gap-1">
-                                                    <BookOpen className="w-4 h-4" />
-                                                    {module.lessons} lessons
-                                                </span>
                                             </div>
                                         </div>
                                     </button>

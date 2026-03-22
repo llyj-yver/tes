@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import {
   ChevronLeft,
   CheckCircle2,
-  Camera,
   FileText,
   Leaf,
   Star,
@@ -13,100 +12,85 @@ import {
   BookOpen,
   Clock,
   Award,
-  ChevronDown,
-  ChevronUp,
   Sparkles,
-  AlertCircle,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// ── Rubric Data ─────────────────────────────────────────────────────────────
+// ── Rubric Data — matches PDF exactly ───────────────────────────────────────
 const rubricData = [
   {
-    criteria: "Salad Classification",
-    points: 20,
+    criteria: "Salad Components",
+    points: 10,
     color: "from-emerald-500 to-green-600",
     bg: "from-emerald-50 to-green-50",
     border: "border-emerald-200",
     icon: "🥗",
     levels: [
-      { label: "Excellent (4)", desc: "Correctly classified with clear justification" },
-      { label: "Good (3)", desc: "Correctly classified but explanation is minimal" },
-      { label: "Fair (2)", desc: "Classification is somewhat correct but unclear" },
-      { label: "Needs Improvement (1)", desc: "Incorrect classification or no explanation" },
+      { label: "Excellent", score: 10, desc: "All 4 components (Base, Body, Garnish, Dressing) are clearly identified and appropriate for the salad type." },
+      { label: "Good",      score: 8,  desc: "All 4 components are present, though one may be a weak fit for the salad type." },
+      { label: "Fair",      score: 5,  desc: "1 component is missing or identified incorrectly." },
+      { label: "Needs Improvement", score: 3, desc: "2 or more components are missing." },
     ],
   },
   {
-    criteria: "Completeness of Components",
-    points: 25,
+    criteria: "Dressing Identification",
+    points: 10,
     color: "from-lime-500 to-green-600",
     bg: "from-lime-50 to-green-50",
     border: "border-lime-200",
-    icon: "🧩",
+    icon: "🫙",
     levels: [
-      { label: "Excellent (4)", desc: "All components complete and properly identified" },
-      { label: "Good (3)", desc: "All components present but not clearly identified" },
-      { label: "Fair (2)", desc: "One component missing or incorrectly identified" },
-      { label: "Needs Improvement (1)", desc: "Two or more components missing" },
+      { label: "Excellent", score: 10, desc: "Dressing is correctly identified by type (e.g., Vinaigrette, Emulsified, Creamy) with clear reasoning." },
+      { label: "Good",      score: 8,  desc: "Dressing is identified by type, but the description of the type is vague." },
+      { label: "Fair",      score: 5,  desc: "Dressing is named, but the category/type is missing." },
+      { label: "Needs Improvement", score: 3, desc: "Dressing is not mentioned or incorrectly categorized." },
     ],
   },
   {
-    criteria: "Dressing Appropriateness",
-    points: 15,
+    criteria: "Preparation and Technique",
+    points: 10,
     color: "from-yellow-500 to-amber-600",
     bg: "from-yellow-50 to-amber-50",
     border: "border-yellow-200",
-    icon: "🫙",
+    icon: "🔪",
     levels: [
-      { label: "Excellent (4)", desc: "Correctly identified and strongly complements the salad" },
-      { label: "Good (3)", desc: "Appropriate but explanation is limited" },
-      { label: "Fair (2)", desc: "Dressing somewhat matches the salad" },
-      { label: "Needs Improvement (1)", desc: "Does not match or not identified" },
+      { label: "Excellent", score: 10, desc: "Vegetables and fruits are cut uniformly in size and shape." },
+      { label: "Good",      score: 8,  desc: "Some vegetables and fruits are not cut uniformly in size and shape." },
+      { label: "Fair",      score: 5,  desc: "Most vegetables and fruits are not cut uniformly in size and shape." },
+      { label: "Needs Improvement", score: 3, desc: "All vegetables and fruits are not cut uniformly in size and shape." },
     ],
   },
   {
-    criteria: "Presentation & Plating",
-    points: 20,
+    criteria: "Quality of Ingredients",
+    points: 10,
     color: "from-rose-500 to-pink-600",
     bg: "from-rose-50 to-pink-50",
     border: "border-rose-200",
-    icon: "📸",
+    icon: "🌿",
     levels: [
-      { label: "Excellent (4)", desc: "Neat, attractive plating; clear photo; background removed" },
-      { label: "Good (3)", desc: "Good presentation; minor issues in clarity or background" },
-      { label: "Fair (2)", desc: "Acceptable but lacks neatness or photo clarity" },
-      { label: "Needs Improvement (1)", desc: "Poor presentation; unclear photo; background not removed" },
+      { label: "Excellent", score: 10, desc: "Ingredients are fresh, crisp, and properly balanced for enjoyable mouthfeel." },
+      { label: "Good",      score: 8,  desc: "Mostly fresh with a good mix of textures; may have a minor flow issue." },
+      { label: "Fair",      score: 5,  desc: "Acceptable textures though some ingredients may lack freshness or balanced flow." },
+      { label: "Needs Improvement", score: 3, desc: "Mostly fresh with a good mix of textures; may have a minor issue." },
     ],
   },
   {
-    criteria: "Written Explanation",
+    criteria: "Presentation and Plating",
     points: 10,
     color: "from-violet-500 to-purple-600",
     bg: "from-violet-50 to-purple-50",
     border: "border-violet-200",
-    icon: "✍️",
+    icon: "📸",
     levels: [
-      { label: "Excellent (4)", desc: "Complete, clear, 5–7 sentences with all required details" },
-      { label: "Good (3)", desc: "Complete but lacks depth or clarity" },
-      { label: "Fair (2)", desc: "Incomplete (missing one required detail)" },
-      { label: "Needs Improvement (1)", desc: "Very minimal or unclear explanation" },
-    ],
-  },
-  {
-    criteria: "Timeliness",
-    points: 10,
-    color: "from-sky-500 to-blue-600",
-    bg: "from-sky-50 to-blue-50",
-    border: "border-sky-200",
-    icon: "⏰",
-    levels: [
-      { label: "Excellent (4)", desc: "Submitted on or before deadline" },
-      { label: "Good (3)", desc: "1 day late" },
-      { label: "Fair (2)", desc: "2 days late" },
-      { label: "Needs Improvement (1)", desc: "More than 2 days late or not submitted" },
+      { label: "Excellent", score: 10, desc: "Neat, attractive plating; clear photo; background removed." },
+      { label: "Good",      score: 8,  desc: "Good presentation; minor issues in clarity or background." },
+      { label: "Fair",      score: 5,  desc: "Acceptable but lacks neatness or photo clarity." },
+      { label: "Needs Improvement", score: 3, desc: "Poor presentation; unclear photo; background not removed." },
     ],
   },
 ];
+
+const totalPoints = rubricData.reduce((sum, r) => sum + r.points, 0); // 50
 
 const instructionSteps = [
   {
@@ -125,13 +109,6 @@ const instructionSteps = [
   },
   {
     num: 3,
-    icon: <FileText className="w-5 h-5" />,
-    title: "Write a Description",
-    desc: "5–7 sentences covering the salad type, components, dressing choice, and nutritional value.",
-    color: "from-rose-500 to-pink-500",
-  },
-  {
-    num: 4,
     icon: <Upload className="w-5 h-5" />,
     title: "Submit Before Deadline",
     desc: "Upload to the designated submission folder before the deadline.",
@@ -139,9 +116,16 @@ const instructionSteps = [
   },
 ];
 
+// Score label colors
+const scoreBadge: Record<string, string> = {
+  "Excellent":         "bg-emerald-100 text-emerald-800 border-emerald-300",
+  "Good":              "bg-lime-100 text-lime-800 border-lime-300",
+  "Fair":              "bg-yellow-100 text-yellow-800 border-yellow-300",
+  "Needs Improvement": "bg-rose-100 text-rose-800 border-rose-300",
+};
+
 const ActivityPage = () => {
   const router = useRouter();
-  const [expandedRubric, setExpandedRubric] = useState<number | null>(null);
   const [activeTab, setActiveTab] = useState<"instructions" | "rubric">("instructions");
 
   return (
@@ -187,9 +171,9 @@ const ActivityPage = () => {
             {/* Score chips */}
             <div className="flex flex-wrap gap-3 shrink-0">
               {[
-                { icon: <Award className="w-5 h-5 text-yellow-300" />, label: "100 Points Total" },
-                { icon: <BookOpen className="w-5 h-5 text-lime-300" />, label: "6 Criteria" },
-                { icon: <Clock className="w-5 h-5 text-green-200" />, label: "Submit on Time" },
+                { icon: <Award className="w-5 h-5 text-yellow-300" />,  label: `${totalPoints} Points Total` },
+                { icon: <BookOpen className="w-5 h-5 text-lime-300" />, label: `${rubricData.length} Criteria` },
+                { icon: <Clock className="w-5 h-5 text-green-200" />,   label: "Submit on Time" },
               ].map((chip, i) => (
                 <div key={i} className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2.5 rounded-full text-white font-semibold text-sm">
                   {chip.icon}
@@ -309,12 +293,12 @@ const ActivityPage = () => {
                   </div>
                   <div className="p-5 space-y-2">
                     {[
-                      { range: "90–100", label: "Outstanding", color: "text-emerald-700 bg-emerald-50 border-emerald-200" },
-                      { range: "80–89", label: "Very Satisfactory", color: "text-lime-700 bg-lime-50 border-lime-200" },
-                      { range: "70–79", label: "Satisfactory", color: "text-yellow-700 bg-yellow-50 border-yellow-200" },
-                      { range: "Below 70", label: "Needs Improvement", color: "text-rose-700 bg-rose-50 border-rose-200" },
-                    ].map((s, idx) => (
-                      <div key={idx} className={`flex items-center justify-between p-3 rounded-xl border-2 ${s.color}`}>
+                      { range: "45–50", label: "Outstanding",        color: "text-emerald-700 bg-emerald-50 border-emerald-200" },
+                      { range: "38–44", label: "Very Satisfactory",  color: "text-lime-700 bg-lime-50 border-lime-200" },
+                      { range: "28–37", label: "Satisfactory",       color: "text-yellow-700 bg-yellow-50 border-yellow-200" },
+                      { range: "Below 28", label: "Needs Improvement", color: "text-rose-700 bg-rose-50 border-rose-200" },
+                    ].map((s, i) => (
+                      <div key={i} className={`flex items-center justify-between p-3 rounded-xl border-2 ${s.color}`}>
                         <span className="font-extrabold text-sm">{s.range}</span>
                         <span className="font-semibold text-sm">{s.label}</span>
                       </div>
@@ -341,7 +325,7 @@ const ActivityPage = () => {
                 </h2>
                 <div className="flex items-center gap-2 bg-gradient-to-r from-yellow-300 to-lime-400 text-green-900 px-5 py-2.5 rounded-full font-extrabold text-sm shadow-md">
                   <Star className="w-4 h-4" />
-                  Total: 100 Points
+                  Total: {totalPoints} Points
                 </div>
               </div>
 
@@ -353,7 +337,7 @@ const ActivityPage = () => {
                     <div
                       key={i}
                       className={`bg-gradient-to-r ${r.color} flex items-center justify-center text-white text-xs font-bold`}
-                      style={{ width: `${r.points}%` }}
+                      style={{ width: `${(r.points / totalPoints) * 100}%` }}
                       title={`${r.criteria}: ${r.points}pts`}
                     >
                       {r.points}
@@ -370,68 +354,100 @@ const ActivityPage = () => {
                 </div>
               </div>
 
-              {/* Rubric cards */}
-              <div className="space-y-4">
-                {rubricData.map((item, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: idx * 0.07 }}
-                    className={`bg-gradient-to-br ${item.bg} rounded-2xl border-2 ${item.border} overflow-hidden shadow-sm`}
-                  >
-                    <button
-                      onClick={() => setExpandedRubric(expandedRubric === idx ? null : idx)}
-                      className="w-full flex items-center justify-between p-5 text-left hover:brightness-95 transition-all"
-                    >
-                      <div className="flex items-center gap-4">
-                        <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center text-2xl shadow-md`}>
-                          {item.icon}
-                        </div>
-                        <div>
-                          <h3 className="font-extrabold text-green-900 text-lg">{item.criteria}</h3>
-                          <p className="text-green-600 text-sm font-semibold">{item.points} points</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className={`bg-gradient-to-r ${item.color} text-white px-4 py-1.5 rounded-full text-sm font-extrabold shadow`}>
-                          /{item.points}
-                        </div>
-                        {expandedRubric === idx
-                          ? <ChevronUp className="w-5 h-5 text-green-600" />
-                          : <ChevronDown className="w-5 h-5 text-green-600" />
-                        }
-                      </div>
-                    </button>
+              {/* Rubric Table */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="bg-white rounded-2xl border-2 border-green-200 shadow-sm overflow-hidden"
+              >
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border-collapse">
+                    {/* Table head */}
+                    <thead>
+                      <tr>
+                        <th className="bg-gradient-to-br from-lime-600 to-green-700 text-white text-left px-5 py-4 font-extrabold text-sm w-44">
+                          Criteria
+                        </th>
+                        {rubricData[0].levels.map((l) => (
+                          <th
+                            key={l.label}
+                            className={`px-4 py-4 font-extrabold text-center text-xs uppercase tracking-wide border-l border-white/20 ${
+                              l.label === "Excellent"
+                                ? "bg-emerald-600 text-white"
+                                : l.label === "Good"
+                                ? "bg-lime-500 text-white"
+                                : l.label === "Fair"
+                                ? "bg-yellow-500 text-white"
+                                : "bg-rose-500 text-white"
+                            }`}
+                          >
+                            <div>{l.label}</div>
+                            <div className="text-lg font-extrabold mt-0.5 opacity-90">({l.score})</div>
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
 
-                    <AnimatePresence>
-                      {expandedRubric === idx && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.25 }}
-                          className="overflow-hidden"
+                    {/* Table body */}
+                    <tbody>
+                      {rubricData.map((item, idx) => (
+                        <tr
+                          key={idx}
+                          className={idx % 2 === 0 ? "bg-white" : "bg-green-50/60"}
                         >
-                          <div className="px-5 pb-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-3 border-t-2 border-white/60 pt-4">
-                            {item.levels.map((level, lIdx) => (
-                              <div
-                                key={lIdx}
-                                className={`bg-white rounded-xl p-4 border-2 ${item.border} shadow-sm`}
-                              >
-                                <span className={`inline-block text-xs font-extrabold bg-gradient-to-r ${item.color} bg-clip-text text-transparent mb-2`}>
-                                  {level.label}
+                          {/* Criteria cell */}
+                          <td className="px-5 py-4 border-t border-green-100 align-top">
+                            <div className="flex items-center gap-2">
+                              <span className="text-xl">{item.icon}</span>
+                              <div>
+                                <p className="font-extrabold text-green-900 leading-snug">{item.criteria}</p>
+                                <span className={`inline-block mt-1 text-xs font-bold px-2 py-0.5 rounded-full bg-gradient-to-r ${item.color} text-white`}>
+                                  {item.points} pts
                                 </span>
-                                <p className="text-green-800 text-sm leading-relaxed">{level.desc}</p>
                               </div>
-                            ))}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </motion.div>
-                ))}
-              </div>
+                            </div>
+                          </td>
+
+                          {/* Level cells */}
+                          {item.levels.map((level, lIdx) => (
+                            <td
+                              key={lIdx}
+                              className={`px-4 py-4 border-t border-l text-green-800 leading-relaxed align-top ${
+                                lIdx === 0 ? "border-emerald-100 bg-emerald-50/40"
+                                : lIdx === 1 ? "border-lime-100 bg-lime-50/40"
+                                : lIdx === 2 ? "border-yellow-100 bg-yellow-50/40"
+                                : "border-rose-100 bg-rose-50/40"
+                              }`}
+                            >
+                              {level.desc}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+
+                    {/* Total row */}
+                    <tfoot>
+                      <tr className="bg-gradient-to-r from-lime-50 to-green-50 border-t-2 border-green-200">
+                        <td className="px-5 py-3 font-extrabold text-green-900">
+                          Total
+                        </td>
+                        {rubricData[0].levels.map((l) => (
+                          <td key={l.label} className="px-4 py-3 text-center border-l border-green-100">
+                            <span className={`inline-block font-extrabold text-sm px-3 py-1 rounded-full border ${scoreBadge[l.label]}`}>
+                              {rubricData.reduce((sum, r) => {
+                                const match = r.levels.find((lv) => lv.label === l.label);
+                                return sum + (match?.score ?? 0);
+                              }, 0)} pts
+                            </span>
+                          </td>
+                        ))}
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>

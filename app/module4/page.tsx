@@ -29,7 +29,7 @@ const quizData: QuizQuestion[] = [
     cDescription: "Correct! PPE and washing are essential for hygiene and food safety.",
     dDescription: "Washing does not grow the vegetables.",
     correctAnswer: "c",
-    timePopUp: 11
+    timePopUp: 32
   },
   {
     question: "In preparing the ingredients, why should we wash it thoroughly?",
@@ -42,71 +42,19 @@ const quizData: QuizQuestion[] = [
     cDescription: "Dressing should adhere, not slide off.",
     dDescription: "Washing usually uses cool water, not hot.",
     correctAnswer: "a",
-    timePopUp: 29
+    timePopUp: 59
   },
   {
-    question: "Why should potatoes be boiled whole before peeling and cutting?",
-    a: "To reduce cooking time",
-    b: "To make peeling easier",
-    c: "To preserve nutrients",
-    d: "To make the potatoes softer for frying",
-    aDescription: "Boiling whole actually takes longer than small pieces.",
-    bDescription: "While true, it's not the primary nutritional reason.",
-    cDescription: "Correct! Cooking them whole keeps vitamins and minerals locked inside.",
-    dDescription: "This is for salads, not frying.",
-    correctAnswer: "c",
-    timePopUp: 42
-  },
-  {
-    question: "Why should vegetables be peeled only after cooling?",
-    a: "To avoid burning your hands",
-    b: "To prevent damage to the texture and avoid overcooking",
-    c: "To make chopping faster",
-    d: "To increase the size of the vegetables",
-    aDescription: "Safety is a factor, but texture is the culinary priority.",
-    bDescription: "Correct! Cooling stabilizes the vegetable so peeling doesn't turn it into mush.",
-    cDescription: "Cooling actually adds a step to the process.",
-    dDescription: "Vegetables don't grow after being cooked.",
+    question: "Why is it important to arrange salad ingredients properly according to color, shape, texture, and flavor?",
+    a: "To make the salad heavier",
+    b: "To maintain balance and enhance the appearance; the right combination makes it more visually appealing and tasty",
+    c: "To make it cook faster",
+    d: "To reduce the cost of ingredients",
+    aDescription: "Arrangement doesn't change the weight.",
+    bDescription: "Correct! We eat with our eyes first; balance is key.",
+    cDescription: "Arrangement happens after cooking.",
+    dDescription: "The cost remains the same regardless of placement.",
     correctAnswer: "b",
-    timePopUp: 52
-  },
-  {
-    question: "Why should we chop all the ingredients into uniform pieces?",
-    a: "To make sure some pieces stay raw while others are overcooked",
-    b: "To prevent the salad dressing from touching the vegetables",
-    c: "To make the salad much harder to chew and swallow",
-    d: "To ensure visual appeal and easier mixing",
-    aDescription: "Uniformity ensures even cooking/texture.",
-    bDescription: "Uniformity helps dressing coat evenly.",
-    cDescription: "Uniformity makes it easier to eat, not harder.",
-    dDescription: "Correct! Evenly sized pieces look professional and mix better.",
-    correctAnswer: "d",
-    timePopUp: 64
-  },
-  {
-    question: "Why should cooked ingredients be thoroughly cooled before mixing with mayonnaise?",
-    a: "To improve the color of the salad",
-    b: "To make chopping easier",
-    c: "To prevent the mayonnaise from spoiling and ensure food safety",
-    d: "To cook the mayonnaise faster",
-    aDescription: "Cooling is about safety, not aesthetics.",
-    bDescription: "Chopping should be done before mixing.",
-    cDescription: "Correct! Heat can cause mayonnaise to break down and breed bacteria.",
-    dDescription: "Mayonnaise should not be cooked in a salad.",
-    correctAnswer: "c",
-    timePopUp: 85
-  },
-  {
-    question: "Why should the dressing be gently mixed into the salad?",
-    a: "To cool the salad faster",
-    b: "To add more salt",
-    c: "To avoid crushing or damaging the main ingredients",
-    d: "To make the salad thicker",
-    aDescription: "Mixing doesn't significantly lower temperature.",
-    bDescription: "Salt is in the dressing, not the mixing style.",
-    cDescription: "Correct! Gentle mixing preserves the integrity and texture of the ingredients.",
-    dDescription: "Gentle mixing maintains lightness.",
-    correctAnswer: "c",
     timePopUp: 98
   },
   {
@@ -120,33 +68,20 @@ const quizData: QuizQuestion[] = [
     cDescription: "Plating can be done on plates or bowls.",
     dDescription: "Blending turns a salad into a smoothie!",
     correctAnswer: "a",
-    timePopUp: 111
-  },
-  {
-    question: "Why is it important to arrange salad ingredients properly according to color, shape, texture, and flavor?",
-    a: "To make the salad heavier",
-    b: "To maintain balance and enhance the appearance; the right combination makes it more visually appealing and tasty",
-    c: "To make it cook faster",
-    d: "To reduce the cost of ingredients",
-    aDescription: "Arrangement doesn't change the weight.",
-    bDescription: "Correct! We eat with our eyes first; balance is key.",
-    cDescription: "Arrangement happens after cooking.",
-    dDescription: "The cost remains the same regardless of placement.",
-    correctAnswer: "b",
-    timePopUp: 120
+    timePopUp: 129
   },
   {
     question: "What is the main goal of following proper guidelines when making salad?",
     a: "To make the salad spicy",
-    b: "To create a salad that is clean, safe to eat, tasty, and visually appealing",
-    c: "To reduce the number of ingredients",
-    d: "To make the salad heavier",
+    b: "To reduce the number of ingredients",
+    c: "To make the salad heavier",
+    d: "To create a salad that is clean, safe to eat, tasty, and visually appealing",
     aDescription: "Spiciness is a flavor choice, not a general goal.",
-    bDescription: "Correct! The ultimate goal is a safe, high-quality, and delicious dish.",
-    cDescription: "Guidelines don't dictate the count of ingredients.",
-    dDescription: "Heaviness is not a quality standard.",
-    correctAnswer: "b",
-    timePopUp: 126
+    bDescription: "Guidelines don't dictate the count of ingredients.",
+    cDescription: "Heaviness is not a quality standard.",
+    dDescription: "Correct! The ultimate goal is a safe, high-quality, and delicious dish.",
+    correctAnswer: "d",
+    timePopUp: 135
   }
 ];
 
@@ -335,7 +270,7 @@ const VideoQuizSystem: React.FC = () => {
               <div className="relative aspect-video bg-gray-950">
                 <video
                   ref={videoRef}
-                  src="/image/video/MODULE 4_ VIDEO .mp4"
+                  src="/image/video/MODULE4vid.mp4"
                   className="w-full h-full object-contain"
                   muted={isMuted}
                   onTimeUpdate={handleTimeUpdate}
