@@ -518,7 +518,7 @@ const VideoQuizSystem: React.FC = () => {
                       />
                     </div>
                     <p className="text-sm text-green-600 mt-2 font-medium">
-                      {askedQuestions.size} of {quizData.length} quizzes done
+                      {askedQuestions.size} of {quizData.length} Quizzes Done
                     </p>
                   </div>
 

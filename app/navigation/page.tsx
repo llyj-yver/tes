@@ -527,18 +527,7 @@ function HamburgerNav({
  
                 {/* Drawer body */}
                 <div className="flex-1 overflow-y-auto p-4 space-y-1">
-                    {/* Top-level links */}
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.href}
-                            href={link.href}
-                            onClick={onClose}
-                            className="flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold text-green-800 hover:bg-gradient-to-r hover:from-lime-50 hover:to-green-50 hover:text-green-900 border-2 border-transparent hover:border-green-200 transition-all text-sm"
-                        >
-                            <span className="text-green-500">{link.icon}</span>
-                            {link.label}
-                        </a>
-                    ))}
+                    
  
                     {/* Divider + Modules */}
                     <div className="pt-3 pb-1 px-4">
@@ -557,6 +546,20 @@ function HamburgerNav({
                             <span className="truncate">{mod.title}</span>
                         </a>
                     ))}
+
+                    {/* Top-level links */}
+                    {navLinks.map((link) => (
+                        <a
+                            key={link.href}
+                            href={link.href}
+                            onClick={onClose}
+                            className="flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold text-green-800 hover:bg-gradient-to-r hover:from-lime-50 hover:to-green-50 hover:text-green-900 border-2 border-transparent hover:border-green-200 transition-all text-sm"
+                        >
+                            <span className="text-green-500">{link.icon}</span>
+                            {link.label}
+                        </a>
+                    ))}
+                    
                 </div>
  
                 {/* Drawer footer */}
@@ -896,7 +899,7 @@ export default function NavigationPage() {
                             <div className="bg-gradient-to-br from-white to-lime-50 rounded-3xl border-2 border-green-200 hover:border-green-400 hover:shadow-lg transition-all overflow-hidden">
                                 <div className="bg-gradient-to-r from-lime-600 via-green-600 to-emerald-600 px-5 py-3 flex items-center gap-2">
                                     <Users className="w-4 h-4 text-lime-200" />
-                                    <span className="text-white font-extrabold text-sm">Research Team</span>
+                                    <span className="text-white font-extrabold text-sm">Developer Team</span>
                                 </div>
                                 <div className="p-5">
                                     <p className="text-green-700 text-sm font-medium mb-4 leading-relaxed">

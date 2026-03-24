@@ -110,8 +110,8 @@ const instructionSteps = [
   {
     num: 3,
     icon: <Upload className="w-5 h-5" />,
-    title: "Submit Before Deadline",
-    desc: "Upload to the designated submission folder before the deadline.",
+    title: "Submission",
+    desc: "Upload to the designated submission folder.",
     color: "from-violet-500 to-purple-600",
   },
 ];
@@ -435,12 +435,6 @@ const ActivityPage = () => {
                         </td>
                         {rubricData[0].levels.map((l) => (
                           <td key={l.label} className="px-4 py-3 text-center border-l border-green-100">
-                            <span className={`inline-block font-extrabold text-sm px-3 py-1 rounded-full border ${scoreBadge[l.label]}`}>
-                              {rubricData.reduce((sum, r) => {
-                                const match = r.levels.find((lv) => lv.label === l.label);
-                                return sum + (match?.score ?? 0);
-                              }, 0)} pts
-                            </span>
                           </td>
                         ))}
                       </tr>
