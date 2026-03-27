@@ -321,7 +321,7 @@ const ActivityPage = () => {
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-extrabold text-green-900 flex items-center gap-2">
                   <Award className="w-6 h-6 text-lime-500" />
-                  Grading Rubric
+                  Grading Rubrics
                 </h2>
                 <div className="flex items-center gap-2 bg-gradient-to-r from-yellow-300 to-lime-400 text-green-900 px-5 py-2.5 rounded-full font-extrabold text-sm shadow-md">
                   <Star className="w-4 h-4" />

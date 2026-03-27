@@ -60,12 +60,13 @@ const salads = [
         name: "Coleslaw",
         image: "/image/examples/coleslaw.png",
         ingredients: [
-          "Cabbage, shredded",
-          "Carrots, grated",
-          "Mayonnaise",
-          "Vinegar",
-          "Sugar",
-          "Salt and pepper"
+          " 4 cups thinly sliced cabbage (green or purple, or a mix)",
+          "1 carrot, grated on the large holes of a box grater",
+          "2 green onions, thinly sliced on the diagonal",
+          "1 teaspoon yellow mustard",
+          "2 teaspoons cider vinegar or wine vinegar",
+          "1/8 teaspoon freshly ground black pepper, or more to taste",
+          "Kosher salt, to taste",
         ],
         process: "Step 1: Wash the cabbage and carrots. Step 2: Shred the cabbage into thin strips. Step 3: Grate the carrots. Step 4: Place the cabbage and carrots in a large bowl. Step 5: In another bowl, mix the mayonnaise, vinegar, sugar, salt, and pepper. Step 6: Stir until the dressing becomes smooth and creamy. Step 7: Pour the dressing over the cabbage and carrots. Step 8: Mix well until the vegetables are evenly coated. Step 9: Refrigerate for about 30 minutes before serving to improve the flavor."
       },
@@ -73,13 +74,12 @@ const salads = [
         name: "Mixed Green Salad",
         image: "/image/examples/mixsalad.png",
         ingredients: [
-          "Mixed greens (romaine lettuce or spinach)",
-          "Cucumber",
-          "Cherry tomatoes",
-          "Red onion",
-          "Olive oil",
-          "Lemon juice or vinegar",
-          "Salt and pepper"
+          "4–6 cups of lettuce/spinach",
+          "1  sliced cucumber",
+          "1 cup of halved cherry tomatoes",
+          "cup of sliced red onion",
+          "Drizzle with a dressing made of 3 tbsp olive oil",
+          "1–2 tbsp lemon juice/vinegar, salt, and pepper",
         ],
         process: "Step 1: Wash all the vegetables thoroughly. Step 2: Chop the lettuce if needed. Step 3: Slice the cucumber and red onion. Step 4: Place the mixed greens in a large bowl. Step 5: Add the cucumber, cherry tomatoes, and red onion. Step 6: In a small bowl, mix the olive oil, lemon juice, salt, and pepper. Step 7: Pour the dressing over the salad. Step 8: Toss gently until the ingredients are well combined. Step 9: Transfer to a serving bowl and serve immediately."
       },
@@ -186,13 +186,12 @@ const salads = [
         name: "Caesar Salad",
         image: "/image/examples/gege.png",
         ingredients: [
-          "Olive oil",
-          "Egg yolks",
-          "Fresh lemon juice",
-          "Worcestershire sauce",
-          "Anchovy paste",
-          "Garlic",
-          "Mustard"
+          "1/2 cup Olive oil",
+          "2 Egg yolks",
+          "2 tbsp Lemon juice",
+          "4 Anchovy fillets",
+          "2 Garlic cloves",
+          "1 tsp Dijon mustard"
         ],
         process: "Step 1: Prepare the Dressing — Whisk the egg yolks with lemon juice and mustard, then slowly drizzle in the olive oil to create a thick, creamy emulsion. Step 2: Infuse Flavor — Stir in the finely minced garlic, anchovy paste, and Worcestershire sauce until the dressing is pungent and smooth. Step 3: Toss the Greens — Break the romaine leaves into large, bite-sized pieces and toss in a chilled bowl with enough dressing to coat every leaf. Step 4: Add Crunch and Salt — Fold in croutons and a generous handful of shaved Parmesan cheese just before serving to maintain texture. Step 5: Finish and Serve — Plate on a chilled dish and top with an extra crack of black pepper and a final sprinkle of cheese."
       },
@@ -200,13 +199,13 @@ const salads = [
         name: "Caprese Salad",
         image: "/image/examples/caprese.png",
         ingredients: [
-          "Ripe tomatoes",
-          "Mozzarella cheese (Bocconcini or Buffalo)",
-          "Basil leaves",
-          "Olive oil",
-          "Balsamic glaze",
-          "Flaky sea salt",
-          "Cracked black pepper"
+          "3-4 large Ripe tomatoes",
+          "8-10 oz (250g) Mozzarella cheese (Bocconcini or Buffalo)",
+          "1 large handful fresh Basil leaves",
+          "3 tbsp Extra virgin olive oil",
+          "2 tbsp Balsamic glaze",
+          "1 large pinch Flaky sea salt",
+          "1/2 tsp Cracked black pepper"
         ],
         process: "Step 1: Slice the Base — Begin by slicing the tomatoes and the fresh mozzarella into uniform rounds approximately 1/4-inch thick. Step 2: Layer for Presentation — On a flat serving platter, alternate the slices of tomato and mozzarella in a circular or linear overlapping pattern. Step 3: Incorporate Aromatics — Tuck a whole, fresh basil leaf between each slice of cheese and tomato so that the scent infuses the entire dish. Step 4: Drizzle and Season — Uniformly drizzle the olive oil and a small amount of balsamic glaze over the top of the arranged ingredients. Step 5: Final Touch — Sprinkle the salad with sea salt and black pepper immediately before bringing it to the table to ensure the tomatoes stay firm and juicy."
       },
@@ -225,12 +224,13 @@ const salads = [
         name: "Coleslaw",
         image: "/image/examples/coleslaw.png",
         ingredients: [
-          "Cabbage, shredded",
-          "Carrots, grated",
-          "Mayonnaise",
-          "Vinegar",
-          "Sugar",
-          "Salt and pepper"
+          "1 small head Cabbage (about 4-5 cups, shredded)",
+          "2 medium Carrots (about 1 cup, grated)",
+          "1/2 cup Mayonnaise",
+          "1 tbsp White vinegar (or apple cider vinegar)",
+          "2 tbsp White sugar",
+          "1/2 tsp Salt",
+          "1/4 tsp Cracked black pepper"
         ],
         process: "Step 1: Wash the cabbage and carrots. Step 2: Shred the cabbage into thin strips. Step 3: Grate the carrots. Step 4: Place the cabbage and carrots in a large bowl. Step 5: In another bowl, mix mayonnaise, vinegar, sugar, salt, and pepper. Step 6: Stir until smooth and creamy. Step 7: Pour the dressing over the cabbage and carrots. Step 8: Toss well to coat the vegetables. Step 9: Refrigerate for 30 minutes before serving."
       },
@@ -238,13 +238,14 @@ const salads = [
         name: "Side Garden Salad",
         image: "/image/examples/gardensalad.png",
         ingredients: [
-          "Lettuce (romaine or iceberg)",
-          "Cucumber, sliced",
-          "Cherry tomatoes",
-          "Carrots, shredded",
-          "Italian dressing",
-          "Cheddar cheese",
-          "Salt and pepper"
+          "1 large head Lettuce (romaine or iceberg, about 4-5 cups)",
+          "1 medium Cucumber (sliced into 1/4-inch rounds)",
+          "1 cup Cherry tomatoes (halved)",
+          "1 large Carrot (about 1/2 cup, shredded)",
+          "1/2 cup Italian dressing",
+          "1/2 cup Cheddar cheese (shredded or cubed)",
+          "1 large pinch Salt",
+          "Cracked black pepper"
         ],
         process: "Step 1: Wash all the vegetables thoroughly. Step 2: Chop the lettuce into bite-sized pieces. Step 3: Slice the cucumber and prepare the cherry tomatoes. Step 4: Place the lettuce in a bowl. Step 5: Add cucumber, tomatoes, and shredded carrots. Step 6: Sprinkle salt and pepper. Step 7: Add the dressing. Step 8: Toss the salad gently. Step 9: Serve immediately as a side dish."
       },
@@ -707,17 +708,15 @@ export default function Module1() {
 
           {/* Completion Card */}
           {showCompletion && current === salads.length - 1 && (
-            <div className={`rounded-3xl p-6 shadow-lg border-2 ${
-              isModuleCompleted
-                ? "bg-gradient-to-br from-white to-green-50 border-green-300"
-                : "bg-gradient-to-br from-white to-yellow-50 border-yellow-300"
-            }`}>
+            <div className={`rounded-3xl p-6 shadow-lg border-2 ${isModuleCompleted
+              ? "bg-gradient-to-br from-white to-green-50 border-green-300"
+              : "bg-gradient-to-br from-white to-yellow-50 border-yellow-300"
+              }`}>
               <div className="flex items-start gap-5">
-                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg ${
-                  isModuleCompleted
-                    ? "bg-gradient-to-br from-lime-400 to-green-500"
-                    : "bg-gradient-to-br from-yellow-400 to-amber-500"
-                }`}>
+                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg ${isModuleCompleted
+                  ? "bg-gradient-to-br from-lime-400 to-green-500"
+                  : "bg-gradient-to-br from-yellow-400 to-amber-500"
+                  }`}>
                   <Award className="w-8 h-8 text-white" />
                 </div>
                 <div className="flex-1">
@@ -936,9 +935,9 @@ export default function Module1() {
           </div>
 
         </div>
-          {/* ── END RIGHT COLUMN ── */}
-  
-        </div>
+        {/* ── END RIGHT COLUMN ── */}
+
       </div>
-    );
-  }
+    </div>
+  );
+}

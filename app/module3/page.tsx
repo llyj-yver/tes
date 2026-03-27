@@ -84,6 +84,12 @@ const dressingData: DressingType[] = [
         visual: "/image/mods3/OIL & VINEGAR DRESSING/step 6.png",
         tip: "Dress the salad just before serving so greens don't wilt.",
       },
+      {
+        title: "What is an Emulsified Dressing?",
+        description: "An Emulsified Dressing is a dressing where oil and a water-based liquid are permanently — or semi-permanently — bound together using an emulsifier such as egg yolk or mustard. The emulsifier contains molecules that attract both oil and water at the same time, acting as a bridge that keeps the two from separating. The result is a smooth, creamy, and stable dressing that clings beautifully to salad ingredients. It is the science behind classics like Caesar dressing, Thousand Island, and homemade mayonnaise.",
+        visual: "/image/mods3/EMULSIFIED DRESSING/s1.jpg",
+        tip: "The slower you add the oil, the creamier and more stable your dressing will be.",
+      },
     ],
   },
   {
@@ -143,6 +149,12 @@ const dressingData: DressingType[] = [
         description: "Your emulsified dressing is stable — it won't separate! Use it for Caesar salad, Thousand Island, or Honey Mustard dressings.",
         visual: "/image/mods3/EMULSIFIED DRESSING/s6.jpg",
         tip: "Refrigerate and use within 2 days since it contains raw egg.",
+      },
+      {
+        title: "What are Other Dressings?",
+        description: "\"Other Dressings\" is a broad category that covers all specialty dressings that do not fit neatly into the vinaigrette or creamy emulsion families. These include yogurt-based, fruit-based, soy-based, and cooked dressings — each with its own unique flavor profile and texture. What they all share is creativity: instead of relying on the classic oil-and-acid formula, they draw flavor from entirely different base ingredients like yogurt, tahini, honey, or citrus. This makes them incredibly versatile and adaptable to a wide range of cuisines and salad styles.",
+        visual: "/image/mods3/OTHER DRESSING/step 1.png",
+        tip: "Don't be afraid to experiment — this category has no strict rules!",
       },
     ],
   },
@@ -205,6 +217,12 @@ const dressingData: DressingType[] = [
         description: "Perfect for Tahini salad, Yogurt Herb, or Avocado Lime dressings. These pair beautifully with Mediterranean and Middle Eastern style salads.",
         visual: "/image/mods3/OTHER DRESSING/step 6.png",
         tip: "Also works as a dip for pita or vegetables!",
+      },
+      {
+        title: "What is a Temporary Emulsion?",
+        description: "A Temporary Emulsion is a dressing where oil and a water-based liquid are mixed together briefly but will naturally separate again after a short time. Unlike a permanent emulsion, no true emulsifier is used — mustard only slows the separation slightly but cannot stop it. This means the dressing must be shaken or whisked vigorously right before every use. The classic French vinaigrette is the best example: light, bright, and always requiring one good shake before it hits the salad.",
+        visual: "/image/mods3/TEMPORARY EMULSION/step 1.png",
+        tip: "The separation is not a flaw — it's just the nature of this dressing. Shake and enjoy!",
       },
     ],
   },
@@ -269,6 +287,12 @@ const dressingData: DressingType[] = [
         visual: "/image/mods3/TEMPORARY EMULSION/step 6.png",
         tip: "Make it fresh each time for the best flavor.",
       },
+      {
+        title: "What is a Permanent Dressing?",
+        description: "A Permanent Dressing is a fully stable emulsion where oil and a water-based liquid are so thoroughly bonded by an emulsifier — typically egg yolk — that they will never separate again. The lecithin in egg yolk wraps around each tiny droplet of oil, locking it in place within the liquid and creating a thick, smooth, velvety texture that holds its form for days. Mayonnaise is the most iconic example of this technique, and it serves as the base for some of the most beloved dressings in the world, from Ranch to Blue Cheese.",
+        visual: "/image/mods3/PERMANENT DRESSING/step 1.jpg",
+        tip: "Once mastered, this technique opens the door to making nearly any creamy dressing from scratch.",
+      },
     ],
   },
   {
@@ -332,6 +356,12 @@ const dressingData: DressingType[] = [
         visual: "/image/mods3/PERMANENT DRESSING/step 6.jpg",
         tip: "Add herbs, garlic, or cheese to customize the flavor.",
       },
+      {
+        title: "What is a Cooked Salad Dressing?",
+        description: "A Cooked Salad Dressing is the only dressing type that requires heat to prepare. By cooking a mixture of eggs, flour, sugar, and vinegar over a stove, the heat activates the starch in the flour and coagulates the eggs — thickening everything into a smooth, custard-like consistency that no cold-mixed dressing can achieve. The result is a warm, sweet, and gently tangy dressing with a soft, pudding-like texture that pairs beautifully with fruit salads and classic cold vegetable dishes. It is a cornerstone of old-fashioned home cooking.",
+        visual: "/image/mods3/COOKED SALAD DRESSING/step 1.png",
+        tip: "Always stir constantly while cooking — stopping even briefly can cause lumps or scorching.",
+      },
     ],
   },
   {
@@ -394,6 +424,12 @@ const dressingData: DressingType[] = [
         description: "Let the dressing cool slightly before using. It's perfect for Fruit Salad, Waldorf, Ambrosia, or Boiled Dressing — sweet salads that need a gentle, warm flavor.",
         visual: "/image/mods3/COOKED SALAD DRESSING/step 6.png",
         tip: "Refrigerate leftovers — it keeps for up to 3 days.",
+      },
+      {
+        title: "What is a Cooked Salad Dressing?",
+        description: "A Cooked Salad Dressing is the only dressing type that requires heat to prepare. By cooking a mixture of eggs, flour, sugar, and vinegar over a stove, the heat activates the starch in the flour and coagulates the eggs — thickening everything into a smooth, custard-like consistency that no cold-mixed dressing can achieve. The result is a warm, sweet, and gently tangy dressing with a soft, pudding-like texture that pairs beautifully with fruit salads and classic cold vegetable dishes. It is a cornerstone of old-fashioned home cooking.",
+        visual: "/image/mods3/COOKED SALAD DRESSING/step 1.png",
+        tip: "Always stir constantly while cooking — stopping even briefly can cause lumps or scorching.",
       },
     ],
   },
@@ -500,7 +536,7 @@ export default function DressingFlipbook() {
   const dressing = dressingData[selectedDressing];
   const step = dressing.steps[currentStep];
   const totalSteps = dressing.steps.length;
-  const isFinalStep = currentStep === totalSteps - 1;
+  const isFinalStep = currentStep === totalSteps - 2;
 
   useEffect(() => {
     const saved = localStorage.getItem("completedModules");
@@ -768,7 +804,7 @@ export default function DressingFlipbook() {
                       className="inline-block text-xs font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full"
                       style={{ background: dressing.color + "22", color: dressing.accent }}
                     >
-                      Step {currentStep + 1}
+                      {isFinalStep ? "Overview" : `Step ${currentStep + 1}`}
                     </span>
                   </div>
 
