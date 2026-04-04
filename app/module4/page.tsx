@@ -29,7 +29,7 @@ const quizData: QuizQuestion[] = [
     cDescription: "Correct! PPE and washing are essential for hygiene and food safety.",
     dDescription: "Washing does not grow the vegetables.",
     correctAnswer: "c",
-    timePopUp: 32
+    timePopUp: 36
   },
   {
     question: "In preparing the ingredients, why should we wash it thoroughly?",
@@ -42,7 +42,7 @@ const quizData: QuizQuestion[] = [
     cDescription: "Dressing should adhere, not slide off.",
     dDescription: "Washing usually uses cool water, not hot.",
     correctAnswer: "a",
-    timePopUp: 59
+    timePopUp: 66
   },
   {
     question: "Why is it important to arrange salad ingredients properly according to color, shape, texture, and flavor?",
@@ -55,7 +55,7 @@ const quizData: QuizQuestion[] = [
     cDescription: "Arrangement happens after cooking.",
     dDescription: "The cost remains the same regardless of placement.",
     correctAnswer: "b",
-    timePopUp: 98
+    timePopUp: 121
   },
   {
     question: "How should plating be done?",
@@ -68,7 +68,7 @@ const quizData: QuizQuestion[] = [
     cDescription: "Plating can be done on plates or bowls.",
     dDescription: "Blending turns a salad into a smoothie!",
     correctAnswer: "a",
-    timePopUp: 129
+    timePopUp: 134
   },
   {
     question: "What is the main goal of following proper guidelines when making salad?",
@@ -81,7 +81,7 @@ const quizData: QuizQuestion[] = [
     cDescription: "Heaviness is not a quality standard.",
     dDescription: "Correct! The ultimate goal is a safe, high-quality, and delicious dish.",
     correctAnswer: "d",
-    timePopUp: 135
+    timePopUp: 144
   }
 ];
 
@@ -270,7 +270,7 @@ const VideoQuizSystem: React.FC = () => {
               <div className="relative aspect-video bg-gray-950">
                 <video
                   ref={videoRef}
-                  src="/image/video/MODULE4vid.mp4"
+                  src="/image/video/smod4vids.mp4"
                   className="w-full h-full object-contain"
                   muted={isMuted}
                   onTimeUpdate={handleTimeUpdate}

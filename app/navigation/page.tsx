@@ -486,17 +486,14 @@ function HamburgerNav({
     open: boolean;
     onClose: () => void;
 }) {
- 
     const navLinks = [
         { label: "Home", href: "/", icon: <Home className="w-4 h-4" /> },
         { label: "Activity", href: "../activity", icon: <ClipboardList className="w-4 h-4" /> },
         { label: "Final Quiz", href: "../quiz", icon: <Award className="w-4 h-4" /> },
     ];
- 
+
     return (
         <>
-            {/* Backdrop */}
- 
             {/* Backdrop */}
             {open && (
                 <div
@@ -504,7 +501,7 @@ function HamburgerNav({
                     onClick={onClose}
                 />
             )}
- 
+
             {/* Slide-in drawer */}
             <div
                 className={`fixed top-0 left-0 z-50 h-full w-72 bg-white shadow-2xl flex flex-col transition-transform duration-300 ease-in-out ${
@@ -524,12 +521,26 @@ function HamburgerNav({
                         <X className="w-4 h-4" />
                     </button>
                 </div>
- 
+
                 {/* Drawer body */}
                 <div className="flex-1 overflow-y-auto p-4 space-y-1">
-                    
- 
-                    {/* Divider + Modules */}
+
+                    {/* Home — always first */}
+                    {navLinks
+                        .filter((link) => link.label === "Home")
+                        .map((link) => (
+                            <a
+                                key={link.href}
+                                href={link.href}
+                                onClick={onClose}
+                                className="flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold text-green-800 hover:bg-gradient-to-r hover:from-lime-50 hover:to-green-50 hover:text-green-900 border-2 border-transparent hover:border-green-200 transition-all text-sm"
+                            >
+                                <span className="text-green-500">{link.icon}</span>
+                                {link.label}
+                            </a>
+                        ))}
+
+                    {/* Modules */}
                     <div className="pt-3 pb-1 px-4">
                         <p className="text-xs font-extrabold text-green-400 uppercase tracking-widest">Modules</p>
                     </div>
@@ -547,21 +558,26 @@ function HamburgerNav({
                         </a>
                     ))}
 
-                    {/* Top-level links */}
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.href}
-                            href={link.href}
-                            onClick={onClose}
-                            className="flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold text-green-800 hover:bg-gradient-to-r hover:from-lime-50 hover:to-green-50 hover:text-green-900 border-2 border-transparent hover:border-green-200 transition-all text-sm"
-                        >
-                            <span className="text-green-500">{link.icon}</span>
-                            {link.label}
-                        </a>
-                    ))}
-                    
+                    {/* Activity & Quiz — always last */}
+                    <div className="pt-3 pb-1 px-4">
+                        <p className="text-xs font-extrabold text-green-400 uppercase tracking-widest">Assessments</p>
+                    </div>
+                    {navLinks
+                        .filter((link) => link.label !== "Home")
+                        .map((link) => (
+                            <a
+                                key={link.href}
+                                href={link.href}
+                                onClick={onClose}
+                                className="flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold text-green-800 hover:bg-gradient-to-r hover:from-lime-50 hover:to-green-50 hover:text-green-900 border-2 border-transparent hover:border-green-200 transition-all text-sm"
+                            >
+                                <span className="text-green-500">{link.icon}</span>
+                                {link.label}
+                            </a>
+                        ))}
+
                 </div>
- 
+
                 {/* Drawer footer */}
                 <div className="px-4 py-4 border-t-2 border-green-100 bg-green-50 flex-shrink-0">
                     <p className="text-xs text-green-500 font-medium text-center">Salads &amp; Salad Dressings</p>

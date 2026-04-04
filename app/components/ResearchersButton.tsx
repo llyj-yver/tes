@@ -9,7 +9,7 @@ const researchers = [
     {
         name: "RYZA MAE C. QUITIONG",
         role: "Lead Researcher",
-        photo: "/image/researchers/RYZA MAE C. QUITIONG_.jpg",
+        photo: "/image/researchers/RYZAMAE C. QUITIONG_.jpg",
         fallbackEmoji: "👩‍🔬",
         description:
             "Led the research and content development for this module, ensuring accuracy and quality throughout the project.",
@@ -18,7 +18,7 @@ const researchers = [
     {
         name: "ASHLEY JANE B. JAVIER",
         role: "Frontend Developer",
-        photo: "/image/researchers/ASHLEY JANE B. JAVIER.jpg",
+        photo: "/image/researchers/ASHLEYJANE B. JAVIER.jpg",
         fallbackEmoji: "👩‍💻",
         description:
             "Built and styled the user interface, bringing the module's design to life with clean and responsive layouts.",
@@ -27,7 +27,7 @@ const researchers = [
     {
         name: "JOY G. SOLIVERES",
         role: "QA Tester",
-        photo: "/image/researchers/JOY G. SOLIVERES.jpg",
+        photo: "/image/researchers/JOYG. SOLIVERES.jpg",
         fallbackEmoji: "👩‍🎨",
         description:
             "Tested all features and content to ensure a smooth, error-free experience for every learner.",
@@ -36,7 +36,7 @@ const researchers = [
     {
         name: "KATRINA JANE G. JALAMAN",
         role: "Full Stack Developer",
-        photo: "/image/researchers/KATRINA JANE G. JALAMAN_.jpg",
+        photo: "/image/researchers/KATRINA JANE G. JALAMAN.jpg",
         fallbackEmoji: "👩‍🍳",
         description:
             "Developed both the frontend and backend systems that power the module's functionality.",
@@ -45,7 +45,7 @@ const researchers = [
     {
         name: "ASHLY ROSE B. QUILLOTES",
         role: "UI/UX Designer",
-        photo: "/image/researchers/ASHLY ROSE B. QUILLOTES_.jpg",
+        photo: "/image/researchers/ASHLYROSE B. QUILLOTES_.jpg",
         fallbackEmoji: "👩‍🏫",
         description:
             "Designed the visual layout and user experience, making the module intuitive and visually appealing.",
@@ -54,7 +54,7 @@ const researchers = [
     {
         name: "JULYNAH NADINE M. LLENA",
         role: "Backend Developer",
-        photo: "/image/researchers/JULYNAH NADINE M. LLENA_.jpg",
+        photo: "/image/researchers/JULYNAH NADINE M. LLENA.jpg",
         fallbackEmoji: "👩‍🎓",
         description:
             "Built and maintained the server-side logic and data structures that keep the module running smoothly.",
