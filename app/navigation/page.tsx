@@ -761,7 +761,7 @@ export default function NavigationPage() {
                         <div className="bg-white rounded-3xl shadow-sm border-2 border-green-200 p-6 mb-6">
                             <h2 className="text-2xl font-extrabold text-green-900 mb-1">Course Content</h2>
                             <p className="text-green-600 font-medium mb-5">
-                                {modules.length} modules • {completedCount} completed
+                                {modules.length} Modules • {completedCount} Completed
                             </p>
                             <div>
                                 <div className="flex justify-between text-sm mb-2">

@@ -233,7 +233,9 @@ const VideoQuizSystem: React.FC = () => {
                 <span className="text-white text-3xl md:text-4xl">Interactive Video Quiz</span>
               </h1>
               <p className="text-green-100 text-lg">
-                Watch the video and answer questions as they appear
+                Watch and listen carefully, then answer the questions as they appear.
+                <br/>
+                <b>Take Note:</b> You cannot skip or rewind the video.
               </p>
             </div>
 
@@ -595,7 +597,6 @@ const VideoQuizSystem: React.FC = () => {
                 </h3>
                 <ul className="space-y-2 text-sm text-green-800 font-medium">
                   <li>• Answer each question before continuing</li>
-                  <li>• Re-watch sections you found tricky</li>
                   <li>• Take notes on key hygiene steps</li>
                   <li>• Review all modules before the final quiz</li>
                 </ul>
